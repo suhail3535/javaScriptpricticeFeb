@@ -23,7 +23,7 @@ x<!DOCTYPE html>
             img {
                 width: 100%;
                 border-radius: 50px;
-            
+
             }
         </style>
     </head>
@@ -41,7 +41,11 @@ x<!DOCTYPE html>
             image.style.marginBottom = "10px";
             let ptag = document.createElement("p");
             ptag.innerText = "price-199 rs";
-            div.append(image, ptag, details);
+                let ptag1 = document.createElement("p");
+            ptag1.innerText = "price-199 rs";
+                let ptag2 = document.createElement("p");
+            ptag2.innerText = "price-199 rs";
+            div.append(image, ptag,ptag1,ptag2, details);
             main_container.append(div);
         </script>
     </body>
