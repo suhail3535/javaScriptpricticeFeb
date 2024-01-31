@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            table {
+                /* border: 1px solid black; */
+                width: 60%;
+                margin: auto;
+                text-align: center;
+                padding: 10px;
+            }
+            th,
+            td {
+                padding: 10px;
+            }
+            caption {
+                font-weight: bold;
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <table id="data_table" border="1px">
+            <!-- <caption>Employee Details Table</caption> -->
+            <!-- <append all data here-------- -->
+        </table>
+
+        <script>
+            let data_table = document.getElementById("data_table");
+            let caption = document.createElement("caption");
+            caption.innerText = "Employee Details Table";
+            let head = document.createElement("thead");
+            let tr = document.createElement("tr");
+            let th1 = document.createElement("th");
+            th1.innerText = "Sr.No";
+            let th2 = document.createElement("th");
+            th2.innerText = "Name";
+            let th3 = document.createElement("th");
+            th3.innerText = "Mobile";
+            let th4 = document.createElement("th");
+            th4.innerText = "City";
+            let th5 = document.createElement("th");
+            th5.innerText = "status";
+            tr.append(th1, th2, th3, th4, th5);
+            head.append(tr);
+
+            // ----------body-------
+            let tbody = document.createElement("tbody");
+            let tr2 = document.createElement("tr");
+            let td1 = document.createElement("td");
+            td1.innerText = "1";
+            let td2 = document.createElement("td");
+            td2.innerText = "Aman Kumar";
+            let td3 = document.createElement("td");
+            td3.innerText = "8989090978";
+            let td4 = document.createElement("td");
+            td4.innerText = "Jaipur";
+            let td10 = document.createElement("td");
+            td10.innerText = "completed";
+            if (td10.innerText == "completed") {
+                td10.style.background = "green";
+                td10.style.color = "white";
+            }
+            let tr3 = document.createElement("tr");
+            let td5 = document.createElement("td");
+            td5.innerText = "2";
+            let td6 = document.createElement("td");
+            td6.innerText = "Sohan Kumar";
+            let td7 = document.createElement("td");
+            td7.innerText = "898909000";
+            let td8 = document.createElement("td");
+            td8.innerText = "Lucknow";
+            let td9 = document.createElement("td");
+            td9.innerText = "Incomplete";
+            if (td9.innerText == "Incomplete") {
+                td9.style.background = "red";
+                td9.style.color = "white";
+            }
+            tr2.append(td1, td2, td3, td4, td10);
+            tr3.append(td5, td6, td7, td8, td9);
+            tbody.append(tr2, tr3);
+            data_table.append(caption, head, tbody);
+
+            console.log(data_table);
+
+            // console.log(dataValue,"value");
+        </script>
+    </body>
+</html>
