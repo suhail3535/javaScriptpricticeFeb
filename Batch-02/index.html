@@ -5,6 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
         <style>
+          *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
             #container {
                 /* border: 2px solid gray; */
                 height: auto;
@@ -13,20 +18,36 @@
                 /* border: 1px solid red; */
                 height: 50px;
                 display: flex;
-                justify-content: space-evenly;
+                justify-content: space-around;
                 align-items: center;
                 box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
                 border-bottom: 2px solid rgb(231, 226, 226);
             }
-            nav div {
+            .nav_link div {
                 /* border: 1px solid gray; */
                 padding: 10px 15px;
                 font-weight: bold;
             }
-            nav div:hover {
+            .logo {
+                /* border: 1px solid green; */
+                font-size: 20px;
+            }
+            .nav_link div:hover {
                 cursor: pointer;
                 background-color: salmon;
                 color: white;
+            }
+            .nav_link {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                /* border: 2px solid red; */
+                width: 60%;
+            }
+            .menu_icon {
+                /* visibility: hidden; */
+                border: 1px solid red;
+                display: none;
             }
             #content_container {
                 /* border: 2px solid blue; */
@@ -46,7 +67,7 @@
             img {
                 width: 100%;
                 margin: auto;
-                height: 200px;
+                /* height: 200px; */
             }
             button {
                 background-color: aquamarine;
@@ -56,27 +77,49 @@
                 border-radius: 5px;
                 align-items: baseline;
 
-                border: 1px solid yellow;
-
+                /* border: 1px solid yellow; */
             }
-            h4{
-              text-align: justify;
-
+            h4 {
+                text-align: justify;
             }
-                h5{
-                  font-size: 20px;
-                  color: red;
-                }
-            h1{
-              font-size: 20px;
+            h5 {
+                font-size: 20px;
+                color: red;
             }
-            button:nth-child(2){
-              border: 5px solid teal ;
+            h1 {
+                font-size: 20px;
+            }
+            button:nth-child(2) {
+                border: 5px solid teal;
             }
             .footer {
-                height: 100px;
+                /* height: 100px; */
+                display: flex;
+                justify-content: space-around;
+                /* padding: 20px; */
                 border: 1px solid blue;
+                background-color: black;
             }
+            .footer div {
+                /* border: 1px solid green;padding: 20px; */
+                width: 20%;
+            }
+            .link {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+            }
+            a {
+                text-decoration: none;
+                color: white;
+            }
+             li{
+  margin-top: 10px;
+                color: white;
+
+}
+
             /* for Mobile screen */
 
             @media screen and (min-width: 200px) and (max-width: 420px) {
@@ -90,11 +133,24 @@
                     font-size: 20px;
                     color: rgb(43, 226, 43);
                 }
-                img{
-                  width: 70%;
-                  /* border: 2px solid green; */
-                  padding: 5px;
-                  border-radius: 10px;
+                img {
+                    width: 70%;
+                    /* border: 2px solid green; */
+                    padding: 5px;
+                    border-radius: 10px;
+                }
+                .nav_link {
+                    display: none;
+                }
+                .menu_icon {
+                    display: block;
+                    font-size: 30px;
+                    color: salmon;
+                    /* border: 2px solid greenyellow; */
+                }
+                svg {
+                    font-size: 30px;
+                    color: salmon;
                 }
             }
             /* for Tablet screen */
@@ -110,11 +166,25 @@
                     color: blueviolet;
                 }
 
-                  img{
-                  width: 70%;
-                  /* border: 2px solid green; */
-                  padding: 5px;
-                  border-radius: 15px;
+                img {
+                    width: 70%;
+                    /* border: 2px solid green; */
+                    padding: 5px;
+                    border-radius: 15px;
+                }
+
+                .menu_icon {
+                    display: block;
+                    font-size: 25px;
+                    color: aquamarine;
+                    /* border: 2px solid greenyellow; */
+                }
+                .logo {
+                    font-size: 25px;
+                    color: aquamarine;
+                }
+                .nav_link {
+                    display: none;
                 }
             }
         </style>
@@ -122,147 +192,182 @@
     <body>
         <div id="container">
             <nav>
-                <div class="">Home</div>
-                <div class="">About</div>
-                <div class="">Contact</div>
+                <div class="logo">
+                    <span>&#9742;</span>
+                </div>
+                <div class="nav_link">
+                    <div class="">Home</div>
+                    <div class="">About</div>
+                    <div class="">Contact</div>
+                </div>
+                <div class="menu_icon">
+                    <span>&#9776;</span>
+                </div>
             </nav>
 
             <div id="content_container"></div>
-            <div class="footer"></div>
+            <div class="footer">
+                <div class="link">
+                    <a href="">Our Branches</a>
+                    <a href="">Phone:-1123456787</a>
+                    <a href="">jaipur city</a>
+                    <a href="">kjhgdfghjkljhfgh</a>
+                </div>
+                <div>
+                    <ol>
+                        <li>Link-1</li>
+                        <li>Link-2</li>
+                        <li>Link-3</li>
+                        <li>Link-4</li>
+                    </ol>
+                </div>
+                <div class="link">
+                    <a href="">Our Branches</a>
+                    <a href="">Phone:-1123456787</a>
+                    <a href="">jaipur city</a>
+                    <a href="">kjhgdfghjkljhfgh</a>
+                </div>
+                <div>
+                    <ol>
+                        <li>Link-1</li>
+                        <li>Link-2</li>
+                        <li>Link-3</li>
+                        <li>Link-4</li>
+                    </ol>
+                </div>
+            </div>
         </div>
-
-
     </body>
 </html>
 
-  <script>
-            let data = [
-                {
-                    id: 1,
-                    title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-                    price: 109.95,
-                    description:
-                        "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-                    category: "men's clothing",
-                    image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-                    rating: {
-                        rate: 3.9,
-                        count: 120,
-                    },
-                },
-                {
-                    id: 2,
-                    title: "Mens Casual Premium Slim Fit T-Shirts ",
-                    price: 22.3,
-                    description:
-                        "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
-                    category: "men's clothing",
-                    image: "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
-                    rating: {
-                        rate: 4.1,
-                        count: 259,
-                    },
-                },
-                {
-                    id: 3,
-                    title: "Mens Cotton Jacket",
-                    price: 55.99,
-                    description:
-                        "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
-                    category: "men's clothing",
-                    image: "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
-                    rating: {
-                        rate: 4.7,
-                        count: 500,
-                    },
-                },
-                {
-                    id: 4,
-                    title: "Mens Casual Slim Fit",
-                    price: 15.99,
-                    description:
-                        "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
-                    category: "men's clothing",
-                    image: "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
-                    rating: {
-                        rate: 2.1,
-                        count: 430,
-                    },
-                },
-                {
-                    id: 5,
-                    title: "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
-                    price: 695,
-                    description:
-                        "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
-                    category: "jewelery",
-                    image: "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
-                    rating: {
-                        rate: 4.6,
-                        count: 400,
-                    },
-                },
-                {
-                    id: 6,
-                    title: "Solid Gold Petite Micropave ",
-                    price: 168,
-                    description:
-                        "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
-                    category: "jewelery",
-                    image: "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
-                    rating: {
-                        rate: 3.9,
-                        count: 70,
-                    },
-                },
-                {
-                    id: 7,
-                    title: "White Gold Plated Princess",
-                    price: 9.99,
-                    description:
-                        "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
-                    category: "jewelery",
-                    image: "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",
-                    rating: {
-                        rate: 3,
-                        count: 400,
-                    },
-                },
-                {
-                    id: 8,
-                    title: "Pierced Owl Rose Gold Plated Stainless Steel Double",
-                    price: 10.99,
-                    description:
-                        "Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel",
-                    category: "jewelery",
-                    image: "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg",
-                    rating: {
-                        rate: 1.9,
-                        count: 100,
-                    },
-                },
-            ];
+<script>
+    let data = [
+        {
+            id: 1,
+            title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+            price: 109.95,
+            description:
+                "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+            category: "men's clothing",
+            image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+            rating: {
+                rate: 3.9,
+                count: 120,
+            },
+        },
+        {
+            id: 2,
+            title: "Mens Casual Premium Slim Fit T-Shirts ",
+            price: 22.3,
+            description:
+                "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
+            category: "men's clothing",
+            image: "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+            rating: {
+                rate: 4.1,
+                count: 259,
+            },
+        },
+        {
+            id: 3,
+            title: "Mens Cotton Jacket",
+            price: 55.99,
+            description:
+                "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
+            category: "men's clothing",
+            image: "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+            rating: {
+                rate: 4.7,
+                count: 500,
+            },
+        },
+        {
+            id: 4,
+            title: "Mens Casual Slim Fit",
+            price: 15.99,
+            description:
+                "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
+            category: "men's clothing",
+            image: "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
+            rating: {
+                rate: 2.1,
+                count: 430,
+            },
+        },
+        {
+            id: 5,
+            title: "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
+            price: 695,
+            description:
+                "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
+            category: "jewelery",
+            image: "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
+            rating: {
+                rate: 4.6,
+                count: 400,
+            },
+        },
+        {
+            id: 6,
+            title: "Solid Gold Petite Micropave ",
+            price: 168,
+            description:
+                "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
+            category: "jewelery",
+            image: "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
+            rating: {
+                rate: 3.9,
+                count: 70,
+            },
+        },
+        {
+            id: 7,
+            title: "White Gold Plated Princess",
+            price: 9.99,
+            description:
+                "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
+            category: "jewelery",
+            image: "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",
+            rating: {
+                rate: 3,
+                count: 400,
+            },
+        },
+        {
+            id: 8,
+            title: "Pierced Owl Rose Gold Plated Stainless Steel Double",
+            price: 10.99,
+            description:
+                "Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel",
+            category: "jewelery",
+            image: "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg",
+            rating: {
+                rate: 1.9,
+                count: 100,
+            },
+        },
+    ];
 
-            data.map((item) => {
-                let div = document.createElement("div");
-                let h1 = document.createElement("h1");
-                // h1.innerText = `item ${index}`;
+    data.map((item) => {
+        let div = document.createElement("div");
+        let h1 = document.createElement("h1");
+        // h1.innerText = `item ${index}`;
 
-                let img = document.createElement("img");
-                img.setAttribute("src", item.image);
+        let img = document.createElement("img");
+        img.setAttribute("src", item.image);
 
-                let name = document.createElement("h1");
-                name.innerText = item.title;
+        let name = document.createElement("h1");
+        name.innerText = item.title;
 
-                let category = document.createElement("h5");
-                category.innerText = item.category;
-                let description = document.createElement("h4");
-                description.innerText = item.description;
-                let button = document.createElement("button");
-                button.innerText = "Shop Now";
+        let category = document.createElement("h5");
+        category.innerText = item.category;
+        let description = document.createElement("h4");
+        description.innerText = item.description;
+        let button = document.createElement("button");
+        button.innerText = "Shop Now";
 
-                let container = document.getElementById("content_container");
-                div.append(img, name, category, description, button);
-                container.append(div);
-            });
-        </script>
+        let container = document.getElementById("content_container");
+        div.append(img, name, category, description, button);
+        container.append(div);
+    });
+</script>
