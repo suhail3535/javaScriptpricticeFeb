@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+#main_container{
+    border: 1px solid gray;
+    width:90%;
+    margin:auto;
+    /* height: 100vh; */
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+table{
+    width: 70%;
+}
+form{
+    width: 30%;
+}
+
+    </style>
+</head>
+<body>
+    <div id="main_container">
+<table id="table" border="1px">
+    <thead>
+        <tr>
+            <td>Sr.No</td>
+            <td>Name</td>
+            <td>Mobile</td>
+            <td>Course</td>
+            <td>Priority</td>
+            <td>Status</td>
+        </tr>
+        <tbody id="tbody">
+
+        </tbody>
+    </thead>
+</table>
+
+<div>
+    <form id="form">
+Name:-<input type="text" id="name" placeholder="Enter Name">
+Mobile:-<input type="text" id="mobile" placeholder="Enter Mobile">
+
+Course:-<select  id="course">
+    <option value="">Select Course</option>
+    <option value="HTML">HTML</option>
+    <option value="CSS">CSS</option>
+    <option value="JavaScript">JavaScript</option>
+    <option value="React">React</option>
+</select><br><br>
+Priority:-<select  id="priority">
+    <option value="">Select</option>
+    <option value="Low">Low</option>
+    <option value="Medium">Medium</option>
+    <option value="High">High</option>
+    <option value="Urgent">Urgent</option>
+</select><br><br>
+<button>Submit</button>
+    </form>
+</div>
+    </div>
+
+    <script>
+let form=document.getElementById("form")
+let allData= JSON.parse(localStorage.getItem("courseDetails")) || []
+form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    let details = {
+        name: document.getElementById('name').value,
+        mobile: document.getElementById('mobile').value,
+        course: document.getElementById('course').value,
+        priority: document.getElementById('priority').value
+    };
+
+    allData.push(details);
+    localStorage.setItem("courseDetails", JSON.stringify(allData));
+    displayData(allData);
+
+
+    form.reset();
+});
+
+
+let tbody=document.getElementById("tbody")
+function displayData(data){
+
+data.map((item,index)=>{
+index++
+let tr=document.createElement("tr")
+let  td1=document.createElement("td");
+td1.innerText=index;
+let  td2=document.createElement("td");
+td2.innerText=item.name;
+let  td3=document.createElement("td");
+td3.innerText=item.mobile;
+let  td4=document.createElement("td");
+td4.innerText=item.priority;
+let  td5=document.createElement("td");
+td5.innerText=item.course;
+let  td6=document.createElement("td");
+if(item.priority==="Low"){
+    td6.innerText="Completed"
+    td6.style.background="green"
+    td6.style.color="white"
+}else if(item.priority==="Medium"){
+    td6.innerText="Completed"
+    td6.style.background="yellowgreen"
+    td6.style.color="white"
+}else if(item.priority==="Urgent"){
+    td6.innerText="InCompleted"
+    td6.style.background="yellow"
+    td6.style.color="black"
+
+}else{
+    td6.innerText="Pending"
+    td6.style.background="red"
+    td6.style.color="white"
+}
+tr.append(td1,td2,td3,td5,td4,td6)
+tbody.append(tr)
+
+
+
+
+
+})
+}
+    displayData(allData);
+    </script>
+</body>
+</html>
