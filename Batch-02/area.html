@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+            .container {
+                display: grid;
+                gap: 20px;
+                grid-template-areas:
+                    "head head head"
+                    "nav nav nav"
+                    "asid sect sect"
+                    "fot fot fot ";
+            }
+            header {
+                padding: 30px;
+                border: 1px solid gray;
+                text-align: center;
+                margin-top: 10px;
+                font-weight: bold;
+                color: aliceblue;
+                background-color: rgb(168, 106, 29);
+                grid-area: head;
+            }
+            nav {
+                padding: 30px;
+                margin-top: 10px;
+                border: 1px solid gray;
+
+                text-align: center;
+                font-weight: bold;
+                color: white;
+                grid-area: nav;
+                background-color: rgb(36, 182, 133);
+            }
+            aside {
+                background-color: rgb(165, 23, 23);
+                padding: 30px;
+                margin-top: 10px;
+                font-weight: bold;
+                color: white;
+                grid-area: asid;
+                border: 1px solid gray;
+
+                text-align: center;
+            }
+            section {
+                padding: 30px;
+                margin-top: 10px;
+                font-weight: bold;
+                text-align: center;
+                color: white;
+                grid-area: sect;
+                border: 1px solid gray;
+
+                background-color: rgb(77, 165, 42);
+            }
+            footer {
+                padding: 30px;
+                margin-top: 10px;
+                font-weight: bold;
+                text-align: center;
+                grid-area: fot;
+                color: white;
+                border: 1px solid gray;
+
+                background-color: cadetblue;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>This is Header</header>
+            <nav>This is Navbar</nav>
+            <aside>This is Aside</aside>
+            <section>This is Section</section>
+            <footer>This is footer</footer>
+        </div>
+    </body>
+</html>

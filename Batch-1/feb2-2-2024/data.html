@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+    let mult=function(x,y){
+        let p=x*y
+        return p;
+    }
+        let add=function(x,y){
+        let s=x+y
+        return s;
+    }
+    let a=5;
+    let b=20;
+        function action(x,y,z){
+        let r=z(x,y)
+        return r;
+    }
+
+    
+    let r=action(a,b,add)
+    document.write(r)
+</script>
+</html>
+
+The code defines two functions, mult and add, and a function called action that takes two numbers and a function as arguments. It then calls action with a, b, and the add function. The result is 25, the addition of 5 and 20.
