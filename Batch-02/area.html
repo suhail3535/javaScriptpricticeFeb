@@ -5,83 +5,103 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
         <style>
-            * {
-                padding: 0;
-                margin: 0;
-                box-sizing: border-box;
-            }
             .container {
+                width: 80%;
+                margin: auto;
                 display: grid;
                 gap: 20px;
+
                 grid-template-areas:
-                    "head head head"
-                    "nav nav nav"
-                    "asid sect sect"
-                    "fot fot fot ";
+                    " nine three six"
+                    "one seven five"
+                    "four eight two";
             }
-            header {
-                padding: 30px;
-                border: 1px solid gray;
-                text-align: center;
-                margin-top: 10px;
-                font-weight: bold;
-                color: aliceblue;
-                background-color: rgb(168, 106, 29);
-                grid-area: head;
-            }
-            nav {
-                padding: 30px;
-                margin-top: 10px;
-                border: 1px solid gray;
 
-                text-align: center;
-                font-weight: bold;
-                color: white;
-                grid-area: nav;
-                background-color: rgb(36, 182, 133);
+            .item1 {
+                background-color: #ff6b81;
+                /* padding: 20px; */
+                height: 100px;
+                display: grid;
+                place-items: center;
+                grid-area: one;
             }
-            aside {
-                background-color: rgb(165, 23, 23);
-                padding: 30px;
-                margin-top: 10px;
-                font-weight: bold;
-                color: white;
-                grid-area: asid;
-                border: 1px solid gray;
-
-                text-align: center;
+            .item2 {
+                background-color: #a46bff;
+                /* padding: 20px; */
+                height: 100px;
+                display: grid;
+                place-items: center;
+                grid-area: two;
             }
-            section {
-                padding: 30px;
-                margin-top: 10px;
-                font-weight: bold;
-                text-align: center;
-                color: white;
-                grid-area: sect;
-                border: 1px solid gray;
-
-                background-color: rgb(77, 165, 42);
+            .item3 {
+                background-color: #6bffc6;
+                /* padding: 20px; */
+                height: 100px;
+                display: grid;
+                place-items: center;
+                grid-area: three;
             }
-            footer {
-                padding: 30px;
-                margin-top: 10px;
-                font-weight: bold;
-                text-align: center;
-                grid-area: fot;
-                color: white;
-                border: 1px solid gray;
-
-                background-color: cadetblue;
+            .item4 {
+                background-color: #4809da;
+                /* padding: 20px; */
+                height: 100px;
+                display: grid;
+                place-items: center;
+                grid-area: four;
+            }
+            .item5 {
+                background-color: #fff06b;
+                /* padding: 20px; */
+                height: 100px;
+                display: grid;
+                place-items: center;
+                grid-area: five;
+            }
+            .item6 {
+                background-color: #6bff7f;
+                /* padding: 20px; */
+                height: 100px;
+                display: grid;
+                place-items: center;
+                grid-area: six;
+            }
+            .item7 {
+                background-color: #b3ff6b;
+                /* padding: 20px; */
+                height: 100px;
+                display: grid;
+                place-items: center;
+                grid-area: seven;
+            }
+            .item8 {
+                background-color: #da09ad;
+                /* padding: 20px; */
+                height: 100px;
+                display: grid;
+                place-items: center;
+                grid-area: eight;
+            }
+            .item9 {
+                background-color: #09d3da;
+                /* padding: 20px; */
+                height: 100px;
+                display: grid;
+                place-items: center;
+                grid-area: nine;
             }
         </style>
     </head>
     <body>
         <div class="container">
-            <header>This is Header</header>
-            <nav>This is Navbar</nav>
-            <aside>This is Aside</aside>
-            <section>This is Section</section>
-            <footer>This is footer</footer>
+            <div class="item1">1</div>
+            <div class="item2">2</div>
+            <div class="item3">3</div>
+            <div class="item4">4</div>
+            <div class="item5">5</div>
+            <div class="item6">6</div>
+            <div class="item7">7</div>
+            <div class="item8">8</div>
+            <div class="item9">9</div>
         </div>
     </body>
 </html>
