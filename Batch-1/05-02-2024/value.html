@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="count"></h1>
+    <button id="add">Add</button>
+    <button id="reduce">Reduce</button>
+
+    <script>
+        let count = document.getElementById("count");
+        const add = document.getElementById("add").addEventListener("click", increse);
+        const reduce = document.getElementById("reduce").addEventListener("click", decrese);
+        let value = 0;
+        count.innerText = value;
+        const reduceButton = document.getElementById("reduce");
+         updateButtonState();
+
+        function increse() {
+            value++;
+            count.innerText = value;
+            updateButtonState();
+        }
+
+        function decrese() {
+            value--;
+            count.innerText = value;
+            updateButtonState();
+        }
+
+        function updateButtonState() {
+            reduceButton.disabled = value === 0;
+        }
+    </script>
+</body>
+</html>

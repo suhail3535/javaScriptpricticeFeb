@@ -1,39 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1 id="count"></h1>
-    <button id="add">Add</button>
-    <button id="reduce">Reduce</button>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            input {
+                width: 100%;
+                height: 40px;
+                border-radius: 5px;
+            }
+            #container {
+                display: grid;
+                margin-top: 50px;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+            }
+            #container div {
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                padding: 10px 10px;
+                display: grid;
+                place-items: center;
+                
+                border-radius: 4px 30px;
+            }
+            h1 {
+                color: salmon;
+            }
+            h4 {
+                color: lightseagreen;
+            }
+            h6 {
+                color: rgb(103, 160, 19);
+                font-size: 15px;
+            }
+            input[type="submit"] {
+                background-color: rgb(38, 186, 70);
+                color: antiquewhite;
+                border: none;
+                width: 100%;
 
-    <script>
-        let count = document.getElementById("count");
-        const add = document.getElementById("add").addEventListener("click", increse);
-        const reduce = document.getElementById("reduce").addEventListener("click", decrese);
-        let value = 0;
-        count.innerText = value;
-        const reduceButton = document.getElementById("reduce");
-         updateButtonState();
+            }
+        </style>
+    </head>
+    <body>
+        <form
+            style="
+                width: 30%;
+                margin: 50px auto;
+                border: 1px solid gray;
+                padding: 10px;
+            ">
+            <input type="text" placeholder="enterName" id="name" /> <br /><br />
+            <input
+                type="text"
+                placeholder="enterSchool"
+                id="school" /><br /><br />
+            <input type="text" placeholder="enterCity" id="city" /><br /><br />
+            <input
+                type="text"
+                placeholder="enterstate"
+                id="state" /><br /><br />
+            <input type="submit" />
+        </form>
+        <hr />
+        <div id="container"></div>
+        <script>
+            let arr = JSON.parse(localStorage.getItem("empData")) || [];
+            console.log(arr);
+            let form = document.querySelector("form");
+            form.addEventListener("submit", myfun);
 
-        function increse() {
-            value++;
-            count.innerText = value;
-            updateButtonState();
-        }
+            function myfun(e) {
+                e.preventDefault();
+                let obj = {
+                    name: document.getElementById("name").value,
+                    school: document.getElementById("school").value,
+                    city: document.getElementById("city").value,
+                    state: document.getElementById("state").value,
+                };
+                if (
+                    obj.name == "" ||
+                    obj.school == "" ||
+                    obj.city == "" ||
+                    obj.state == ""
+                ) {
+                    alert("please enter full details");
+                } else {
+                    alert("data submitted");
+                    arr.push(obj);
+                    localStorage.setItem("empData", JSON.stringify(arr));
+                    // window.location.reload();
+                }
+                showdata(arr);
+                form.reset();
+            }
 
-        function decrese() {
-            value--;
-            count.innerText = value;
-            updateButtonState();
-        }
+            // show data function
+            let container = document.getElementById("container");
+            function showdata(data) {
+                container.innerHTML = " ";
+                arr.map((item, index) => {
+                    let card = document.createElement("div");
+                    let heading = document.createElement("h1");
+                    heading.innerText = item.name;
+                    let school = document.createElement("h3");
+                    school.innerText = item.school;
 
-        function updateButtonState() {
-            reduceButton.disabled = value === 0;
-        }
-    </script>
-</body>
+                    let city = document.createElement("h4");
+                    city.innerText = item.city;
+
+                    let state = document.createElement("h6");
+                    state.innerText = item.state;
+                    card.append(heading, school, city, state);
+
+                    container.append(card);
+                });
+            }
+            showdata(arr);
+        </script>
+    </body>
 </html>
