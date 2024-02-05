@@ -7,49 +7,42 @@
         <style>
             .container {
                 display: grid;
-                /* grid-template-columns: repeat(4, 1fr); */
+                grid-template-columns: repeat(4, 1fr);
                 gap: 20px;
-                grid-template-areas:
-                    "twelve nine"
-                     "six three"
-                      "ten eleven"
-                    " two five"
-                    "one seven"
-                     "four  eight";
-
             }
             .item1 {
                 height: 100px;
                 background-color: salmon;
                 display: grid;
                 place-items: center;
-                grid-area: one;
+                /* grid-area: one; */
             }
             .item2 {
-                height: 100px;
+                /* height: 100px; */
                 display: grid;
+
                 place-items: center;
-                grid-area: two;
+                /* grid-area: two; */
                 background-color: rgb(247, 178, 3);
             }
             .item3 {
                 display: grid;
                 place-items: center;
-                grid-area: three;
+                /* grid-area: three; */
                 height: 100px;
                 background-color: rgb(155, 238, 11);
             }
             .item4 {
                 display: grid;
                 place-items: center;
-                grid-area: four;
+                /* grid-area: four; */
                 height: 100px;
                 background-color: rgb(49, 225, 4);
             }
             .item5 {
                 display: grid;
                 place-items: center;
-                grid-area: five;
+                /* grid-area: five; */
                 height: 100px;
                 background-color: rgb(226, 28, 5);
             }
@@ -57,49 +50,70 @@
                 height: 100px;
                 display: grid;
                 place-items: center;
-                grid-area: six;
+                grid-column-start: 4;
+                grid-column-end: 5;
+                grid-row-start: 2;
+                grid-row-end: 3;
+                /* grid-row-start: ; */
+                /* grid-area: six; */
                 background-color: rgb(250, 114, 225);
             }
             .item7 {
-                height: 100px;
+                /* height: 100px; */
                 display: grid;
+                grid-row-start: 2;
+                grid-row-end: 5;
+                grid-column-start: 2;
+                grid-column-end: 4;
+
                 place-items: center;
-                grid-area: seven;
+                /* grid-area: seven; */
                 background-color: rgb(10, 121, 212);
             }
             .item8 {
                 display: grid;
                 place-items: center;
-                grid-area: eight;
-                height: 100px;
+                /* grid-area: eight; */
+                /* height: 100px; */
+                grid-row-start: 3;
+                grid-row-end: 5;
+                grid-column-start: 4;
+                grid-column-end: 5;
                 background-color: rgb(114, 157, 250);
             }
             .item9 {
                 display: grid;
                 place-items: center;
-                grid-area: nine;
+                /* grid-area: nine; */
                 height: 100px;
+
                 background-color: rgb(114, 250, 214);
             }
             .item10 {
                 display: grid;
                 place-items: center;
-                grid-area: ten;
-                height: 100px;
+                /* grid-area: ten; */
+                /* height: 100px; */
+                    grid-row-start: 4;
+                grid-row-end: 7;
                 background-color: rgb(84, 10, 195);
             }
             .item11 {
                 display: grid;
                 place-items: center;
-                grid-area: eleven;
+                    grid-column-start: 2;
+                grid-column-end: 5;
+                /* grid-area: eleven; */
                 height: 100px;
                 background-color: rgb(125, 114, 250);
             }
             .item12 {
                 display: grid;
                 place-items: center;
-                grid-area: twelve;
+                /* grid-area: twelve; */
                 height: 100px;
+                grid-column-start: 2;
+                grid-column-end: 5;
                 background-color: rgb(250, 114, 125);
             }
         </style>
@@ -119,17 +133,5 @@
             <div class="item11">11</div>
             <div class="item12">12</div>
         </div>
-
-        <!-- <div style="display: grid; width: 60%; margin: 40px auto;    background-color: yellow;height: 200px; place-items: center;">
-            <div
-                style="
-                    width: 50%;
-                    height: 100px;
-                    background-color: brown;
-
-                ">
-                hello world
-            </div>
-        </div> -->
     </body>
 </html>
