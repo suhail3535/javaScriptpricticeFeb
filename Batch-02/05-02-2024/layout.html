@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .container {
+                display: grid;
+                /* grid-template-columns: repeat(4, 1fr); */
+                gap: 20px;
+                grid-template-areas:
+                    "one one one"
+                    "two three four"
+                    "six six five";
+            }
+            .item1 {
+                height: 100px;
+                background-color: salmon;
+                display: grid;
+                place-items: center;
+                grid-area: one;
+            }
+            .item2 {
+                height: 100px;
+                display: grid;
+                place-items: center;
+                grid-area: two;
+                background-color: rgb(247, 178, 3);
+            }
+            .item3 {
+                display: grid;
+                place-items: center;
+                grid-area: three;
+                height: 100px;
+                background-color: rgb(155, 238, 11);
+            }
+            .item4 {
+                display: grid;
+                place-items: center;
+                grid-area: four;
+                height: 100px;
+                background-color: rgb(49, 225, 4);
+            }
+            .item5 {
+                display: grid;
+                place-items: center;
+                grid-area: five;
+                height: 100px;
+                background-color: rgb(226, 28, 5);
+            }
+            .item6 {
+                height: 100px;
+                display: grid;
+                place-items: center;
+                grid-area: six;
+                background-color: rgb(250, 114, 225);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item1">This is Header</div>
+            <div class="item2">child-1</div>
+            <div class="item3">child-2</div>
+            <div class="item4">child-3</div>
+            <div class="item5">child-4</div>
+            <div class="item6">This is Footer</div>
+        </div>
+    </body>
+</html>

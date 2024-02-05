@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .container {
+                display: grid;
+                /* grid-template-columns: repeat(4, 1fr); */
+                gap: 20px;
+                grid-template-areas:
+                    "twelve nine"
+                     "six three"
+                      "ten eleven"
+                    " two five"
+                    "one seven"
+                     "four  eight";
+
+            }
+            .item1 {
+                height: 100px;
+                background-color: salmon;
+                display: grid;
+                place-items: center;
+                grid-area: one;
+            }
+            .item2 {
+                height: 100px;
+                display: grid;
+                place-items: center;
+                grid-area: two;
+                background-color: rgb(247, 178, 3);
+            }
+            .item3 {
+                display: grid;
+                place-items: center;
+                grid-area: three;
+                height: 100px;
+                background-color: rgb(155, 238, 11);
+            }
+            .item4 {
+                display: grid;
+                place-items: center;
+                grid-area: four;
+                height: 100px;
+                background-color: rgb(49, 225, 4);
+            }
+            .item5 {
+                display: grid;
+                place-items: center;
+                grid-area: five;
+                height: 100px;
+                background-color: rgb(226, 28, 5);
+            }
+            .item6 {
+                height: 100px;
+                display: grid;
+                place-items: center;
+                grid-area: six;
+                background-color: rgb(250, 114, 225);
+            }
+            .item7 {
+                height: 100px;
+                display: grid;
+                place-items: center;
+                grid-area: seven;
+                background-color: rgb(10, 121, 212);
+            }
+            .item8 {
+                display: grid;
+                place-items: center;
+                grid-area: eight;
+                height: 100px;
+                background-color: rgb(114, 157, 250);
+            }
+            .item9 {
+                display: grid;
+                place-items: center;
+                grid-area: nine;
+                height: 100px;
+                background-color: rgb(114, 250, 214);
+            }
+            .item10 {
+                display: grid;
+                place-items: center;
+                grid-area: ten;
+                height: 100px;
+                background-color: rgb(84, 10, 195);
+            }
+            .item11 {
+                display: grid;
+                place-items: center;
+                grid-area: eleven;
+                height: 100px;
+                background-color: rgb(125, 114, 250);
+            }
+            .item12 {
+                display: grid;
+                place-items: center;
+                grid-area: twelve;
+                height: 100px;
+                background-color: rgb(250, 114, 125);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item1">1</div>
+            <div class="item2">2</div>
+            <div class="item3">3</div>
+            <div class="item4">4</div>
+            <div class="item5">5</div>
+            <div class="item6">6</div>
+            <div class="item7">7</div>
+            <div class="item8">8</div>
+            <div class="item9">9</div>
+            <div class="item10">10</div>
+            <div class="item11">11</div>
+            <div class="item12">12</div>
+        </div>
+
+        <!-- <div style="display: grid; width: 60%; margin: 40px auto;    background-color: yellow;height: 200px; place-items: center;">
+            <div
+                style="
+                    width: 50%;
+                    height: 100px;
+                    background-color: brown;
+
+                ">
+                hello world
+            </div>
+        </div> -->
+    </body>
+</html>
