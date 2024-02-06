@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            form {
+                width: 40%;
+                padding: 20px;
+                margin: 50px auto;
+                border-radius: 50px;
+                background: #e0e0e0;
+                box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+            }
+            input {
+                width: 100%;
+                height: 40px;
+            }
+            input[type="submit"] {
+                background-color: lightcoral;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <input
+                type="text"
+                id="name"
+                placeholder="enterName"
+                value="Manish Kumar" /><br /><br />
+            <input
+                type="text"
+                id="city"
+                placeholder="city name"
+                value="jaipur" /><br /><br />
+            <input
+                type="text"
+                id="school"
+                placeholder="school"
+                value="dps jaipur" /><br /><br />
+            <input
+                type="text"
+                id="number"
+                placeholder="mobile  number"
+                value="9598125005" /><br /><br />
+            <input type="Submit" />
+        </form>
+        <script>
+            let name = document.getElementById("name").value;
+            let city = document.getElementById("city").value;
+            let school = document.getElementById("school").value;
+            let mobile = document.getElementById("number").value;
+            console.log(
+                `My name is ${name} and city ${city} my school is ${school} mera mobile number is ${mobile} .`
+            );
+        </script>
+    </body>
+</html>
