@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <!-- <style>
+            .container{
+                display: flex;
+                flex-direction: column;
+                width: 80%;
+                margin: 100px auto;
+                height: 400px;
+                border: 1px solid greenyellow;
+            }
+            .row1{
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(auto-fill,minmax(60px,auto));
+            }
+            .row1 button{
+                padding: 20px;
+            }
+        </style> -->
+
+        <style>
+            .container {
+                display: flex;
+                flex-direction: column;
+                width: 80%;
+                margin: 100px auto;
+                height: 400px;
+                /* border: 1px solid greenyellow; */
+                padding: 20px;
+                background-color: rgb(145, 233, 228);
+                border-radius: 5px;
+            }
+
+            .row1,
+            .row2,
+            .row3,
+            .row4,
+            .row5 {
+                display: grid;
+                gap: 10px;
+
+                margin-top: 10px;
+                grid-template-columns: repeat(auto-fill, minmax(65px, 1fr));
+            }
+
+            .row1 button,
+            .row2 button,
+            .row3 button,
+            .row4 button,
+            .row5 button {
+                padding: 20px;
+                /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+                width: 100%;
+                border-radius: 10px;
+                /* background: #ddf1f3; */
+                box-shadow: 19px 19px 38px white,
+                    -19px -19px 38px rgba(168, 168, 168, 0.918);
+                border: none;
+                cursor: pointer;
+            }
+            #space {
+                grid-column-start: 4;
+                grid-column-end: 10;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row1">
+                <button>~</button>
+                <button>1</button>
+                <button>2</button>
+
+                <button>3</button>
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <button>0</button>
+                <button>-</button>
+                <button>+</button>
+                <button>Delete</button>
+            </div>
+            <div class="row2">
+                <button>Tab</button>
+                <button>Q</button>
+                <button>W</button>
+                <button>E</button>
+                <button>R</button>
+                <button>T</button>
+                <button>Y</button>
+                <button>U</button>
+                <button>I</button>
+                <button>O</button>
+                <button>P</button>
+                <button>[</button><button>]</button>
+                <button>\</button>
+            </div>
+            <div class="row3">
+                <button>Caps Lock</button>
+                <button>A</button>
+                <button>S</button>
+                <button>D</button>
+                <button>F</button>
+                <button>G</button>
+                <button>H</button>
+                <button>J</button>
+                <button>K</button>
+                <button>L</button>
+                <button>:</button>
+                <button>"</button>
+                <button>Enter</button>
+            </div>
+            <div class="row4">
+                <button>Shift</button>
+                <button>Z</button>
+                <button>X</button>
+                <button>C</button>
+                <button>V</button>
+                <button>B</button>
+                <button>N</button>
+                <button>M</button>
+                <button>N</button>
+                <button>,</button>
+                <button>.</button>
+                <button>/</button><button>Shift</button>
+            </div>
+            <div class="row5">
+                <button>Ctrl</button>
+                <button>Alt</button>
+                <button>Command</button>
+                <button id="space">Space</button>
+                <button>Command</button>
+                <button>Alt</button>
+                <button>Ctrl</button>
+                <button>Fn</button>
+            </div>
+        </div>
+    </body>
+</html>
