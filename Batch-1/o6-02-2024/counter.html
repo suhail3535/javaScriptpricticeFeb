@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style></style>
+    </head>
+    <body>
+        <div>
+            <p id="count">0</p>
+            <div id="btn_div">
+                <button onclick="addValue()" id="add">Add +</button>
+                <button onclick="reduceValue()" id="reduce">Reduce-</button>
+            </div>
+        </div>
+        <script>
+            let count = document.getElementById("count");
+            let value = 0;
+            count.innerText = value;
+            let add = document.getElementById("add");
+            let reduce = document.getElementById("reduce");
+
+            function addValue() {
+                value++;
+                count.innerText = value;
+
+                console.log("called add");
+            }
+
+            function reduceValue() {
+                value--;
+                count.innerText = value;
+
+                console.log("called reduce");
+            }
+        </script>
+    </body>
+</html>

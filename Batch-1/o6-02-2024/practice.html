@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            .container {
+                display: grid;
+                gap: 20px;
+                width: 90%;
+                margin: auto;
+                margin-top: 50px;
+                font-size: 20px;
+                font-weight: 700;
+                /* grid-template-areas:
+                    "nine  eight four"
+                    "two five one"
+                    "seven six three"; */
+
+                color: whitesmoke;
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .item1 {
+                /* height: 100px; */
+                background-color: lightcoral;
+                padding: 50px;
+                display: grid;
+                /* grid-area: one; */
+                place-items: center;
+            }
+
+            .item2 {
+                /* height: 100px; */
+                background-color: rgb(215, 61, 61);
+                padding: 50px;
+                display: grid;
+                /* grid-area: two; */
+
+                place-content: center;
+            }
+            .item3 {
+                /* height: 100px; */
+                background-color: rgb(185, 212, 84);
+                padding: 50px;
+                display: grid;
+                /* grid-area: three; */
+                /* grid-column-start: 1;
+                grid-column-end: 3;
+                grid-row-start: 2;
+                grid-row-end: 5; */
+                place-content: center;
+            }
+            .item4 {
+                /* height: 100px; */
+                background-color: rgb(128, 135, 240);
+                padding: 50px;
+                display: grid;
+                /* grid-area: four; */
+    grid-row-start: 2;
+                grid-row-end: 4;
+                place-content: center;
+            }
+            .item5 {
+                /* height: 100px; */
+                background-color: rgb(188, 96, 59);
+                padding: 50px;
+                display: grid;
+                /* grid-area: five; */
+                grid-column-start: 3;
+                grid-column-end: 4;
+                grid-row-start: 3;
+                grid-row-end: 4;
+                place-content: center;
+            }
+            .item6 {
+                /* height: 100px; */
+                background-color: rgb(240, 223, 128);
+                padding: 50px;
+                display: grid;
+                /* grid-area: six; */
+
+                place-content: center;
+            }
+            .item7 {
+                /* grid-area: seven; */
+
+                /* height: 100px; */
+                background-color: rgb(128, 240, 169);
+                padding: 50px;
+                display: grid;
+                grid-column-start: 1;
+                grid-column-end: 2;
+                grid-row-start: 1;
+                grid-row-end: 2;
+                place-content: center;
+            }
+            .item8 {
+                /* heig
+                ht: 100px; */
+                background-color: rgb(128, 229, 240);
+                padding: 50px;
+                display: grid;
+                /* grid-area: eight; */
+
+                place-content: center;
+            }
+            .item9 {
+                /* height: 100px; */
+                background-color: rgb(139, 128, 240);
+                padding: 50px;
+                display: grid;
+                /* grid-area: nine; */
+
+                place-content: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item1">1</div>
+            <div class="item2">2</div>
+            <div class="item3">3</div>
+            <div class="item4">4</div>
+            <div class="item5">5</div>
+            <div class="item6">6</div>
+            <div class="item7">7</div>
+            <div class="item8">8</div>
+            <div class="item9">9</div>
+        </div>
+    </body>
+</html>

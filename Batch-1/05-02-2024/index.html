@@ -4,6 +4,10 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
         <style>
             * {
                 box-sizing: border-box;
@@ -26,7 +30,7 @@
                 padding: 10px 10px;
                 display: grid;
                 place-items: center;
-                
+
                 border-radius: 4px 30px;
             }
             h1 {
@@ -44,7 +48,6 @@
                 color: antiquewhite;
                 border: none;
                 width: 100%;
-
             }
         </style>
     </head>
@@ -90,9 +93,20 @@
                     obj.city == "" ||
                     obj.state == ""
                 ) {
-                    alert("please enter full details");
+                    // alert("please enter full details");
+                    Swal.fire({
+                        title: "Error!",
+                        text: "please fill all details",
+                        icon: "error",
+                        // confirmButtonText: "Cool",
+                    });
                 } else {
-                    alert("data submitted");
+                    Toastify({
+                        text: "data submitted",
+                        position: "center",
+                        duration: 3000,
+                    }).showToast();
+
                     arr.push(obj);
                     localStorage.setItem("empData", JSON.stringify(arr));
                     // window.location.reload();
@@ -124,5 +138,9 @@
             }
             showdata(arr);
         </script>
+        <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </body>
 </html>
