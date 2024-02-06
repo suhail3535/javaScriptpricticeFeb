@@ -1,0 +1,32 @@
+.container {
+    width: 90%;
+    margin: 40px auto;
+    /* border: 1px solid red; */
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+}
+.container div {
+    /* height: 100px; */
+    padding: 50px;
+    color: brown;
+    display: grid;
+    place-items: center;
+    background-color: lightskyblue;
+}
+ .item3 {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+
+.item1 {
+    grid-row-start: 1;
+    grid-row-end: 5;
+}
+.item5 {
+    grid-row-start: 2;
+    grid-row-end: 6;
+}
