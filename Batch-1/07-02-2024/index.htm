@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        hello world
+    </body>
+
+    <script>
+        let arr = [
+            {
+                name: "suhail",
+                mobile: 9598125005,
+                school: "Ar inte collage",
+            },
+            {
+                name: "suhail",
+                mobile: 9598125006,
+                school: "Ar inte collage",
+            },
+            {
+                name: "sahil",
+                mobile: 9598125006,
+                school: "Ar inte collage",
+            },
+            {
+                name: "sameer",
+                mobile: 9598125006,
+                school: "Ar inte collage",
+            },
+        ];
+
+        localStorage.setItem("value", JSON.stringify(arr));
+        let newdata = JSON.parse(localStorage.getItem("value"));
+
+        newdata.map((item, index) => {
+            if (item.name === "suhail") {
+                item.name = "Manjeet";
+                localStorage.setItem("value", JSON.stringify(newdata));
+            }
+        });
+    </script>
+</html>
