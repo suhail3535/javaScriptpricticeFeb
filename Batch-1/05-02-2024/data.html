@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            input {
+                width: 100%;
+                height: 40px;
+                border-radius: 5px;
+            }
+            #container {
+                display: grid;
+                margin-top: 50px;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+            }
+            #container div {
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                padding: 10px 10px;
+                display: grid;
+                place-items: center;
+
+                border-radius: 4px 30px;
+            }
+            h1 {
+                color: salmon;
+            }
+            h4 {
+                color: lightseagreen;
+            }
+            h6 {
+                color: rgb(103, 160, 19);
+                font-size: 15px;
+            }
+            input[type="submit"] {
+                background-color: rgb(38, 186, 70);
+                color: antiquewhite;
+                border: none;
+                width: 100%;
+            }
+            button {
+                background-color: lightsalmon;
+                color: white;
+                padding: 2px;
+                margin-top: 10px;
+                cursor: pointer;
+                border: none;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Your HTML code here -->
+        <form
+            style="
+                width: 30%;
+                margin: 50px auto;
+                border: 1px solid gray;
+                padding: 10px;
+            ">
+            <input type="text" placeholder="enterName" id="name" /> <br /><br />
+            <input
+                type="text"
+                placeholder="enterSchool"
+                id="school" /><br /><br />
+            <input type="text" placeholder="enterCity" id="city" /><br /><br />
+            <input
+                type="text"
+                placeholder="enterstate"
+                id="state" /><br /><br />
+            <input type="submit" />
+        </form>
+            <div id="container"></div>
+    </body>
+    <script>
+        let empData = JSON.parse(localStorage.getItem("empData")) || [];
+        let favData = JSON.parse(localStorage.getItem("favData")) || [];
+        let form = document.querySelector("form");
+        form.addEventListener("submit", myfun);
+
+        function myfun(e) {
+            e.preventDefault();
+            let obj = {
+                name: document.getElementById("name").value,
+                school: document.getElementById("school").value,
+                city: document.getElementById("city").value,
+                state: document.getElementById("state").value,
+            };
+
+            if (
+                obj.name == "" ||
+                obj.school == "" ||
+                obj.city == "" ||
+                obj.state == ""
+            ) {
+                Swal.fire({
+                    title: "Error!",
+                    text: "please fill all details",
+                    icon: "error",
+                });
+            } else {
+                Toastify({
+                    text: "data submitted",
+                    position: "center",
+                    duration: 3000,
+                }).showToast();
+
+                empData.push(obj);
+                localStorage.setItem("empData", JSON.stringify(empData));
+            }
+            showdata(empData);
+            form.reset();
+        }
+
+        let container = document.getElementById("container");
+        function showdata(data) {
+            container.innerHTML = "";
+            data.map((item, index) => {
+                let card = document.createElement("div");
+                let heading = document.createElement("h1");
+                let school = document.createElement("h3");
+                let city = document.createElement("h4");
+                let state = document.createElement("h6");
+
+                let editBtn = document.createElement("button");
+                let addToFavBtn = document.createElement("button");
+                let deleteBtn = document.createElement("button");
+
+                heading.innerText = item.name;
+                school.innerText = item.school;
+                city.innerText = item.city;
+                state.innerText = item.state;
+
+                editBtn.innerText = "Edit";
+                addToFavBtn.innerText = "Add to Fav♥";
+                deleteBtn.innerText = "Delete";
+
+                // Event listeners for buttons
+                editBtn.addEventListener("click", () => editData(index, item));
+                addToFavBtn.addEventListener("click", () => addData(item));
+                deleteBtn.addEventListener("click", () => deleteData(index));
+
+                card.append(
+                    heading,
+                    school,
+                    city,
+                    state,
+                    editBtn,
+                    addToFavBtn,
+                    deleteBtn
+                );
+                container.append(card);
+            });
+        }
+        showdata(empData);
+
+        function addData(item) {
+            favData.push(item);
+            localStorage.setItem("favData", JSON.stringify(favData));
+            alert("Added to Favorites");
+        }
+
+        function deleteData(index) {
+            empData.splice(index, 1);
+            localStorage.setItem("empData", JSON.stringify(empData));
+            showdata(empData);
+            alert("Card deleted");
+        }
+
+        function editData(index, item) {
+            // Replace card content with input fields for editing
+            let card = container.children[index];
+            card.innerHTML = `
+                <input type="text" id="editedName" value="${item.name}" />
+                <input type="text" id="editedSchool" value="${item.school}" />
+                <input type="text" id="editedCity" value="${item.city}" />
+                <input type="text" id="editedState" value="${item.state}" />
+                <button onclick="submitEdit(${index})">Submit</button>
+            `;
+        }
+
+        function submitEdit(index) {
+            // Get the edited values
+            let editedName = document.getElementById("editedName").value;
+            let editedSchool = document.getElementById("editedSchool").value;
+            let editedCity = document.getElementById("editedCity").value;
+            let editedState = document.getElementById("editedState").value;
+
+            // Update the empData array with the edited values
+            empData[index] = {
+                name: editedName,
+                school: editedSchool,
+                city: editedCity,
+                state: editedState,
+            };
+
+            // Update local storage and display the modified data
+            localStorage.setItem("empData", JSON.stringify(empData));
+            showdata(empData);
+        }
+    </script>
+    <script
+        type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</html>

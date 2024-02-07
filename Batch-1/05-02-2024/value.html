@@ -1,39 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1 id="count"></h1>
-    <button id="add">Add</button>
-    <button id="reduce">Reduce</button>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1 id="count"></h1>
+        <button id="add">Add</button>
+        <button id="reduce">Reduce</button>
 
-    <script>
-        let count = document.getElementById("count");
-        const add = document.getElementById("add").addEventListener("click", increse);
-        const reduce = document.getElementById("reduce").addEventListener("click", decrese);
-        let value = 0;
-        count.innerText = value;
-        const reduceButton = document.getElementById("reduce");
-         updateButtonState();
-
-        function increse() {
-            value++;
+        <script>
+            let count = document.getElementById("count");
+            const add = document
+                .getElementById("add")
+                .addEventListener("click", increse);
+            const reduce = document
+                .getElementById("reduce")
+                .addEventListener("click", decrese);
+            let value = 0;
             count.innerText = value;
+            const reduceButton = document.getElementById("reduce");
             updateButtonState();
-        }
 
-        function decrese() {
-            value--;
-            count.innerText = value;
-            updateButtonState();
-        }
+            function increse() {
+                value++;
+                count.innerText = value;
+                updateButtonState();
+            }
 
-        function updateButtonState() {
-            reduceButton.disabled = value === 0;
-        }
-    </script>
-</body>
+            function decrese() {
+                value--;
+                count.innerText = value;
+                updateButtonState();
+            }
+
+            function updateButtonState() {
+                reduceButton.disabled = value === 0;
+            }
+        </script>
+    </body>
 </html>
+
+<!-- function addData(item) {
+                favData.push(item);
+                localStorage.setItem("favData", JSON.stringify(favData));
+                alert("added");
+            }
+
+            function deleteData(value) {
+                empData.splice(value, 1);
+                localStorage.setItem("empData", JSON.stringify(empData));
+                showdata(empData);
+                alert("Card deleted");
+            } -->
+<!--
+                let btn = document.createElement("button");
+                    btn.innerText = "Add to Fav♥";
+                    btn.addEventListener("click", () => {
+                        addData(item);
+
+
+
+
+                    });    let btn1 = document.createElement("button");
+                    btn1.innerText = "Delete";
+                    btn1.addEventListener("click", () => deleteData(index)); -->

@@ -49,6 +49,14 @@
                 border: none;
                 width: 100%;
             }
+            button {
+                background-color: lightsalmon;
+                color: white;
+                padding: 2px;
+                margin-top: 10px;
+                cursor: pointer;
+                border: none;
+            }
         </style>
     </head>
     <body>
@@ -74,8 +82,7 @@
         <hr />
         <div id="container"></div>
         <script>
-            let arr = JSON.parse(localStorage.getItem("empData")) || [];
-            console.log(arr);
+            let empData = JSON.parse(localStorage.getItem("empData")) || [];
             let form = document.querySelector("form");
             form.addEventListener("submit", myfun);
 
@@ -87,18 +94,17 @@
                     city: document.getElementById("city").value,
                     state: document.getElementById("state").value,
                 };
+
                 if (
                     obj.name == "" ||
                     obj.school == "" ||
                     obj.city == "" ||
                     obj.state == ""
                 ) {
-                    // alert("please enter full details");
                     Swal.fire({
                         title: "Error!",
                         text: "please fill all details",
                         icon: "error",
-                        // confirmButtonText: "Cool",
                     });
                 } else {
                     Toastify({
@@ -107,19 +113,17 @@
                         duration: 3000,
                     }).showToast();
 
-                    arr.push(obj);
-                    localStorage.setItem("empData", JSON.stringify(arr));
-                    // window.location.reload();
+                    empData.push(obj);
+                    localStorage.setItem("empData", JSON.stringify(empData));
                 }
-                showdata(arr);
+                showdata(empData);
                 form.reset();
             }
 
-            // show data function
             let container = document.getElementById("container");
             function showdata(data) {
-                container.innerHTML = " ";
-                arr.map((item, index) => {
+                container.innerHTML = "";
+                data.map((item, index) => {
                     let card = document.createElement("div");
                     let heading = document.createElement("h1");
                     heading.innerText = item.name;
@@ -131,12 +135,19 @@
 
                     let state = document.createElement("h6");
                     state.innerText = item.state;
-                    card.append(heading, school, city, state);
+                
 
+
+
+                    card.append(heading, school, city, state, btn, btn1);
                     container.append(card);
                 });
             }
-            showdata(arr);
+            showdata(empData);
+
+
+
+
         </script>
         <script
             type="text/javascript"
