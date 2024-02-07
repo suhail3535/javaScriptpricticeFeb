@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Login Form</title>
         <style>
             * {
                 margin: 0;
@@ -11,7 +11,7 @@
                 box-sizing: border-box;
             }
             form {
-                width: 40%;
+                width: 30%;
                 margin: 50px auto;
                 box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
                     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
@@ -27,12 +27,15 @@
                 background-color: lightgreen;
                 color: white;
             }
+            h1 {
+                text-align: center;
+            }
         </style>
     </head>
     <body>
         <div>
-            <h1 style="text-align: center">Login Form</h1>
-            <form action="">
+            <h1>Login Form</h1>
+            <form id="loginForm">
                 <input
                     type="text"
                     id="name"
@@ -41,43 +44,39 @@
                     type="email"
                     id="email"
                     placeholder="Enter Email" /><br /><br />
-
-                <input type="submit" id="btn" />
+                <input type="submit" value="Login" />
             </form>
-
             <h1><a href="./register.html">Register</a></h1>
         </div>
         <script>
             let allData = JSON.parse(localStorage.getItem("userData")) || [];
-            // let btn = document.getElementById("btn");
-            let name = document.getElementById("name").value;
-            let email = document.getElementById("email").value;
+            let form = document.getElementById("loginForm");
 
-            let btn = document.getElementById("btn");
-
-            btn.addEventListener("click", () => {
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
                 let name = document.getElementById("name").value;
                 let email = document.getElementById("email").value;
                 meraFunction(name, email);
                 form.reset();
             });
 
-            function meraFunction(nameValue, emailValue) {
-                let value = false;
-                allData.map((item) => {
-                    if (item.name === nameValue && item.email === emailValue) {
-                        value = true;
-                        return;
-                    }
-                });
+function meraFunction(nameValue, emailValue) {
+                let value = allData.some(
+                    (item) =>
+                        item.name === nameValue && item.email === emailValue
+                );
+
                 if (value) {
                     alert("Login Successfully 🎈🎈");
+                    setTimeout(() => {
+                        window.open("https://www.google.com/", "_blank");
+
+                    }, 2000);
                 } else {
                     alert("Details Not Found 🎃🎃");
                 }
             }
 
-            // console.log(allData);
         </script>
     </body>
 </html>

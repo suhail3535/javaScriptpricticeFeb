@@ -11,7 +11,7 @@
                 box-sizing: border-box;
             }
             form {
-                width: 40%;
+                width: 30%;
                 margin: 50px auto;
                 box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
                     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
@@ -26,6 +26,11 @@
             input[type="submit"] {
                 background-color: lightgreen;
                 color: white;
+            }
+            input:hover{
+                border: 2px solid salmon;
+                cursor: pointer;
+                background-color: lightcyan;
             }
         </style>
     </head>
@@ -53,19 +58,19 @@
             let arr = [];
             let form = document.querySelector("form");
             form.addEventListener("submit", myfunction);
-            let otp=Math.random(Math.floor())*10
+
             function myfunction(event) {
-                event.preventDefault()
+                event.preventDefault();
                 let obj = {
                     name: document.getElementById("name").value,
                     email: document.getElementById("email").value,
                     mobile: document.getElementById("mobile").value,
-                    id:otp
                 };
-                arr.push(obj)
-                console.log(arr)
-                localStorage.setItem("userData",JSON.stringify(arr))
-                // form.reset()
+                arr.push(obj);
+                console.log(arr);
+                localStorage.setItem("userData", JSON.stringify(arr));
+                form.reset();
+                alert("submited");
             }
         </script>
     </body>
