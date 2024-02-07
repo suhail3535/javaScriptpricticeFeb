@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            form {
+                width: 40%;
+                margin: 50px auto;
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+                    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+                padding: 40px;
+            }
+            input {
+                width: 100%;
+                height: 40px;
+                border-radius: 5px;
+                text-align: center;
+            }
+            input[type="submit"] {
+                background-color: lightgreen;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1 style="text-align: center">Register Form</h1>
+            <form>
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter Name" /><br /><br />
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter Email" /><br /><br />
+                <input
+                    type="text"
+                    id="mobile"
+                    placeholder="Enter Mobile" /><br /><br />
+                <input type="submit" />
+            </form>
+            <h1><a href="./login.html">login</a></h1>
+        </div>
+        <script>
+            let arr = [];
+            let form = document.querySelector("form");
+            form.addEventListener("submit", myfunction);
+            let otp=Math.random(Math.floor())*10
+            function myfunction(event) {
+                event.preventDefault()
+                let obj = {
+                    name: document.getElementById("name").value,
+                    email: document.getElementById("email").value,
+                    mobile: document.getElementById("mobile").value,
+                    id:otp
+                };
+                arr.push(obj)
+                console.log(arr)
+                localStorage.setItem("userData",JSON.stringify(arr))
+                // form.reset()
+            }
+        </script>
+    </body>
+</html>
