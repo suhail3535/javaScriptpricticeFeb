@@ -38,8 +38,6 @@
 
             .row1,
             .row2,
-            .row3,
-            .row4,
             .row5 {
                 display: grid;
                 gap: 10px;
@@ -47,7 +45,14 @@
                 margin-top: 10px;
                 grid-template-columns: repeat(auto-fill, minmax(65px, 1fr));
             }
-
+            .row3,
+            .row4 {
+                display: grid;
+                gap: 10px;
+                border: 1px solid lavenderblush;
+                margin-top: 20px;
+                grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+            }
             .row1 button,
             .row2 button,
             .row3 button,
@@ -67,17 +72,32 @@
                 grid-column-start: 4;
                 grid-column-end: 10;
             }
+            #caps {
+                /* margin-left: 30px; */
+                /* border: 1px solid yellowgreen; */
+                /* width: 100px; */
+                margin-right: 150px;
+                /* padding-left: 30px; */
+                /* margin: 50px; */
+            }
+            #output {
+                border: 1px solid lightgray;
+                width: 60%;
+                margin: auto;
+                height: 100px;
+            }
         </style>
     </head>
     <body>
+        <div id="output"></div>
         <div class="container">
             <div class="row1">
-                <button>~</button>
-                <button>1</button>
-                <button>2</button>
+                <button onclick="appendToOutput('~')">~</button>
+                <button onclick="appendToOutput('1')">1</button>
+                <button onclick="appendToOutput('2')">2</button>
 
-                <button>3</button>
-                <button>4</button>
+                <button onclick="appendToOutput('3')">3</button>
+                <button onclick="appendToOutput('4')">4</button>
                 <button>5</button>
                 <button>6</button>
                 <button>7</button>
@@ -104,7 +124,7 @@
                 <button>\</button>
             </div>
             <div class="row3">
-                <button>Caps Lock</button>
+                <button id="caps">Caps Lock</button>
                 <button>A</button>
                 <button>S</button>
                 <button>D</button>
@@ -116,7 +136,7 @@
                 <button>L</button>
                 <button>:</button>
                 <button>"</button>
-                <button>Enter</button>
+                <button id="enter">Enter</button>
             </div>
             <div class="row4">
                 <button>Shift</button>
@@ -136,12 +156,24 @@
                 <button>Ctrl</button>
                 <button>Alt</button>
                 <button>Command</button>
-                <button id="space">Space</button>
+                <button onclick="appendToOutput(' ')" id="space">Space</button>
                 <button>Command</button>
                 <button>Alt</button>
                 <button>Ctrl</button>
                 <button>Fn</button>
             </div>
         </div>
+        <script>
+            function appendToOutput(value) {
+                // Get the current content of the output element
+                var currentOutput = document.getElementById("output").innerText;
+
+                // Concatenate the new value with the current content
+                var newOutput = currentOutput + value;
+
+                // Update the content of the output element
+                document.getElementById("output").innerText = newOutput;
+            }
+        </script>
     </body>
 </html>
