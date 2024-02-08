@@ -27,10 +27,10 @@
                 background-color: lightgreen;
                 color: white;
             }
-            input:hover{
+            input:hover {
                 border: 2px solid salmon;
                 cursor: pointer;
-                background-color: lightcyan;
+                background-color: rgb(31, 226, 13);
             }
         </style>
     </head>
@@ -55,6 +55,109 @@
             <h1><a href="./login.html">login</a></h1>
         </div>
         <script>
+            const userData = [
+                {
+                    name: "John Doe",
+                    email: "john@example.com",
+                    mobile: "1234567890",
+                },
+                {
+                    name: "Jane Smith",
+                    email: "jane@example.com",
+                    mobile: "9876543210",
+                },
+                {
+                    name: "Michael Johnson",
+                    email: "michael@example.com",
+                    mobile: "5551234567",
+                },
+                {
+                    name: "Emily Davis",
+                    email: "emily@example.com",
+                    mobile: "5559876543",
+                },
+                {
+                    name: "William Brown",
+                    email: "william@example.com",
+                    mobile: "5552345678",
+                },
+                {
+                    name: "Emma Wilson",
+                    email: "emma@example.com",
+                    mobile: "5558765432",
+                },
+                {
+                    name: "James Taylor",
+                    email: "james@example.com",
+                    mobile: "5553456789",
+                },
+                {
+                    name: "Olivia Martinez",
+                    email: "olivia@example.com",
+                    mobile: "5557654321",
+                },
+                {
+                    name: "Alexander Anderson",
+                    email: "alexander@example.com",
+                    mobile: "5554567890",
+                },
+                {
+                    name: "Sophia Thomas",
+                    email: "sophia@example.com",
+                    mobile: "5556543210",
+                },
+                {
+                    name: "Ethan Hernandez",
+                    email: "ethan@example.com",
+                    mobile: "5555678901",
+                },
+                {
+                    name: "Isabella Nelson",
+                    email: "isabella@example.com",
+                    mobile: "5557890123",
+                },
+                {
+                    name: "Mason White",
+                    email: "mason@example.com",
+                    mobile: "5556789012",
+                },
+                {
+                    name: "Ava Lee",
+                    email: "ava@example.com",
+                    mobile: "5558901234",
+                },
+                {
+                    name: "Noah Walker",
+                    email: "noah@example.com",
+                    mobile: "5554567890",
+                },
+                {
+                    name: "Liam Perez",
+                    email: "liam@example.com",
+                    mobile: "5559012345",
+                },
+                {
+                    name: "Charlotte King",
+                    email: "charlotte@example.com",
+                    mobile: "5556789012",
+                },
+                {
+                    name: "Aiden Scott",
+                    email: "aiden@example.com",
+                    mobile: "5552345678",
+                },
+                {
+                    name: "Amelia Green",
+                    email: "amelia@example.com",
+                    mobile: "5558901234",
+                },
+                {
+                    name: "Harper Baker",
+                    email: "harper@example.com",
+                    mobile: "5557890123",
+                },
+            ];
+
             let arr = [];
             let form = document.querySelector("form");
             form.addEventListener("submit", myfunction);
@@ -68,7 +171,7 @@
                 };
                 arr.push(obj);
                 console.log(arr);
-                localStorage.setItem("userData", JSON.stringify(arr));
+                localStorage.setItem("userData", JSON.stringify(userData));
                 form.reset();
                 alert("submited");
             }

@@ -30,6 +30,11 @@
             h1 {
                 text-align: center;
             }
+            input:hover {
+                border: 2px solid salmon;
+                cursor: pointer;
+                background-color: rgb(31, 226, 13);
+            }
         </style>
     </head>
     <body>
@@ -60,7 +65,7 @@
                 form.reset();
             });
 
-function meraFunction(nameValue, emailValue) {
+            function meraFunction(nameValue, emailValue) {
                 let value = allData.some(
                     (item) =>
                         item.name === nameValue && item.email === emailValue
@@ -70,13 +75,11 @@ function meraFunction(nameValue, emailValue) {
                     alert("Login Successfully 🎈🎈");
                     setTimeout(() => {
                         window.open("https://www.google.com/", "_blank");
-
                     }, 2000);
                 } else {
                     alert("Details Not Found 🎃🎃");
                 }
             }
-
         </script>
     </body>
 </html>
