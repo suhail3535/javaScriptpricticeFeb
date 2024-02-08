@@ -1,0 +1,105 @@
+.MainContainerContent{
+    width: 100%;
+     
+    /* background-color: #BB2649; */
+    
+     
+}
+.MainContainerContent .MainContainerContentTop{
+    width: 100%;
+    height: 9%; 
+    color: rgb(10, 119, 10);
+    display: flex;
+    justify-content: center; 
+    background-color: white;
+    align-items: center;
+    position: fixed;
+      
+
+    
+  
+}
+.MainContainerContent .MainContainerContentBottom{
+    width: 100%;
+     
+    padding: 6%;
+    height: 100%;
+    /* background-color: #BB2649; */
+    background-image: linear-gradient(45deg, rgb(28, 107, 9), rgb(161, 12, 129));
+    color: aliceblue;
+}
+.MainContainerContent .MainContainerContentBottom .CommonDivStyle{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2%;
+}
+
+.CommonInputStyle{
+    width: 450px;
+    height: 35px;
+    border-radius: 5px;
+    border-color: white;
+    outline: none;
+}
+ .myTextArea{
+    width: 450px;
+    height: 80px;
+    border-radius: 5px;
+    border-color: white;
+    outline: none;
+}
+.Registerbtn{
+    width: 100px;
+    height: 45px;
+    margin-left:6% ;
+    border-radius: 5px;
+    border-color:  #BB2649;
+    outline: none;
+    color:  #BB2649;
+}
+
+@media only screen and (max-width:600px){
+    .MainContainerContent .MainContainerContentBottom .CommonDivStyle{
+        display: flex;
+        flex-direction:column;
+        justify-content: space-around;
+        margin-bottom: 2%;
+      }
+}
+@media only screen and (max-width:768px){
+    .MainContainerContent .MainContainerContentBottom .CommonDivStyle{
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2%;
+      }
+}
+
+@media only screen and (max-width:769px) and (max-width:790px) {
+    .CommonInputStyle{
+        width: 300px;
+        height: 35px;
+        border-radius: 5px;
+        border-color: white;
+        outline: none;
+    }
+    .myTextArea{
+        width: 300px;
+    }
+    .rgistercontainer{ 
+        display: flex;
+         justify-content: center;
+         align-items: center;
+    }
+
+}
+
+@media only screen and (min-width:790) and (max-width:992) {
+    .MainContainerContent .MainContainerContentBottom .CommonDivStyle{
+        display: flex;
+        flex-direction:row;
+        justify-content: space-between;
+        margin-bottom: 2%;
+      }
+}

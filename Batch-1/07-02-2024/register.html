@@ -1,180 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-            form {
-                width: 30%;
-                margin: 50px auto;
-                box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-                    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-                padding: 40px;
-            }
-            input {
-                width: 100%;
-                height: 40px;
-                border-radius: 5px;
-                text-align: center;
-            }
-            input[type="submit"] {
-                background-color: lightgreen;
-                color: white;
-            }
-            input:hover {
-                border: 2px solid salmon;
-                cursor: pointer;
-                background-color: rgb(31, 226, 13);
-            }
-        </style>
-    </head>
-    <body>
-        <div>
-            <h1 style="text-align: center">Register Form</h1>
-            <form>
-                <input
-                    type="text"
-                    id="name"
-                    placeholder="Enter Name" /><br /><br />
-                <input
-                    type="email"
-                    id="email"
-                    placeholder="Enter Email" /><br /><br />
-                <input
-                    type="text"
-                    id="mobile"
-                    placeholder="Enter Mobile" /><br /><br />
-                <input type="submit" />
-            </form>
-            <h1><a href="./login.html">login</a></h1>
-        </div>
-        <script>
-            const userData = [
-                {
-                    name: "John Doe",
-                    email: "john@example.com",
-                    mobile: "1234567890",
-                },
-                {
-                    name: "Jane Smith",
-                    email: "jane@example.com",
-                    mobile: "9876543210",
-                },
-                {
-                    name: "Michael Johnson",
-                    email: "michael@example.com",
-                    mobile: "5551234567",
-                },
-                {
-                    name: "Emily Davis",
-                    email: "emily@example.com",
-                    mobile: "5559876543",
-                },
-                {
-                    name: "William Brown",
-                    email: "william@example.com",
-                    mobile: "5552345678",
-                },
-                {
-                    name: "Emma Wilson",
-                    email: "emma@example.com",
-                    mobile: "5558765432",
-                },
-                {
-                    name: "James Taylor",
-                    email: "james@example.com",
-                    mobile: "5553456789",
-                },
-                {
-                    name: "Olivia Martinez",
-                    email: "olivia@example.com",
-                    mobile: "5557654321",
-                },
-                {
-                    name: "Alexander Anderson",
-                    email: "alexander@example.com",
-                    mobile: "5554567890",
-                },
-                {
-                    name: "Sophia Thomas",
-                    email: "sophia@example.com",
-                    mobile: "5556543210",
-                },
-                {
-                    name: "Ethan Hernandez",
-                    email: "ethan@example.com",
-                    mobile: "5555678901",
-                },
-                {
-                    name: "Isabella Nelson",
-                    email: "isabella@example.com",
-                    mobile: "5557890123",
-                },
-                {
-                    name: "Mason White",
-                    email: "mason@example.com",
-                    mobile: "5556789012",
-                },
-                {
-                    name: "Ava Lee",
-                    email: "ava@example.com",
-                    mobile: "5558901234",
-                },
-                {
-                    name: "Noah Walker",
-                    email: "noah@example.com",
-                    mobile: "5554567890",
-                },
-                {
-                    name: "Liam Perez",
-                    email: "liam@example.com",
-                    mobile: "5559012345",
-                },
-                {
-                    name: "Charlotte King",
-                    email: "charlotte@example.com",
-                    mobile: "5556789012",
-                },
-                {
-                    name: "Aiden Scott",
-                    email: "aiden@example.com",
-                    mobile: "5552345678",
-                },
-                {
-                    name: "Amelia Green",
-                    email: "amelia@example.com",
-                    mobile: "5558901234",
-                },
-                {
-                    name: "Harper Baker",
-                    email: "harper@example.com",
-                    mobile: "5557890123",
-                },
-            ];
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        form {
+            width: 30%;
+            margin: 50px auto;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+                rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+            padding: 40px;
+        }
+        input {
+            width: 100%;
+            height: 40px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        input[type="submit"] {
+            background-color: lightgreen;
+            color: white;
+        }
+        input:hover {
+            border: 2px solid salmon;
+            cursor: pointer;
+            background-color: rgb(31, 226, 13);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 style="text-align: center">Register Form</h1>
+        <form>
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter Name" /><br /><br />
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter Email" /><br /><br />
+            <input
+                type="text"
+                id="mobile"
+                placeholder="Enter Mobile" /><br /><br />
+            <input type="submit" />
+        </form>
+        <h1><a href="./login.html">login</a></h1>
+    </div>
 
-            let arr = [];
-            let form = document.querySelector("form");
-            form.addEventListener("submit", myfunction);
+    
+    <script>
+        let arr = [];
+        let form = document.querySelector("form");
+        form.addEventListener("submit", myfunction);
 
-            function myfunction(event) {
-                event.preventDefault();
-                let obj = {
-                    name: document.getElementById("name").value,
-                    email: document.getElementById("email").value,
-                    mobile: document.getElementById("mobile").value,
-                };
-                arr.push(obj);
-                console.log(arr);
-                localStorage.setItem("userData", JSON.stringify(userData));
-                form.reset();
-                alert("submited");
-            }
-        </script>
-    </body>
+        function myfunction(event) {
+            event.preventDefault();
+
+            let obj = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                mobile: document.getElementById("mobile").value,
+
+            };
+            arr.push(obj);
+            console.log(arr);
+            localStorage.setItem("userData", JSON.stringify(arr));
+            form.reset();
+            alert("submitted");
+        }
+    </script>
+</body>
 </html>
