@@ -49,33 +49,29 @@
                     type="email"
                     id="email"
                     placeholder="Enter Email" /><br /><br />
-                <input type="submit" value="Login" />
+                <input type="submit" />
             </form>
             <h1><a href="./register.html">Register</a></h1>
         </div>
         <script>
             let allData = JSON.parse(localStorage.getItem("userData")) || [];
             let form = document.getElementById("loginForm");
-
-            form.addEventListener("submit", function (event) {
-                event.preventDefault();
-                let name = document.getElementById("name").value;
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
                 let email = document.getElementById("email").value;
-                meraFunction(name, email);
-                form.reset();
+                let name = document.getElementById("name").value;
+                getValue(name, email, allData);
             });
 
-            function meraFunction(nameValue, emailValue) {
-                let value = allData.some(
-                    (item) =>
-                        item.name === nameValue && item.email === emailValue
+            function getValue(nameVale, emailVale, data) {
+                let value = data.some(
+                    (item) => item.name == nameVale && item.email == emailVale
                 );
 
                 if (value) {
-                    alert("Login Successfully 🎈🎈");
-                
+                    alert("Login Successfull");
                 } else {
-                    alert("Details Not Found 🎃🎃");
+                    alert("Details Not Found");
                 }
             }
         </script>
