@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            table {
+                width: 70%;
+                margin: auto;
+                text-align: center;
+            }
+            thead {
+                background-color: rgb(113, 207, 50);
+                color: white;
+                font-weight: 700;
+            }
+            td {
+                padding: 5px;
+            }
+            form {
+                width: 30%;
+                padding: 30px;
+                margin: auto;
+                border-radius: 10px;
+                background: #ddf1f3;
+                box-shadow: 20px 20px 31px #bccdcf, -20px -20px 31px #feffff;
+            }
+            input
+             {
+                height: 30px;
+                border-radius: 5px;
+                width: 100%;
+            }
+    select
+             {
+                height: 30px;
+                border-radius: 5px;
+                width: 100%;
+                height: 37px;
+            }
+input:hover,select:hover{
+    background-color:lightseagreen;
+    cursor: pointer;
+}
+            input[type="submit"] {
+                background-color: lightcoral;
+                color: white;
+                font-size: 15px;
+                font-weight: bold;
+                height: 37px;
+                transition: 0.5s ease-in-out;
+            }
+
+            input[type="submit"]:hover {
+                cursor: pointer;
+                background-color: rgb(238, 73, 73);
+            }
+            button{
+                /* padding: 5px; */
+                margin: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="./login.html">Login page</a>
+
+        <div id="container">
+            <h1 style="text-align: center">Students form</h1>
+
+            <form>
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter Name" /><br /><br />
+                <input
+                    type="text"
+                    id="mobile"
+                    placeholder="Enter Mobile Number" /><br /><br />
+                <input
+                    type="text"
+                    id="city"
+                    placeholder="Enter City Name" /><br /><br />
+                <select id="course">
+                    <option value="">Select</option>
+                    <option value="HTML">HTML</option>
+                    <option value="CSS">CSS</option>
+                    <option value="JavaScript">JavaScript</option></select
+                ><br /><br />
+                <input type="submit" /><br /><br />
+            </form>
+            <hr style="margin-top: 50px" />
+            <table id="table" border="1px">
+                <thead>
+                    <tr>
+                        <td>Sr.No</td>
+                        <td>Name</td>
+                        <td>Mobile</td>
+                        <td>City</td>
+                        <td>Course</td>
+                        <td>Status</td>
+                        <td>Edit</td>
+                        <td>Delete</td>
+                    </tr>
+                </thead>
+                <tbody id="tbody"></tbody>
+            </table>
+        </div>
+        <script>
+            let allData = JSON.parse(localStorage.getItem("userData")) || [];
+            let form = document.querySelector("form");
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+                let data = {
+                    name: document.getElementById("name").value,
+                    mobile: document.getElementById("mobile").value,
+                    city: document.getElementById("city").value,
+                    course: document.getElementById("course").value,
+                };
+                allData.push(data);
+                localStorage.setItem("userData", JSON.stringify(allData));
+                form.reset();
+                showDetails(allData);
+            });
+
+            function createEditForm(index, data) {
+                let editForm = document.createElement("form");
+                editForm.addEventListener("submit", (e) => {
+                    e.preventDefault();
+                    allData[index] = {
+                        name: editForm.querySelector("#editName").value,
+                        mobile: editForm.querySelector("#editMobile").value,
+                        city: editForm.querySelector("#editCity").value,
+                        course: editForm.querySelector("#editCourse").value,
+                    };
+                    localStorage.setItem("userData", JSON.stringify(allData));
+                    showDetails(allData);
+                });
+
+                let editName = document.createElement("input");
+                editName.type = "text";
+                editName.id = "editName";
+                editName.value = data.name;
+
+                let editMobile = document.createElement("input");
+                editMobile.type = "text";
+                editMobile.id = "editMobile";
+                editMobile.value = data.mobile;
+
+                let editCity = document.createElement("input");
+                editCity.type = "text";
+                editCity.id = "editCity";
+                editCity.value = data.city;
+
+                let editCourse = document.createElement("select");
+                editCourse.id = "editCourse";
+                let options = ["", "HTML", "CSS", "JavaScript"];
+                options.forEach((option) => {
+                    let opt = document.createElement("option");
+                    opt.value = option;
+                    opt.text = option;
+                    editCourse.add(opt);
+                });
+                editCourse.value = data.course;
+
+                let submitButton = document.createElement("input");
+                submitButton.type = "submit";
+                submitButton.value = "Update";
+
+                editForm.append(
+                    editName,
+                    editMobile,
+                    editCity,
+                    editCourse,
+                    submitButton
+                );
+                return editForm;
+            }
+
+            function handleEdit(index, data) {
+                let editForm = createEditForm(index, data);
+                let tr = tbody.querySelector(`tr:nth-child(${index + 1})`);
+                tr.innerHTML = "";
+                let td = document.createElement("td");
+                td.colSpan = 8; // Set colspan to cover all columns
+                td.appendChild(editForm);
+                tr.appendChild(td);
+            }
+
+            function handleDelete(index) {
+                allData.splice(index, 1);
+                localStorage.setItem("userData", JSON.stringify(allData));
+                showDetails(allData);
+            }
+
+            function showDetails(data) {
+                let tbody = document.getElementById("tbody");
+                tbody.innerHTML = null;
+                data.map((ele, index) => {
+                    let tr = document.createElement("tr");
+                    let td1 = document.createElement("td");
+                    td1.innerText = index + 1; // Add 1 to index to start from 1
+                    let td2 = document.createElement("td");
+                    td2.innerText = ele.name;
+                    let td3 = document.createElement("td");
+                    td3.innerText = ele.mobile;
+                    let td4 = document.createElement("td");
+                    td4.innerText = ele.city;
+                    let td5 = document.createElement("td");
+                    td5.innerText = ele.course;
+                    let td6 = document.createElement("td");
+
+                    if (ele.course == "HTML") {
+                        td6.innerText = "Completed";
+                        td6.style.background = "lightgreen";
+                    } else if (ele.course == "CSS") {
+                        td6.innerText = "Pending";
+                        td6.style.background = "yellow";
+                    } else {
+                        td6.innerText = "Not Completed";
+                        td6.style.backgroundColor = "red";
+                    }
+
+                    let editButton = document.createElement("td");
+                    editButton.innerText = "Edit";
+                        editButton.style.backgroundColor = "lightgreen";
+                        editButton.style.cursor="pointer"
+
+
+                    editButton.addEventListener("click", () =>
+                        handleEdit(index, ele)
+                    );
+                    let deleteButton = document.createElement("td");
+                    deleteButton.innerText = "Delete";
+                        deleteButton.style.backgroundColor = "red";
+                        deleteButton.style.cursor="pointer"
+
+
+                    deleteButton.addEventListener("click", () =>
+                        handleDelete(index)
+                    );
+
+                    tr.append(
+                        td1,
+                        td2,
+                        td3,
+                        td4,
+                        td5,
+                        td6,
+                        editButton,
+                        deleteButton
+                    );
+                    tbody.append(tr);
+                });
+            }
+
+showDetails(allData)
+        </script>
+    </body>
+</html>
