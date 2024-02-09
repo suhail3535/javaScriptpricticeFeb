@@ -29,8 +29,9 @@
                 background-color: lightgreen;
                 border: 2px solid salmon;
                 margin: 50px auto;
-                transition: width 10s ease-in, color 3s ease-in,
-                    background-color 4s ease-in,height 5s ease-in;
+                transition: width 10s ease-in-out, color 3s ease-in-out,
+                    background-color 4s ease-in-out, height 5s ease-in-out;
+                border-bottom-color: yellow;
             }
 
             .container:hover {
@@ -38,8 +39,12 @@
                 cursor: pointer;
                 height: 500px;
                 width: 400px;
+                transition: width 10s ease-in-out, color 3s ease-in-out,
+                    background-color 4s ease-in-out;
+                border-bottom-color: yellow;
                 border: 2px solid white;
                 color: blue;
+                border-radius: 90px;
             }
         </style>
     </head>

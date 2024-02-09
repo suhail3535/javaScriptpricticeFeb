@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            table {
+                width: 60%;
+                margin: auto;
+                text-align: center;
+            }
+            thead {
+                background-color: rgb(113, 207, 50);
+                color: white;
+                font-weight: 700;
+            }
+            td {
+                padding: 5px;
+            }
+            form {
+                width: 30%;
+                padding: 30px;
+                margin: auto;
+                border-radius: 10px;
+                background: #ddf1f3;
+                box-shadow: 20px 20px 31px #bccdcf, -20px -20px 31px #feffff;
+            }
+            input,
+            select {
+                height: 30px;
+                border-radius: 5px;
+                width: 100%;
+            }
+            input[type="submit"] {
+                background-color: lightcoral;
+                color: white;
+                font-size: 15px;
+                font-weight: bold;
+                transition: 0.5s ease-in-out;
+            }
+
+            input[type="submit"]:hover {
+                cursor: pointer;
+                background-color: rgb(238, 73, 73);
+            }
+        </style>
+    </head>
+    <body>
+        <a href="./index.html">Back to user Registration page</a>
+        <div id="conatainer">
+            <h1 style="text-align: center">Login form</h1>
+            <form>
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter  Name" /><br /><br />
+                <input
+                    type="text"
+                    id="mobile"
+                    placeholder="Enter Mobile Number" /><br /><br />
+
+                <input type="submit" /><br /><br />
+            </form>
+            <hr style="margin-top: 50px" />
+            <table id="table" border="1px">
+                <thead>
+                    <tr>
+                        <td>Sr.No</td>
+                        <td>Name</td>
+                        <td>Mobile</td>
+                        <td>City</td>
+                        <td>Course</td>
+                        <td>Status</td>
+                    </tr>
+                </thead>
+                <h1 style="text-align: center;">All User Details </h1>
+                <tbody id="tbody"></tbody>
+            </table>
+        </div>
+        <script>
+            let allData = JSON.parse(localStorage.getItem("userData")) || [];
+            let form = document.querySelector("form");
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+                let name = document.getElementById("name").value;
+                let mobile = document.getElementById("mobile").value;
+                ValidUser(name, mobile);
+                form.reset()
+            });
+
+            function ValidUser(userName, userMobile) {
+                let validValue = allData.some(
+                    (item) => item.name == userName && item.mobile == userMobile
+                );
+                if(validValue){
+                    alert("User Login Details Match")
+                }else{
+                    alert("User Details Not Found")
+                }
+            }
+
+            // function for showdata and create elements
+            let tbody = document.getElementById("tbody");
+
+            function showDeatils(data) {
+                tbody.innerHTML = null;
+                data.map((ele, index) => {
+                    let tr = document.createElement("tr");
+                    let td1 = document.createElement("td");
+                    td1.innerText = index;
+                    let td2 = document.createElement("td");
+                    td2.innerText = ele.name;
+                    let td3 = document.createElement("td");
+                    td3.innerText = ele.mobile;
+                    let td4 = document.createElement("td");
+                    td4.innerText = ele.city;
+                    let td5 = document.createElement("td");
+                    td5.innerText = ele.course;
+                    let td6 = document.createElement("td");
+
+                    if (ele.course == "HTML") {
+                        td6.innerText = "Completed";
+                        td6.style.background = "lightgreen";
+                    } else if (ele.course == "CSS") {
+                        td6.innerText = "Pending";
+                        td6.style.background = "yellow";
+                    } else {
+                        td6.innerText = "Not Completed";
+                        td6.style.backgroundColor = "red";
+                    }
+
+                    tr.append(td1, td2, td3, td4, td5, td6);
+                    tbody.append(tr);
+                });
+            }
+            showDeatils(allData);
+        </script>
+    </body>
+</html>
