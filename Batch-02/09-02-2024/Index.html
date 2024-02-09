@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            /* .container{
+            width: 200px;
+            height: 200px;
+            background-color: lightgreen;
+            border: 2px solid salmon;
+            margin: 50px auto;
+            transition: width 2s ease-in ;
+            transition: color 3s ease-in;
+            transition: background-color 4s ease-in;
+        }
+        .container:hover{
+            background-color: blanchedalmond;
+            cursor: pointer;
+            height: 500px;
+            width: 400px;
+            color: blue;
+        } */
+
+            .container {
+                width: 200px;
+                height: 200px;
+                background-color: lightgreen;
+                border: 2px solid salmon;
+                margin: 50px auto;
+                transition: width 10s ease-in, color 3s ease-in,
+                    background-color 4s ease-in,height 5s ease-in;
+            }
+
+            .container:hover {
+                background-color: blanchedalmond;
+                cursor: pointer;
+                height: 500px;
+                width: 400px;
+                border: 2px solid white;
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">Hello From javaScript</div>
+    </body>
+</html>
