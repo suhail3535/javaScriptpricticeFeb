@@ -83,6 +83,7 @@
                         <td>City</td>
                         <td>Course</td>
                         <td>Status</td>
+                        <td>Action</td>
                     </tr>
                 </thead>
                 <tbody id="tbody"></tbody>
@@ -105,20 +106,6 @@
                 showDeatils(allData);
                 // console.log(allData)
             });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             // function for showdata and create elements
             let tbody = document.getElementById("tbody");
@@ -149,19 +136,41 @@
                         td6.innerText = "Not Completed";
                         td6.style.backgroundColor = "red";
                     }
+                    let action = document.createElement("td");
+                    let add = document.createElement("button");
+                    add.innerText = "Add";
+                    add.addEventListener("click", () => {
+                        addData("favData", ele);
+                        alert("data Add to Fav");
+                    });
 
-                    tr.append(td1, td2, td3, td4, td5, td6);
+                    let del = document.createElement("button");
+                    del.innerText = "Delete";
+                    del.addEventListener("click", () => {
+                        delData(allData, index);
+                        alert("deleted");
+                        showDeatils(allData);
+                    });
+                    action.append(add, del);
+
+                    tr.append(td1, td2, td3, td4, td5, td6, action);
                     tbody.append(tr);
                 });
             }
             showDeatils(allData);
+// ------Delete function------
 
 
-
-
-
-
-
+            function addData(key, value) {
+                let newData = JSON.parse(localStorage.getItem(key)) || [];
+                newData.push(value);
+                localStorage.setItem(key, JSON.stringify(newData));
+            }
+// ------Delete function------
+            function delData(data, value) {
+                data.splice(value, 1);
+                localStorage.setItem("userData", JSON.stringify(data));
+            }
         </script>
     </body>
 </html>

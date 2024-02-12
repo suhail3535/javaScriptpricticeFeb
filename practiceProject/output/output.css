@@ -544,34 +544,6 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.visible {
-  visibility: visible;
-}
-
-.collapse {
-  visibility: collapse;
-}
-
-.relative {
-  position: relative;
-}
-
-.m-auto {
-  margin: auto;
-}
-
-.m-5 {
-  margin: 1.25rem;
-}
-
-.m-4 {
-  margin: 1rem;
-}
-
-.mt-20 {
-  margin-top: 5rem;
-}
-
 .mt-4 {
   margin-top: 1rem;
 }
@@ -580,56 +552,24 @@ video {
   display: block;
 }
 
-.flex {
-  display: flex;
+.grid {
+  display: grid;
 }
 
-.table {
-  display: table;
+.w-60 {
+  width: 15rem;
 }
 
-.contents {
-  display: contents;
+.w-auto {
+  width: auto;
 }
 
-.hidden {
-  display: none;
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.h-32 {
-  height: 8rem;
-}
-
-.w-32 {
-  width: 8rem;
-}
-
-.w-3\/4 {
-  width: 75%;
-}
-
-.w-3 {
-  width: 0.75rem;
-}
-
-.w-3\/5 {
-  width: 60%;
-}
-
-.w-3\/6 {
-  width: 50%;
-}
-
-.border-collapse {
-  border-collapse: collapse;
-}
-
-.transform {
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.resize {
-  resize: both;
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .justify-between {
@@ -662,16 +602,6 @@ video {
   border-color: rgb(234 179 8 / var(--tw-border-opacity));
 }
 
-.bg-indigo-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(79 70 229 / var(--tw-bg-opacity));
-}
-
-.bg-indigo-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(165 180 252 / var(--tw-bg-opacity));
-}
-
 .bg-green-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(74 222 128 / var(--tw-bg-opacity));
@@ -682,13 +612,14 @@ video {
   background-color: rgb(22 163 74 / var(--tw-bg-opacity));
 }
 
+.bg-indigo-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(165 180 252 / var(--tw-bg-opacity));
+}
+
 .bg-yellow-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(253 224 71 / var(--tw-bg-opacity));
-}
-
-.bg-transparent {
-  background-color: transparent;
 }
 
 .p-5 {
@@ -697,11 +628,6 @@ video {
 
 .text-justify {
   text-align: justify;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
 }
 
 .text-xl {
@@ -718,20 +644,30 @@ video {
   color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 
-.underline {
-  text-decoration-line: underline;
-}
-
-.outline {
-  outline-style: solid;
-}
-
 @media (min-width: 768px) {
   .md\:flex {
     display: flex;
   }
 
+  .md\:grid {
+    display: grid;
+  }
+
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .md\:bg-transparent {
     background-color: transparent;
+  }
+
+  .md\:text-blue-400 {
+    --tw-text-opacity: 1;
+    color: rgb(96 165 250 / var(--tw-text-opacity));
+  }
+
+  .md\:text-white {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }
