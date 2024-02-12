@@ -29,26 +29,95 @@
                 background-color: lightgreen;
                 border: 2px solid salmon;
                 margin: 50px auto;
-                transition: width 10s ease-in-out, color 3s ease-in-out,
+                /* transition: width 10s ease-in, color 3s ease-in-out,
                     background-color 4s ease-in-out, height 5s ease-in-out;
-                border-bottom-color: yellow;
+                border-bottom-color: yellow; */
+                transition: all 2s ease-in-out 2s;
             }
 
             .container:hover {
-                background-color: blanchedalmond;
-                cursor: pointer;
-                height: 500px;
                 width: 400px;
-                transition: width 10s ease-in-out, color 3s ease-in-out,
-                    background-color 4s ease-in-out;
-                border-bottom-color: yellow;
-                border: 2px solid white;
-                color: blue;
-                border-radius: 90px;
+                background-color: red;
+                cursor: pointer;
+                border-radius: 30px;
+                height: 500px;
+                border: 5px solid lightseagreen;
+            }
+            .tr_div {
+                width: 300px;
+                height: 300px;
+                margin: auto;
+                background-color: cyan;
+                color: white;
+                border: 3px solid black;
+
+                width: 80%;
+                border: 1px solid green;
+
+                display: flex;
+                justify-content: space-between;
+            }
+            .card_div {
+                border: 2px solid teal;
+                margin: 20px;
+                overflow: hidden;
+                color: black;
+
+                text-align: center;
+                /* transition: all 0.6s ease-in-out; */
+            }
+            .card_div img {
+                width: 40%;
+                margin: auto;
+                /* padding: 10px; */
+                border: 2px solid red;
+                transition: all 0.6s ease-in-out;
+            }
+            .card_div img:hover {
+                transform: scale(1.1);
+                cursor: pointer;
+                /* overflow: hidden; */
+            }
+            .tr_div:hover {
+                transform:translate(100px,200px);
+                cursor: pointer;
             }
         </style>
     </head>
     <body>
         <div class="container">Hello From javaScript</div>
+
+        <div class="tr_div">
+            <div class="card_div">
+                <img src="./broadcomlogo.png" alt="" />
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Accusamus, doloribus. Lorem ipsum, dolor sit amet
+                    consectetur adipisicing elit. Accusamus, doloribus. Lorem
+                    ipsum, dolor sit amet consectetur adipisicing elit.
+                    Accusamus, doloribus. Lorem ipsum, dolor sit amet
+                    consectetur adipisicing elit. Accusamus, doloribus. Lorem
+                    ipsum, dolor sit amet consectetur adipisicing elit.
+                    Accusamus, doloribus. Lorem ipsum, dolor sit amet
+                    consectetur adipisicing elit. Accusamus, doloribus. Lorem
+                    ipsum, dolor sit amet consectetur adipisicing elit.
+                    Accusamus, doloribus.
+                </p>
+            </div>
+            <div class="card_div">
+                <img src="./broadcomlogo.png" alt="" />
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Accusamus, doloribus.
+                </p>
+            </div>
+            <div class="card_div">
+                <img src="./broadcomlogo.png" alt="" />
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Accusamus, doloribus.
+                </p>
+            </div>
+        </div>
     </body>
 </html>
