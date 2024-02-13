@@ -106,9 +106,10 @@
             function showDeatils(data) {
                 tbody.innerHTML = null;
                 data.map((ele, index) => {
+
                     let tr = document.createElement("tr");
                     let td1 = document.createElement("td");
-                    td1.innerText = index;
+                    td1.innerText = index++;
                     let td2 = document.createElement("td");
                     td2.innerText = ele.name;
                     let td3 = document.createElement("td");
