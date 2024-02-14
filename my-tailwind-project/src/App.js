@@ -5,16 +5,18 @@ import Navbar from './component/navbar/Navbar'
 import MapComponent from './component/footer/Footer'
 import { ChakraProvider } from '@chakra-ui/react'
 import Login from './views/login/Login'
+import Navbar2 from './component/navbar/Nav2'
 const App = () => {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
 
-      <ChakraProvider>
+      {/* <ChakraProvider>
         <Item />
       </ChakraProvider>
-      <MapComponent />
-      {/* <Login /> */}
+      <MapComponent /> */}
+      <Navbar2 />
+      <Login />
 
     </div>
   )

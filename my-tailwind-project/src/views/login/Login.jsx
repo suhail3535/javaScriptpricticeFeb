@@ -1,8 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [refreshKey, setRefreshKey] = useState(0); // Initialize key state
+
+  const getData = (e) => {
+    e.preventDefault();
+    const userData = { email, password };
+    const existingData = JSON.parse(localStorage.getItem("userData")) || [];
+    const newData = [...existingData, userData];
+    localStorage.setItem("userData", JSON.stringify(newData));
+    setEmail("");
+    setPassword("");
+    alert("Login successful");
+    // Update key to trigger dynamic refresh
+    setRefreshKey((prevKey) => prevKey + 1);
+  };
+
   return (
-    <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+    <div
+      key={refreshKey}
+      className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
         <img
           className="mx-auto h-10 w-auto"
@@ -15,7 +34,7 @@ const Login = () => {
       </div>
 
       <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-        <form className="space-y-6" action="#" method="POST">
+        <form className="space-y-6" onSubmit={getData}>
           <div>
             <label
               htmlFor="email"
@@ -27,6 +46,8 @@ const Login = () => {
                 id="email"
                 name="email"
                 type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 autoComplete="email"
                 required
                 className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -54,6 +75,8 @@ const Login = () => {
                 id="password"
                 name="password"
                 type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 autoComplete="current-password"
                 required
                 className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
