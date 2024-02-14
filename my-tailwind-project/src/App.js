@@ -10,11 +10,11 @@ const App = () => {
     <div>
       <Navbar />
 
-      {/* <ChakraProvider>
+      <ChakraProvider>
         <Item />
       </ChakraProvider>
-      <MapComponent /> */}
-      <Login />
+      <MapComponent />
+      {/* <Login /> */}
 
     </div>
   )
