@@ -6,6 +6,7 @@ import MapComponent from './component/footer/Footer'
 import { ChakraProvider } from '@chakra-ui/react'
 import Login from './views/login/Login'
 import Navbar2 from './component/navbar/Nav2'
+import GitHubCommitHistory from './component/items/Cal'
 const App = () => {
   return (
     <div>
@@ -16,7 +17,8 @@ const App = () => {
       </ChakraProvider>
       <MapComponent /> */}
       <Navbar2 />
-      <Login />
+      {/* <Login /> */}
+      <GitHubCommitHistory />
 
     </div>
   )
