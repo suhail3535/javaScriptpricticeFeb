@@ -1,176 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <style>
-            table {
-                width: 60%;
-                margin: auto;
-                text-align: center;
-            }
-            thead {
-                background-color: rgb(113, 207, 50);
-                color: white;
-                font-weight: 700;
-            }
-            td {
-                padding: 5px;
-            }
-            form {
-                width: 30%;
-                padding: 30px;
-                margin: auto;
-                border-radius: 10px;
-                background: #ddf1f3;
-                box-shadow: 20px 20px 31px #bccdcf, -20px -20px 31px #feffff;
-            }
-            input,
-            select {
-                height: 30px;
-                border-radius: 5px;
-                width: 100%;
-            }
-            input[type="submit"] {
-                background-color: lightcoral;
-                color: white;
-                font-size: 15px;
-                font-weight: bold;
-                transition: 0.5s ease-in-out;
-            }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        width: 60%;
+        margin: auto;
+        text-align: center;
+      }
+      thead {
+        background-color: rgb(113, 207, 50);
+        color: white;
+        font-weight: 700;
+      }
+      td {
+        padding: 5px;
+      }
+      form {
+        width: 30%;
+        padding: 30px;
+        margin: auto;
+        border-radius: 10px;
+        background: #ddf1f3;
+        box-shadow: 20px 20px 31px #bccdcf, -20px -20px 31px #feffff;
+      }
+      input,
+      select {
+        height: 30px;
+        border-radius: 5px;
+        width: 100%;
+      }
+      input[type="submit"] {
+        background-color: lightcoral;
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+        transition: 0.5s ease-in-out;
+      }
 
-            input[type="submit"]:hover {
-                cursor: pointer;
-                background-color: rgb(238, 73, 73);
-            }
-        </style>
-    </head>
-    <body>
-        <a href="./login.html">Login page</a>
+      input[type="submit"]:hover {
+        cursor: pointer;
+        background-color: rgb(238, 73, 73);
+      }
+    </style>
+  </head>
+  <body>
+    <a href="./login.html">Login page</a>
 
-        <div id="conatainer">
-            <h1 style="text-align: center">Students form</h1>
+    <div id="conatainer">
+      <h1 style="text-align: center">Students form</h1>
 
-            <form>
-                <input
-                    type="text"
-                    id="name"
-                    placeholder="Enter  Name" /><br /><br />
-                <input
-                    type="text"
-                    id="mobile"
-                    placeholder="Enter Mobile Number" /><br /><br />
-                <input
-                    type="text"
-                    id="city"
-                    placeholder="Enter City Name" /><br /><br />
-                <select id="course">
-                    <option value="">Select</option>
-                    <option value="HTML">HTML</option>
-                    <option value="CSS">CSS</option>
-                    <option value="javaScript">javaScript</option></select
-                ><br /><br />
-                <input type="submit" /><br /><br />
-            </form>
-            <hr style="margin-top: 50px" />
-            <table id="table" border="1px">
-                <thead>
-                    <tr>
-                        <td>Sr.No</td>
-                        <td>Name</td>
-                        <td>Mobile</td>
-                        <td>City</td>
-                        <td>Course</td>
-                        <td>Status</td>
-                        <td>Action</td>
-                    </tr>
-                </thead>
-                <tbody id="tbody"></tbody>
-            </table>
-        </div>
-        <script>
-            let allData = JSON.parse(localStorage.getItem("userData")) || [];
-            let form = document.querySelector("form");
-            form.addEventListener("submit", (e) => {
-                e.preventDefault();
-                let data = {
-                    name: document.getElementById("name").value,
-                    mobile: document.getElementById("mobile").value,
-                    city: document.getElementById("city").value,
-                    course: document.getElementById("course").value,
-                };
-                allData.push(data);
-                localStorage.setItem("userData", JSON.stringify(allData));
-                form.reset();
-                showDeatils(allData);
-                // console.log(allData)
-            });
+      <form>
+        <input type="text" id="name" placeholder="Enter  Name" /><br /><br />
+        <input
+          type="text"
+          id="mobile"
+          placeholder="Enter Mobile Number" /><br /><br />
+        <input
+          type="text"
+          id="city"
+          placeholder="Enter City Name" /><br /><br />
+        <select id="course">
+          <option value="">Select</option>
+          <option value="HTML">HTML</option>
+          <option value="CSS">CSS</option>
+          <option value="javaScript">javaScript</option></select
+        ><br /><br />
+        <input type="submit" /><br /><br />
+      </form>
+      <hr style="margin-top: 50px" />
+      <table id="table" border="1px">
+        <thead>
+          <tr>
+            <td>Sr.No</td>
+            <td>Name</td>
+            <td>Mobile</td>
+            <td>City</td>
+            <td>Course</td>
+            <td>Status</td>
+            <td>Action</td>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <script>
+      let allData = JSON.parse(localStorage.getItem("userData")) || [];
+      let form = document.querySelector("form");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        let data = {
+          name: document.getElementById("name").value,
+          mobile: document.getElementById("mobile").value,
+          city: document.getElementById("city").value,
+          course: document.getElementById("course").value,
+        };
+        allData.push(data);
+        localStorage.setItem("userData", JSON.stringify(allData));
+        form.reset();
+        showDeatils(allData);
+        // console.log(allData)
+      });
 
-            // function for showdata and create elements
-            let tbody = document.getElementById("tbody");
+      // function for showdata and create elements
+      let tbody = document.getElementById("tbody");
 
-            function showDeatils(data) {
-                tbody.innerHTML = null;
-                data.map((ele, index) => {
-                    let tr = document.createElement("tr");
-                    let td1 = document.createElement("td");
-                    td1.innerText = index;
-                    let td2 = document.createElement("td");
-                    td2.innerText = ele.name;
-                    let td3 = document.createElement("td");
-                    td3.innerText = ele.mobile;
-                    let td4 = document.createElement("td");
-                    td4.innerText = ele.city;
-                    let td5 = document.createElement("td");
-                    td5.innerText = ele.course;
-                    let td6 = document.createElement("td");
+      function showDeatils(data) {
+        let newIndex = 0;
+        tbody.innerHTML = null;
+        data.map((ele, index) => {
+          newIndex++;
+          let tr = document.createElement("tr");
+          let td1 = document.createElement("td");
+          td1.innerText = newIndex;
+          let td2 = document.createElement("td");
+          td2.innerText = ele.name;
+          let td3 = document.createElement("td");
+          td3.innerText = ele.mobile;
+          let td4 = document.createElement("td");
+          td4.innerText = ele.city;
+          let td5 = document.createElement("td");
+          td5.innerText = ele.course;
+          let td6 = document.createElement("td");
 
-                    if (ele.course == "HTML") {
-                        td6.innerText = "Completed";
-                        td6.style.background = "lightgreen";
-                    } else if (ele.course == "CSS") {
-                        td6.innerText = "Pending";
-                        td6.style.background = "yellow";
-                    } else {
-                        td6.innerText = "Not Completed";
-                        td6.style.backgroundColor = "red";
-                    }
-                    let action = document.createElement("td");
-                    let add = document.createElement("button");
-                    add.innerText = "Add";
-                    add.addEventListener("click", () => {
-                        addData("favData", ele);
-                        alert("data Add to Fav");
-                    });
+          if (ele.course == "HTML") {
+            td6.innerText = "Completed";
+            td6.style.background = "lightgreen";
+          } else if (ele.course == "CSS") {
+            td6.innerText = "Pending";
+            td6.style.background = "yellow";
+          } else {
+            td6.innerText = "Not Completed";
+            td6.style.backgroundColor = "red";
+          }
+          let action = document.createElement("td");
+          let add = document.createElement("button");
+          add.innerText = "Add";
+          add.addEventListener("click", () => {
+            addData("favData", ele);
+            alert("data Add to Fav");
+          });
 
-                    let del = document.createElement("button");
-                    del.innerText = "Delete";
-                    del.addEventListener("click", () => {
-                        delData(allData, index);
-                        alert("deleted");
-                        showDeatils(allData);
-                    });
-                    action.append(add, del);
-
-                    tr.append(td1, td2, td3, td4, td5, td6, action);
-                    tbody.append(tr);
-                });
-            }
+          let del = document.createElement("button");
+          del.innerText = "Delete";
+          del.addEventListener("click", () => {
+            delData(allData, index);
+            alert("deleted");
             showDeatils(allData);
-// ------Delete function------
+          });
+          action.append(add, del);
 
+          tr.append(td1, td2, td3, td4, td5, td6, action);
+          tbody.append(tr);
+        });
+      }
+      showDeatils(allData);
+      // ------Delete function------
 
-            function addData(key, value) {
-                let newData = JSON.parse(localStorage.getItem(key)) || [];
-                newData.push(value);
-                localStorage.setItem(key, JSON.stringify(newData));
-            }
-// ------Delete function------
-            function delData(data, value) {
-                data.splice(value, 1);
-                localStorage.setItem("userData", JSON.stringify(data));
-            }
-        </script>
-    </body>
+      function addData(key, value) {
+        let newData = JSON.parse(localStorage.getItem(key)) || [];
+        newData.push(value);
+        localStorage.setItem(key, JSON.stringify(newData));
+      }
+      // ------Delete function------
+      function delData(data, value) {
+        data.splice(value, 1);
+        localStorage.setItem("userData", JSON.stringify(data));
+      }
+    </script>
+  </body>
 </html>
