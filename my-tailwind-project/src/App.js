@@ -10,15 +10,15 @@ import GitHubCommitHistory from './component/items/Cal'
 const App = () => {
   return (
     <div>
-      {/* <Navbar /> */}
+      <Navbar />
 
-      {/* <ChakraProvider>
+      <ChakraProvider>
         <Item />
       </ChakraProvider>
-      <MapComponent /> */}
+      <MapComponent />
       <Navbar2 />
       {/* <Login /> */}
-      <GitHubCommitHistory />
+      {/* <GitHubCommitHistory /> */}
 
     </div>
   )

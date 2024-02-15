@@ -34,8 +34,8 @@ const ProductCard = ({
 
       <h1 className="">{name}</h1>
       <p className="text-gray-400">{Rating}</p>
-      <p>{price}</p>
-      <p>{discount}</p>
+      <p className="text-green-500">{price}</p>
+      <p className="text-yellow-600">{discount}</p>
       <p>{size}</p>
     </div>
   );
