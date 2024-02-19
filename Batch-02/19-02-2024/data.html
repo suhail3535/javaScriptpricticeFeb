@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .identifier {
+        width: 400px;
+        height: 200px;
+        background-color: red;
+        /* animation: identifier linear;a*/
+
+        animation: 3s infinite alternate slidein;
+      }
+      @keyframes identifier {
+        0% {
+          top: 0;
+          left: 0;
+        }
+        30% {
+          top: 50px;
+        }
+        68%,
+        72% {
+          left: 50px;
+        }
+        100% {
+          top: 100px;
+          left: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="identifier"></div>
+  </body>
+</html>
