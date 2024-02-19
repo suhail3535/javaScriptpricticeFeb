@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      nav {
+        width: 90%;
+        margin: auto;
+        /* background-color: rgb(226, 226, 215); */
+        background-color: black;
+        height: 60px;
+        z-index: 2;
+        position: sticky;
+        border: 2px solid green;
+        top: 0px;
+      }
+      .cont {
+        width: 90%;
+        margin: 60px auto;
+        border: 1px solid red;
+        height: 1000px;
+        display: flex;
+        overflow: scroll;
+        justify-content: space-between;
+      }
+      .cont div {
+        height: 20%;
+        padding: 50px;
+        border: 3px solid teal;
+        /* z-index: 4; */
+        transition: all 0.9s ease-in-out;
+        /* position: relative; */
+        /* position: absolute; */
+      }
+
+      .cont div:hover{
+        transform: scale(1.2);
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <nav></nav>
+    <div class="cont">
+      <div class="item1">1</div>
+      <div class="item2">2</div>
+      <div class="item3">3</div>
+      <div class="item4">4</div>
+      <div class="item5">5</div>
+      <div class="item6">6</div>
+    </div>
+  </body>
+</html>
