@@ -32,6 +32,7 @@ Include a navigation bar, main section, and footer using flex containers.
 Ensure that the navigation bar and footer are fixed while the main section adjusts dynamically.
 Apply responsive design principles to make the landing page accessible on different devices.
 
+
 <!-- <-----------Task-4-------------------->
 
 
@@ -48,4 +49,5 @@ Ensure responsiveness and test the layout on various screen sizes.
 <!-- <-----------Task-5-------------------->
 
 Task 5: Create a Calculator
+![Getting Started](../../download.jpg)
 
