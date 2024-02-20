@@ -17,37 +17,29 @@ Task 2: Create a Login and Register Form
 Instructions:
 
 Design an HTML form that serves both login and register functionalities.
-Include at least 6 fields such as username, password, email, first name, last name, etc.
+Include at least 6 fields such as username, password, email, first_name, last _name, Mobile etc.
+Note-For login there should be 2 fields username and password.
 Implement proper form validation for required fields.
 Consider user experience and design an intuitive layout for the forms.
 
+
+
 <!-- <-----------Task-3-------------------->
 
-Task 3: Create a Landing Page with Flexbox
+
+Task 3: Create a Landing Page with Grid Layout
 
 Instructions:
 
-Design a landing page using the Flexbox layout.
-Include a navigation bar, main section, and footer using flex containers.
-Ensure that the navigation bar and footer are fixed while the main section adjusts dynamically.
-Apply responsive design principles to make the landing page accessible on different devices.
-
-
-<!-- <-----------Task-4-------------------->
-
-
-Task 4: Create a Landing Page with Grid Layout
-
-Instructions:
-
-Revisit the landing page from Task 3.
+Include a navigation bar, main section, and footer using grid.
+Ensure that the navigation bar should fixed while the main section adjusts dynamically.
 Redesign the layout using CSS Grid whenever applicable.
 Utilize grid areas to structure the main content, navigation, and footer.
 Ensure responsiveness and test the layout on various screen sizes.
 
 
-<!-- <-----------Task-5-------------------->
+<!-- <-----------Task-4-------------------->
 
-Task 5: Create a Calculator
+Task 4: Create a Calculator
 ![Getting Started](../../download.jpg)
 

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background: red;
+        position: relative;
+        right: 10px; /* Start from the right */
+        animation: mymove 5s infinite;
+      }
+
+      @keyframes mymove {
+        0% {
+          right: 200px;
+          background: red;
+        } /* Start position */
+        100% {
+          right: 1000;
+          background: yellow;
+        } /* End position */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>The @keyframes Rule</h1>
+
+    <div></div>
+  </body>
+</html>
