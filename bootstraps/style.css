@@ -1,0 +1,11 @@
+.bg-info {
+  background-color: salmon;
+}
+.image_btf {
+  /* border: 2px solid red; */
+  height: 300px;
+  padding: 5px;
+}
+.card {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
