@@ -33,7 +33,7 @@ const App = () => {
       {/* <Login /> */}
       {/* <GitHubCommitHistory /> */}
 
-      <h1>hello manish</h1>
+      {/* <h1>hello manish</h1> */}
 
       <ChakraProvider>
         <JoinOurTeam />
