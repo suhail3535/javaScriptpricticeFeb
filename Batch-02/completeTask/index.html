@@ -1,43 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your Web Development Practice</title>
     <style>
-        /* Global styling can be added here */
+      /* Global styling can be added here */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      nav {
+        /* border: 2px solid green; */
+        width: 100%;
+        padding: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        margin: auto;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: aquamarine;
+      }
+      .logo {
+        /* border: 1px solid red; */
+        width: 10%;
+        text-align: center;
+      }
+      .logo img {
+        width: 50%;
+      }
+      .link_div {
+        /* border: 2px solid greenyellow; */
+        width: 40%;
+        display: flex;
+        justify-content: space-around;
+      }
+      .menu {
+        display: none;
+      }
+      a {
+        text-decoration: none;
+      }
+      .input_div {
+        /* border: 1px solid green; */
+        width: 22%;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+      }
+      input {
+        height: 30px;
+        border-radius: 10px;
+        cursor: pointer;
+        padding: 10px;
+      }
+      button {
+        width: 80px;
+        background-color: lightgreen;
+        border-radius: 10px;
+        border: none;
+        color: white;
+      }
+      button:hover {
+        background-color: rgb(65, 212, 65);
+        cursor: pointer;
+        transition: all 0.8s ease-in-out;
+      }
+      @media screen and (min-width: 200px) and (max-width: 420px) {
+        .link_div {
+
+          display: none;
+        }
+        .menu {
+          display: block;
+          font-size: 30px;
+        }
+         .input_div {
+        /* border: 1px solid green; */
+        width: 50%;
+        display: block;
+
+        /* padding: 10px; */
+      }
+      input{
+        width: 90%;
+        margin-bottom: 10px;
+      }
+        button {
+        width: 80%;
+        background-color: lightgreen;
+        border-radius: 10px;
+        border: none;
+        padding: 5px;
+        color: white;
+      }
+       .logo {
+        /* border: 1px solid red; */
+        width: 15%;
+        text-align: center;
+      }
+        .logo img {
+        width: 100%;
+      }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <nav>
+      <div class="logo"><img src="./BMW-Logo-370x247.png" alt="" /></div>
+      <div class="link_div">
+        <a href="">Home</a>
+        <a href="">About</a>
+        <a href="">Contact</a>
+        <a href="">Project</a>
+      </div>
+      <div class="input_div">
+        <input type="search" placeholder="Search" />
+        <button>Submit</button>
+      </div>
+      <div class="menu">
+        <span>&#9776;</span>
+      </div>
+    </nav>
+
     <!-- Task 1: Create a Table -->
     <section id="task1">
-        <h2>Task 1: Create a Table</h2>
-        <!-- Your code for the table goes here -->
+      <h2>Task 1: Create a Table</h2>
+      <!-- Your code for the table goes here -->
     </section>
 
     <!-- Task 2: Create a Login and Register Form -->
     <section id="task2">
-        <h2>Task 2: Create a Login and Register Form</h2>
-        <!-- Your code for the login and register form goes here -->
+      <h2>Task 2: Create a Login and Register Form</h2>
+      <!-- Your code for the login and register form goes here -->
     </section>
 
     <!-- Task 3: Create a Landing Page with Flexbox -->
     <section id="task3">
-        <h2>Task 3: Create a Landing Page with Flexbox</h2>
-        <!-- Your code for the landing page with flexbox goes here -->
+      <h2>Task 3: Create a Landing Page with Flexbox</h2>
+      <!-- Your code for the landing page with flexbox goes here -->
     </section>
 
     <!-- Task 4: Create a Landing Page with Grid Layout -->
     <section id="task4">
-        <h2>Task 4: Create a Landing Page with Grid Layout</h2>
-        <!-- Your code for the landing page with grid layout goes here -->
+      <h2>Task 4: Create a Landing Page with Grid Layout</h2>
+      <!-- Your code for the landing page with grid layout goes here -->
     </section>
 
     <!-- Task 5: Additional Styling and Responsive Adjustments -->
-  <section id="calculator">
-        <h2>Calculator</h2>
-        <!-- Your code for the calculator goes here -->
+    <section id="calculator">
+      <h2>Calculator</h2>
+      <!-- Your code for the calculator goes here -->
     </section>
-
-</body>
+  </body>
 </html>
