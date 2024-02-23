@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
+    <!-- <script src="./package.json"></script> -->
+    <style>
+      #all_countries {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        column-gap: 20px;
+        row-gap: 30px;
+        width: 90%;
+        border: 0px solid green;
+        margin: auto;
+        padding: 10px;
+      }
+      /* #all_countries > div > img {
+        width: 50%;
+
+        padding: 15px;
+      } */
+      #all_countries > div {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 15px;
+
+        font-weight: bold;
+        transition: all 0.8s ease-in-out;
+      }
+      /* #all_countries div:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+      } */
+      h3,
+      p {
+        margin-left: 20px;
+      }
+
+      #sort_population {
+        /* border: 1px solid green; */
+        margin-left: 5%;
+        height: 50px;
+        width: 40%;
+        margin-bottom: 30px;
+        border-radius: 5px;
+        margin-top: 20px;
+      }
+      #filter_region {
+        /* border: 1px solid green; */
+        margin-left: 10%;
+        height: 50px;
+        width: 40%;
+        margin-bottom: 30px;
+        border-radius: 5px;
+        margin-top: 20px;
+      }
+      .img_divv {
+        /* border: 1px solid green; */
+        width: 90%;
+        margin: auto;
+        overflow: hidden;
+
+      }
+      h1{
+        text-align: center;
+      }
+      .img_divv img {
+        width: 100%;
+        margin: auto;
+        transition: all 0.6s ease-in-out
+      }
+      .img_divv img:hover{
+        transform: scale(1.2);
+        cursor: pointer;
+
+
+      }
+      @media screen and (min-width: 200px) and (max-width: 420px) {
+        #all_countries {
+          display: block;
+        }
+      }
+      @media screen and (min-width: 421px) and (max-width: 768px) {
+        #all_countries {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Mens Products Details</h1>
+    <div id="all_countries"></div>
+  </body>
+  <script>
+    let arr = [];
+    async function getData() {
+      try {
+        let response = await axios.get(
+          "https://helpful-gray-rooster.cyclic.app/men"
+        );
+
+        let value = response.data;
+        arr = value;
+        console.log(arr);
+        displayData(arr);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    function displayData(data) {
+      document.querySelector("#all_countries").innerHTML = "";
+      data.map(function (element) {
+        let div = document.createElement("div");
+        let img_div = document.createElement("div");
+        img_div.classList.add("img_divv");
+        let image = document.createElement("img");
+        image.setAttribute("src", element.image);
+        img_div.append(image);
+        let count = document.createElement("h3");
+        count.innerText = element.name;
+        let pop = document.createElement("p");
+        pop.innerText = "Price" + " :" + element.price;
+        let reg = document.createElement("p");
+        reg.innerText = "Rating" + " :" + element.Rating;
+
+        div.append(img_div, count, pop, reg);
+        document.querySelector("#all_countries").append(div);
+      });
+    }
+    displayData(arr);
+    getData();
+  </script>
+</html>
