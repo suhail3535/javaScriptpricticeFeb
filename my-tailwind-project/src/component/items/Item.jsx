@@ -13,6 +13,7 @@ const Item = () => {
       let res = await axios.get(
         "https://helpful-gray-rooster.cyclic.app/product"
       );
+      console.log(res,"item")
       setData(res.data);
       setLoading(false);
     } catch (error) {
