@@ -64,21 +64,18 @@
         width: 90%;
         margin: auto;
         overflow: hidden;
-
       }
-      h1{
+      h1 {
         text-align: center;
       }
       .img_divv img {
         width: 100%;
         margin: auto;
-        transition: all 0.6s ease-in-out
+        transition: all 0.6s ease-in-out;
       }
-      .img_divv img:hover{
+      .img_divv img:hover {
         transform: scale(1.2);
         cursor: pointer;
-
-
       }
       @media screen and (min-width: 200px) and (max-width: 420px) {
         #all_countries {
@@ -91,7 +88,7 @@
           grid-template-columns: repeat(2, 1fr);
         }
       }
-      input[id="chk"]{
+      input[id="chk"] {
         border: 50px solid red;
         /* outline: 2px solid green; */
         width: 100px;
@@ -101,7 +98,20 @@
     </style>
   </head>
   <body>
-    <input type="checkbox" id="chk"> Male
+    <form id="postDataForm">
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" /><br /><br />
+
+      <label for="body">Body:</label>
+      <input type="text" id="body" name="body" /><br /><br />
+
+      <label for="userId">User ID:</label>
+      <input type="number" id="userId" name="userId" /><br /><br />
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <!-- <input type="checkbox" id="chk"> Male -->
     <h1>Mens Products Details</h1>
     <div id="all_countries"></div>
   </body>
@@ -110,7 +120,7 @@
     async function getData() {
       try {
         let response = await axios.get(
-          "https://helpful-gray-rooster.cyclic.app/men"
+          "https://jsonplaceholder.typicode.com/posts"
         );
 
         let value = response.data;
@@ -120,6 +130,42 @@
       } catch (error) {
         console.log(error);
       }
+    }
+
+    // <---------------post------------->
+
+    const data = document.getElementById("postDataForm");
+    data.addEventListener("submit", myfun);
+
+    async function postData(event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      try {
+        const formData = new FormData(data);
+        const jsonData = {};
+        formData.forEach((value, key) => {
+          jsonData[key] = value;
+        });
+
+        const response = await axios.post(
+          "https://jsonplaceholder.typicode.com/posts",
+          jsonData,
+          {
+            headers: {
+              "Content-type": "application/json; charset=UTF-8",
+            },
+          }
+        );
+        console.log(response.data);
+        alert("Post created successfully!");
+      } catch (error) {
+        console.error("Error:", error);
+        alert("Error creating post. Please try again.");
+      }
+    }
+
+    function myfun(event) {
+      postData(event);
     }
 
     function displayData(data) {
@@ -132,11 +178,11 @@
         image.setAttribute("src", element.image);
         img_div.append(image);
         let count = document.createElement("h3");
-        count.innerText = element.name;
+        count.innerText = element.title;
         let pop = document.createElement("p");
-        pop.innerText = "Price" + " :" + element.price;
+        pop.innerText = "Price" + " :" + element.body;
         let reg = document.createElement("p");
-        reg.innerText = "Rating" + " :" + element.Rating;
+        reg.innerText = "Rating" + " :" + element.userId;
 
         div.append(img_div, count, pop, reg);
         document.querySelector("#all_countries").append(div);
