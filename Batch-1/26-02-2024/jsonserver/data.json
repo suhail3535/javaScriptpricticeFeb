@@ -1,28 +1,94 @@
 {
   "data": [
     {
-      "id": 1,
-      "name": "John Doe",
-      "age": 30,
-      "city": "New York"
+      "id": "fc0f",
+      "name": "Python",
+      "age": "28",
+      "city": "chennai"
     },
     {
-      "id": 2,
-      "name": "Alice Smith",
-      "age": 25,
-      "city": "Los Angeles"
+      "id": "fc0g",
+      "name": "Java",
+      "age": "40",
+      "city": "hyderabad"
     },
     {
-      "id": 3,
-      "name": "Bob Johnson",
-      "age": 35,
-      "city": "Chicago"
+      "id": "fc0h",
+      "name": "JavaScript",
+      "age": "35",
+      "city": "kolkata city"
     },
     {
-      "id": 4,
-      "name": "Emily Brown",
-      "age": 28,
-      "city": "San Francisco"
+      "id": "fc0i",
+      "name": "HTML",
+      "age": "22",
+      "city": "pune"
+    },
+    {
+      "id": "fc0j",
+      "name": "CSS",
+      "age": "20",
+      "city": "ahmedabad"
+    },
+    {
+      "id": "fc0k",
+      "name": "PHP",
+      "age": "45",
+      "city": "lucknow"
+    },
+    {
+      "id": "fc0l",
+      "name": "Ruby on Rails",
+      "age": "38",
+      "city": "bhopal"
+    },
+    {
+      "id": "fc0m",
+      "name": "C++",
+      "age": "42",
+      "city": "chandigarh"
+    },
+    {
+      "id": "fc0n",
+      "name": "C#",
+      "age": "33",
+      "city": "coimbatore"
+    },
+    {
+      "id": "fc0o",
+      "name": "Swift",
+      "age": "27",
+      "city": "indore"
+    },
+    {
+      "id": "fc0p",
+      "name": "Kotlin",
+      "age": "29",
+      "city": "jaipur"
+    },
+    {
+      "id": "fc0q",
+      "name": "TypeScript",
+      "age": "31",
+      "city": "delhi"
+    },
+    {
+      "id": "fc0r",
+      "name": "Go",
+      "age": "34",
+      "city": "mumbai"
+    },
+    {
+      "id": "fc0s",
+      "name": "Rust",
+      "age": "26",
+      "city": "bangalore"
+    },
+    {
+      "id": "fc0t",
+      "name": "Scala",
+      "age": "36",
+      "city": "chennai"
     }
   ]
 }

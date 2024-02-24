@@ -16,82 +16,50 @@
         margin: auto;
         padding: 10px;
       }
-      /* #all_countries > div > img {
-        width: 50%;
 
-        padding: 15px;
-      } */
       #all_countries > div {
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         border-radius: 5px;
-        padding: 10px;
+        /* padding: 10px; */
         font-size: 15px;
-
         font-weight: bold;
         transition: all 0.8s ease-in-out;
       }
-      /* #all_countries div:hover {
-        transform: scale(1.1);
-        cursor: pointer;
-      } */
+
       h3,
       p {
         margin-left: 20px;
       }
 
-      #sort_population {
-        /* border: 1px solid green; */
-        margin-left: 5%;
-        height: 50px;
-        width: 40%;
-        margin-bottom: 30px;
-        border-radius: 5px;
-        margin-top: 20px;
-      }
-      #filter_region {
-        /* border: 1px solid green; */
-        margin-left: 10%;
-        height: 50px;
-        width: 40%;
-        margin-bottom: 30px;
-        border-radius: 5px;
-        margin-top: 20px;
-      }
-      .img_divv {
-        /* border: 1px solid green; */
-        width: 90%;
-        margin: auto;
-        overflow: hidden;
-      }
-      h1 {
-        text-align: center;
-      }
-      .img_divv img {
-        width: 100%;
-        margin: auto;
-        transition: all 0.6s ease-in-out;
-      }
-      .img_divv img:hover {
-        transform: scale(1.2);
-        cursor: pointer;
-      }
-      @media screen and (min-width: 200px) and (max-width: 420px) {
-        #all_countries {
-          display: block;
-        }
-      }
       @media screen and (min-width: 421px) and (max-width: 768px) {
         #all_countries {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
         }
       }
-      input[id="chk"] {
-        border: 50px solid red;
-        /* outline: 2px solid green; */
-        width: 100px;
-        height: 30px;
-        /* accent-color: red; */
+
+      button {
+        margin: 30px;
+      }
+
+      .drawer {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 300px; /* Adjust the width as needed */
+        background-color: white;
+        box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(100%);
+      }
+
+      .drawer.open {
+        transform: translateX(0);
+      }
+
+      .drawer-content {
+        padding: 20px;
       }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
@@ -113,6 +81,25 @@
     <h1>Mens Products Details</h1>
     <div id="all_countries"></div>
 
+    <!-- Drawer -->
+    <div id="drawer" class="drawer">
+      <div class="drawer-content">
+        <h2>Edit Card</h2>
+        <form id="editForm">
+          <label for="editName">Name:</label>
+          <input type="text" id="editName" name="editName" /><br /><br />
+
+          <label for="editAge">Age:</label>
+          <input type="number" id="editAge" name="editAge" /><br /><br />
+
+          <label for="editCity">City:</label>
+          <input type="text" id="editCity" name="editCity" /><br /><br />
+
+          <button id="submitEditBtn" type="button">Submit</button>
+        </form>
+      </div>
+    </div>
+
     <script>
       let arr = [];
 
@@ -121,14 +108,16 @@
           let response = await axios.get("http://localhost:8000/data");
           let value = response.data;
           arr = value;
-          console.log(arr);
+
           displayData(arr);
         } catch (error) {
           console.log(error);
         }
       }
+
       const data = document.getElementById("postDataForm");
       data.addEventListener("submit", postData);
+
       async function postData(event) {
         event.preventDefault(); // Prevent the default form submission
 
@@ -147,6 +136,7 @@
           alert("Error creating post. Please try again.");
         }
       }
+
       const deleteData = async (id) => {
         try {
           const response = await axios.delete(
@@ -154,11 +144,41 @@
           );
           console.log(response.data);
 
-        alert("item deleted")
+          alert("item deleted");
+          getData();
         } catch (error) {
           console.log(error);
         }
       };
+
+      // <----------for getting value in drawer----------->
+      function openDrawer(data) {
+        const drawer = document.getElementById("drawer");
+        drawer.classList.add("open");
+        const editForm = document.getElementById("editForm");
+        editForm.querySelector("#editName").value = data.name;
+        editForm.querySelector("#editAge").value = data.age;
+        editForm.querySelector("#editCity").value = data.city;
+      }
+
+      const updateData = async (id) => {
+        try {
+          let editForm = document.getElementById("editForm");
+          let newData = {
+            name: editForm.querySelector("#editName").value,
+            age: editForm.querySelector("#editAge").value,
+            city: editForm.querySelector("#editCity").value,
+          };
+          const response = await axios.patch(
+            `http://localhost:8000/data/${id}`,
+            newData
+          );
+        } catch (error) {
+          console.log(error);
+        }
+      };
+      
+      let submitEditBtn = document.getElementById("submitEditBtn");
 
       function displayData(data) {
         document.querySelector("#all_countries").innerHTML = "";
@@ -173,10 +193,19 @@
           city.innerText = "Rating" + " :" + element.city;
           let btn = document.createElement("button");
           btn.innerText = "delete";
-          btn.addEventListener("click",()=>{
-            deleteData(element.id)
-          })
-          div.append(name, age, city,btn);
+          btn.addEventListener("click", () => {
+            deleteData(element.id);
+          });
+          let edit = document.createElement("button");
+          edit.innerText = "edit";
+
+          edit.addEventListener("click", () => {
+            openDrawer(element);
+            submitEditBtn.addEventListener("click", () => {
+              updateData(element.id);
+            });
+          });
+          div.append(name, age, city, btn, edit);
           document.querySelector("#all_countries").append(div);
         });
       }
