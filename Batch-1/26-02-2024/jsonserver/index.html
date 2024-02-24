@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #all_countries {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        column-gap: 20px;
+        row-gap: 30px;
+        width: 90%;
+        border: 0px solid green;
+        margin: auto;
+        padding: 10px;
+      }
+      /* #all_countries > div > img {
+        width: 50%;
+
+        padding: 15px;
+      } */
+      #all_countries > div {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 15px;
+
+        font-weight: bold;
+        transition: all 0.8s ease-in-out;
+      }
+      /* #all_countries div:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+      } */
+      h3,
+      p {
+        margin-left: 20px;
+      }
+
+      #sort_population {
+        /* border: 1px solid green; */
+        margin-left: 5%;
+        height: 50px;
+        width: 40%;
+        margin-bottom: 30px;
+        border-radius: 5px;
+        margin-top: 20px;
+      }
+      #filter_region {
+        /* border: 1px solid green; */
+        margin-left: 10%;
+        height: 50px;
+        width: 40%;
+        margin-bottom: 30px;
+        border-radius: 5px;
+        margin-top: 20px;
+      }
+      .img_divv {
+        /* border: 1px solid green; */
+        width: 90%;
+        margin: auto;
+        overflow: hidden;
+      }
+      h1 {
+        text-align: center;
+      }
+      .img_divv img {
+        width: 100%;
+        margin: auto;
+        transition: all 0.6s ease-in-out;
+      }
+      .img_divv img:hover {
+        transform: scale(1.2);
+        cursor: pointer;
+      }
+      @media screen and (min-width: 200px) and (max-width: 420px) {
+        #all_countries {
+          display: block;
+        }
+      }
+      @media screen and (min-width: 421px) and (max-width: 768px) {
+        #all_countries {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      input[id="chk"] {
+        border: 50px solid red;
+        /* outline: 2px solid green; */
+        width: 100px;
+        height: 30px;
+        /* accent-color: red; */
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
+  </head>
+  <body>
+    <form id="postDataForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" /><br /><br />
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" /><br /><br />
+
+      <label for="city">City:</label>
+      <input type="text" id="city" name="city" /><br /><br />
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <h1>Mens Products Details</h1>
+    <div id="all_countries"></div>
+
+    <script>
+      let arr = [];
+
+      async function getData() {
+        try {
+          let response = await axios.get("http://localhost:8000/data");
+          let value = response.data;
+          arr = value;
+          console.log(arr);
+          displayData(arr);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+      const data = document.getElementById("postDataForm");
+      data.addEventListener("submit", postData);
+      async function postData(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        let obj = {
+          name: document.getElementById("name").value,
+          age: document.getElementById("age").value,
+          city: document.getElementById("city").value,
+        };
+
+        try {
+          const response = await axios.post("http://localhost:8000/data", obj);
+          console.log(response.data);
+          alert("Post created successfully!");
+        } catch (error) {
+          console.error("Error:", error);
+          alert("Error creating post. Please try again.");
+        }
+      }
+      const deleteData = async (id) => {
+        try {
+          const response = await axios.delete(
+            `http://localhost:8000/data/${id}`
+          );
+          console.log(response.data);
+
+        alert("item deleted")
+        } catch (error) {
+          console.log(error);
+        }
+      };
+
+      function displayData(data) {
+        document.querySelector("#all_countries").innerHTML = "";
+        data.map(function (element) {
+          let div = document.createElement("div");
+
+          let name = document.createElement("h3");
+          name.innerText = element.name;
+          let age = document.createElement("p");
+          age.innerText = "Price" + " :" + element.age;
+          let city = document.createElement("p");
+          city.innerText = "Rating" + " :" + element.city;
+          let btn = document.createElement("button");
+          btn.innerText = "delete";
+          btn.addEventListener("click",()=>{
+            deleteData(element.id)
+          })
+          div.append(name, age, city,btn);
+          document.querySelector("#all_countries").append(div);
+        });
+      }
+
+      displayData(arr);
+      getData();
+    </script>
+  </body>
+</html>

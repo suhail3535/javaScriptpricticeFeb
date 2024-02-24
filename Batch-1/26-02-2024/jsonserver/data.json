@@ -1,0 +1,28 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "age": 30,
+      "city": "New York"
+    },
+    {
+      "id": 2,
+      "name": "Alice Smith",
+      "age": 25,
+      "city": "Los Angeles"
+    },
+    {
+      "id": 3,
+      "name": "Bob Johnson",
+      "age": 35,
+      "city": "Chicago"
+    },
+    {
+      "id": 4,
+      "name": "Emily Brown",
+      "age": 28,
+      "city": "San Francisco"
+    }
+  ]
+}
