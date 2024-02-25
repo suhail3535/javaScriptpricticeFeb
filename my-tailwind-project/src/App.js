@@ -10,6 +10,7 @@ import GitHubCommitHistory from './component/items/Cal'
 import { Card } from './Card'
 import JoinOurTeam from './Form'
 import Item from './component/items/Item'
+import Temp from './views/Temp'
 // import axios from 'axios'
 const App = () => {
   const [item, setItem] = useState([])
@@ -53,16 +54,7 @@ const App = () => {
         <JoinOurTeam />
       </ChakraProvider> */}
       {/* <Item /> */}
-<div style={{display:"grid",gridTemplateColumns:"repeat(5,1fr)",gap:"20px"}}>
-      {item.map((ele) => {
-        return <div style={{border:"2px solid green",padding:"20px"}}>
-          <p>{ele.userId}</p>
-          <p>{ele.id}</p>
-          <p>{ele.title}</p>
-          <p>{ele.completed}</p>
-        </div>
-      })}
-      </div>
+      <Temp />
     </div>
   )
 }
