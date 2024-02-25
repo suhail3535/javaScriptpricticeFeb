@@ -41,6 +41,7 @@ const Item = () => {
         <div>
         </div>
       )} */}
+
       <Example products={data} />
     </>
   );
