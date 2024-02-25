@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -12,9 +13,11 @@ const Navbar = () => {
           />
         </div>
         <div className="w-2/6 sm:flex hidden justify-between">
-          <a className="hover:text-cyan-300" href="">
-            Home
-          </a>
+          <Link to="/item">
+            <a className="hover:text-cyan-300" href="">
+              Home
+            </a>{" "}
+          </Link>
           <a className="hover:text-cyan-300" href="">
             About
           </a>
