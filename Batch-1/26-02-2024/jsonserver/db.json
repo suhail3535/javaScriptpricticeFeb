@@ -8,15 +8,15 @@
     },
     {
       "id": "fc0g",
-      "name": "Java",
-      "age": "45",
-      "city": "hyderabad"
+      "name": "Java learn",
+      "age": "459",
+      "city": "hyderabad city"
     },
     {
       "id": "fc0h",
-      "name": "JavaScript",
-      "age": "35",
-      "city": "kolkata city"
+      "name": "Java learn",
+      "age": "459",
+      "city": "hyderabad city"
     },
     {
       "id": "fc0i",
@@ -80,15 +80,35 @@
     },
     {
       "id": "fc0s",
-      "name": "Rust",
-      "age": "26",
-      "city": "bangalore"
+      "name": "Rust API",
+      "age": "90",
+      "city": "bangalore city"
     },
     {
       "id": "fc0t",
       "name": "Scala",
-      "age": "36",
+      "age": "360",
       "city": "chennai"
+    },
+    {
+      "id": "b61a",
+      "name": "suhail",
+      "age": "23",
+      "city": "Jaipur"
+    },
+    {
+      "id": "e915",
+      "name": "Mahamantri",
+      "age": "50",
+      "city": "Jaipur city",
+      "url": ""
+    },
+    {
+      "id": "89bc",
+      "name": "mahamantri2",
+      "age": "30",
+      "city": "Delhi",
+      "url": "https://img.freepik.com/premium-photo/words-with-contact-us-business-concept-idea_352439-357.jpg?w=740"
     }
   ]
 }
