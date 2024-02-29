@@ -1,0 +1,214 @@
+{
+    "MensData": [
+        {
+            "id": "M2",
+            "category": "Mens",
+            "brand": "Nike",
+            "title": "Men's Air Zoom Pegasus 38 Running Shoes",
+            "discounted_price": 7499,
+            "strike_price": 9999,
+            "discount": "(25% OFF)",
+            "images": [
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg",
+                "https://example.com/image3.jpg"
+            ],
+            "size": [
+                "7",
+                "8",
+                "9",
+                "10",
+                "11",
+                "12"
+            ],
+            "rating": 4.5,
+            "rating_count": 256
+        },
+        {
+            "id": "M3",
+            "category": "Mens",
+            "brand": "Adidas",
+            "title": "Men's Essentials 3-Stripes Regular Fit Fleece Pants",
+            "discounted_price": 2099,
+            "strike_price": 2999,
+            "discount": "(30% OFF)",
+            "images": [
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg",
+                "https://example.com/image3.jpg"
+            ],
+            "size": [
+                "S",
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ],
+            "rating": 4.2,
+            "rating_count": 98
+        },
+        {
+            "id": "M4",
+            "category": "Mens",
+            "brand": "Puma",
+            "title": "Men's Essentials Plus Regular Fit Hooded Sweatshirt",
+            "discounted_price": 1699,
+            "strike_price": 2499,
+            "discount": "(32% OFF)",
+            "images": [
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg",
+                "https://example.com/image3.jpg"
+            ],
+            "size": [
+                "S",
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ],
+            "rating": 4.0,
+            "rating_count": 72
+        },
+        {
+            "id": "M5",
+            "category": "Mens",
+            "brand": "Levi's",
+            "title": "Men's 511 Slim Fit Jeans",
+            "discounted_price": 3199,
+            "strike_price": 3999,
+            "discount": "(20% OFF)",
+            "images": [
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg",
+                "https://example.com/image3.jpg"
+            ],
+            "size": [
+                "28",
+                "30",
+                "32",
+                "34",
+                "36",
+                "38"
+            ],
+            "rating": 4.6,
+            "rating_count": 152
+        },
+        {
+            "id": "M6",
+            "category": "Mens",
+            "brand": "Tommy Hilfiger",
+            "title": "Men's Adaptive Magnetic Long Sleeve Button Shirt",
+            "discounted_price": 4899,
+            "strike_price": 6999,
+            "discount": "(30% OFF)",
+            "images": [
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg",
+                "https://example.com/image3.jpg"
+            ],
+            "size": [
+                "XS",
+                "S",
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ],
+            "rating": 4.8,
+            "rating_count": 87
+        },
+        {
+            "id": "M7",
+            "category": "Mens",
+            "brand": "Under Armour",
+            "title": "Men's UA Tech 2.0 Short Sleeve T-Shirt",
+            "discounted_price": 1999,
+            "strike_price": 2499,
+            "discount": "(20% OFF)",
+            "images": [
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg",
+                "https://example.com/image3.jpg"
+            ],
+            "size": [
+                "S",
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ],
+            "rating": 4.4,
+            "rating_count": 123
+        },
+        {
+            "id": "M8",
+            "category": "Mens",
+            "brand": "H&M",
+            "title": "Men's Skinny Fit Jeans",
+            "discounted_price": 1999,
+            "strike_price": 2499,
+            "discount": "(20% OFF)",
+            "images": [
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg",
+                "https://example.com/image3.jpg"
+            ],
+            "size": [
+                "28",
+                "30",
+                "32",
+                "34",
+                "36",
+                "38"
+            ],
+            "rating": 4.1,
+            "rating_count": 64
+        },
+        {
+            "id": "M9",
+            "category": "Mens",
+            "brand": "Calvin Klein",
+            "title": "Men's Cotton Classics Multipack Briefs",
+            "discounted_price": 1499,
+            "strike_price": 1999,
+            "discount": "(25% OFF)",
+            "images": [
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg",
+                "https://example.com/image3.jpg"
+            ],
+            "size": [
+                "S",
+                "M",
+                "L",
+                "XL"
+            ],
+            "rating": 4.3,
+            "rating_count": 98
+        },
+        {
+            "id": "M10",
+            "category": "Mens",
+            "brand": "Ralph Lauren",
+            "title": "Men's Classic Fit Polo Shirt",
+            "discounted_price": 2999,
+            "strike_price": 3999,
+            "discount": "(25% OFF)",
+            "images": [
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg",
+                "https://example.com/image3.jpg"
+            ],
+            "size": [
+                "S",
+                "M",
+                "L",
+                "XL",
+                "XXL"
+            ],
+            "rating": 4.7,
+            "rating_count": 135
+        }
+    ]
+}
