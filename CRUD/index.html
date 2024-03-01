@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Post And Get Data By Api</title>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            .container {
+                display: flex;
+                justify-content: space-around;
+                width: 90%;
+                margin: 80px auto;
+                gap: 50px;
+            }
+
+            body {
+                background-color: rgba(20, 47, 77, 0.446);
+            }
+            .table {
+                width: 100%;
+                color: white;
+            }
+            table {
+                width: 100%;
+                margin-top: 20px;
+                text-align: center;
+            }
+            thead tr th {
+                padding: 10px;
+                background-color: rgb(19, 16, 16);
+                color: rgb(204, 197, 197);
+            }
+            tr {
+                background-color: whitesmoke;
+                color: black;
+                text-align: center;
+            }
+
+            tr td {
+                padding: 10px;
+            }
+            td button {
+                background-color: rgba(240, 12, 12, 0.665);
+                border: none;
+                padding: 8px;
+                color: rgb(31, 28, 28);
+            }
+            td button:hover {
+                box-shadow: 0px 0px 20px red;
+            }
+            .form {
+                width: 70%;
+                /* height: 70vh; */
+                background: url("https://media.istockphoto.com/id/1337911837/photo/remote-learning-and-online-work-concept-happy-arab-woman-using-laptop-computer-at-cozy-urban.webp?b=1&s=170667a&w=0&k=20&c=-0_72Jo38haFAwcYmUTEMcoiUud8gj7VT8AMb--qwqA=")
+                    no-repeat center;
+                background-size: cover;
+            }
+            form {
+                width: 50%;
+                margin: 80px auto;
+                background: rgba(0, 0, 0, 0.591);
+                padding: 30px;
+                color: white;
+            }
+            input {
+                width: 100%;
+                display: flex;
+                margin: auto;
+                padding: 8px;
+            }
+            button {
+                border: none;
+                display: flex;
+                margin: auto;
+                padding: 9px 15px;
+                background-color: green;
+                border: none;
+                color: white;
+                border-radius: 8px;
+            }
+            button:hover {
+                box-shadow: 0px 0px 20px green;
+                cursor: pointer;
+            }
+
+            @media (max-width: 420px) and (min-width: 220px) {
+                .container {
+                    display: flex;
+                    flex-flow: column-reverse;
+                }
+                .form {
+                    width: 100%;
+                    /* height: 80vh; */
+                }
+                form {
+                    width: 80%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="table">
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Mobile</th>
+                            <th>action</th>
+                            <th>City</th>
+                            <th>State</th>
+                            <th>action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody"></tbody>
+                </table>
+            </div>
+            <div class="form">
+                <!-- <h1>Data Entry</h1> -->
+                <form>
+                    Name :
+                    <input
+                        class="input-icon"
+                        type="text"
+                        id="name"
+                        placeholder="Name" />
+                    <br />
+                    email :
+                    <input type="text" id="email" placeholder="email" /><br />
+                    Mobile :
+                    <input type="number" id="mobile" placeholder="Mobile" />
+                    <br />
+                    City :
+                    <input type="text" id="city" placeholder="City" /><br />
+                    State :
+                    <input type="text" id="state" placeholder="state" /><br />
+
+                    <button id="submit" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            let userId = null; //for edit
+            console.log(userId, "154");
+
+            let url = "http://localhost:8080/data";
+
+            async function PostData() {
+                let obj = {
+                    name: document.getElementById("name").value,
+                    email: document.getElementById("email").value,
+                    mobile: document.getElementById("mobile").value,
+                    city: document.getElementById("city").value,
+                    state: document.getElementById("state").value,
+                };
+
+                try {
+                    let res = await axios.post(url, obj);
+                    alert(`${obj.name} Data Successfully Submited`);
+                } catch (error) {
+                    console.log(error);
+                }
+            }
+            // <--------------for edit--------------->
+            // get value in form input on click edit button
+            function getRowData(data) {
+                userId = data.id;
+                document.getElementById("name").value = data.name;
+                document.getElementById("email").value = data.email;
+                document.getElementById("mobile").value = data.mobile;
+                document.getElementById("city").value = data.city;
+                document.getElementById("state").value = data.state;
+                document.getElementById("submit").innerText = "Save";
+            }
+            async function updateData() {
+                let newdata = {
+                    name: document.getElementById("name").value,
+                    email: document.getElementById("email").value,
+                    mobile: document.getElementById("mobile").value,
+                    city: document.getElementById("city").value,
+                    state: document.getElementById("state").value,
+                };
+
+                try {
+                    let res = await axios.patch(`${url}/${userId}`, newdata);
+                    alert(`${newdata.name} data Successfully Updated`);
+                    console.log(res);
+                } catch (error) {
+                    console.log(error);
+                }
+            }
+
+            let form = document.querySelector("form");
+            form.addEventListener("submit", (event) => {
+                event.preventDefault();
+                if (userId) {
+                    updateData();
+                } else {
+                    PostData();
+                }
+            });
+
+            async function GetData() {
+                try {
+                    let responce = await axios.get(url);
+                    let value = responce.data;
+                    displayData(value);
+                    // console.log(value);
+                } catch (error) {
+                    console.log(error);
+                }
+            }
+            GetData();
+
+            async function DeleteData(id) {
+                try {
+                    let deldata = await axios.delete(`${url}/${id}`);
+                } catch (error) {
+                    console.log(error);
+                }
+            }
+            // this function is only used for get value in form input
+
+            let tbody = document.getElementById("tbody");
+            const displayData = (data1) => {
+                data1.map((item) => {
+                    let tr = document.createElement("tr");
+                    let id1 = document.createElement("td");
+                    id1.innerText = item.id;
+                    id1.classList.add("id");
+                    let name = document.createElement("td");
+                    name.innerText = item.name;
+                    let email = document.createElement("td");
+                    email.innerText = item.email;
+
+                    let mobile = document.createElement("td");
+                    mobile.innerText = item.mobile;
+
+                    let city = document.createElement("td");
+                    city.innerText = item.city;
+
+                    let state = document.createElement("td");
+                    state.innerText = item.state;
+                    let btn = document.createElement("td");
+                    let btnE = document.createElement("td");
+                    let btn1 = document.createElement("button");
+                    btn1.innerText = "delete";
+                    btn1.addEventListener("click", () => {
+                        DeleteData(item.id);
+                    });
+                    btn.append(btn1);
+
+                    let btn2 = document.createElement("button");
+                    btn2.innerText = "Edit";
+                    btn2.style.backgroundColor = "green";
+                    btn2.addEventListener("click", () => {
+                        getRowData(item);
+                    });
+                    btnE.append(btn2);
+                    tr.append(id1, name, email, mobile, city, state, btn, btnE);
+                    tbody.append(tr);
+                });
+            };
+            // displayData();
+        </script>
+    </body>
+</html>
