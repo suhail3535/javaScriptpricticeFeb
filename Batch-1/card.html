@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>all card</h1>
+    <div id="container"></div>
+  </body>
+  <script>
+    let data = [
+      {
+        img: "./image1.jpg",
+        name: "manjeet",
+      },
+      {
+        img: "./image1.jpg",
+        name: "manjeet",
+      },
+      {
+        img: "./image1.jpg",
+        name: "manjeet",
+      },
+    ];
+    function getdata(value) {
+      console.log(value);
+    }
+    getdata(data);
+    let container = document.getElementById("container");
+    function disp(ele) {
+      ele.map((item) => {
+        let div = document.createElement("div");
+        let image=document.createElement("img")
+        image.src=item.img
+        let p = document.createElement("p");
+        p.innerText = item.name;
+        div.append(image,p);
+        container.append(div);
+      });
+    }
+
+    disp(data);
+  </script>
+</html>
