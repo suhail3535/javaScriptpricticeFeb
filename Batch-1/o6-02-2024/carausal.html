@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Card Carousel</title>
+<style>
+  .carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 50%;
+    margin: auto;
+  }
+
+  .carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+
+  .card {
+    flex: 0 0 auto;
+    width: 200px; /* Adjust the width as needed */
+    height: 150px; /* Adjust the height as needed */
+    margin: 0 10px;
+    background: #f0f0f0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .prev-btn,
+  .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .prev-btn {
+    left: 10px;
+  }
+
+  .next-btn {
+    right: 10px;
+  }
+</style>
+</head>
+<body>
+
+<div class="carousel-container">
+  <div class="carousel">
+    <div class="card">Card 1</div>
+    <div class="card">Card 2</div>
+    <div class="card">Card 3</div>
+    <div class="card">Card 4</div>
+    <div class="card">Card 5</div>
+    <div class="card">Card 6</div>
+    <div class="card">Card 7</div>
+    <!-- Add more cards as needed -->
+  </div>
+  <button class="prev-btn">&larr;</button>
+  <button class="next-btn">&rarr;</button>
+</div>
+
+<script>
+  const carousel = document.querySelector('.carousel');
+  const prevBtn = document.querySelector('.prev-btn');
+  const nextBtn = document.querySelector('.next-btn');
+  const cardWidth = document.querySelector('.card').offsetWidth;
+
+  let currentIndex = 0;
+  const totalCards = carousel.children.length;
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % totalCards;
+    updateCarousel();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + totalCards) % totalCards;
+    updateCarousel();
+  });
+
+  function updateCarousel() {
+    const offset = -currentIndex * cardWidth;
+    carousel.style.transform = `translateX(${offset}px)`;
+  }
+</script>
+
+</body>
+</html>
