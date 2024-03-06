@@ -7,6 +7,7 @@ import JoinOurTeam from './views/login/Form'
 import Item from './component/items/Item'
 import { ChakraProvider } from '@chakra-ui/react'
 import MainRoutes from './component/MainRoutes'
+import DataValue from '../../myapp/src/DataValue'
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
         <h2>nike</h2>
       </div> */}
       <MainRoutes />
+      <DataValue />
     </div>
   )
 }
