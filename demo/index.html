@@ -117,18 +117,27 @@
         displayData(filteredData);
       }
 
+
       function handleSort() {
-        let sortOption = document.querySelector("#sort").value;
-        let sortedData;
-        if (sortOption === "LTH") {
-          sortedData = arr.sort((a, b) => a.price - b.price);
-        } else if (sortOption === "HTL") {
-          sortedData = arr.sort((a, b) => b.price - a.price);
-        } else {
-          sortedData = arr;
-        }
-        displayData(sortedData);
-      }
+  let sortOption = document.querySelector("#sort").value;
+
+  if (sortOption === "") {
+    // If no sort option selected, display all data
+    displayData(arr);
+  } else {
+    let sortedData;
+
+    if (sortOption === "LTH") {
+      sortedData = arr.slice().sort((a, b) => a.price - b.price);
+    } else if (sortOption === "HTL") {
+      sortedData = arr.slice().sort((a, b) => b.price - a.price);
+    }
+
+    // Display the sorted data
+    displayData(sortedData);
+  }
+}
+
     </script>
   </body>
 </html>
