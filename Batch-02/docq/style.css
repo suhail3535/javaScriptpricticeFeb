@@ -1,0 +1,362 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.outerConatiner {
+  width: 100%;
+  height: 100vh;
+  /* border: 2px solid red; */
+}
+.top {
+  width: 100%;
+  height: 12%;
+  /* border: 2px solid pink; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+.secondimg {
+  position: relative;
+  right: 10px;
+}
+.menuContainer {
+  /* border: 2px solid teal; */
+}
+.menuContainer ul {
+  display: flex;
+  margin-left: 20px;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+ul li a {
+  text-decoration: none;
+  color: gray;
+  text-decoration-line: line-through;
+}
+.menuContainer ul li {
+  margin-left: 40px;
+}
+.searching input {
+  width: 300px;
+  height: 30px;
+  border-radius: 30px;
+  align-items: center;
+  color: gray;
+  text-decoration: none;
+  padding-left: 15px;
+}
+.hamburgerIcon {
+  display: none;
+}
+/* ----------navbar for mobile screen-------- */
+@media screen and (min-width: 200px) and (max-width: 420px) {
+  .menuContainer {
+    display: none;
+  }
+  ul {
+    display: none;
+  }
+  .searching {
+    display: none;
+  }
+  .hamburgerIcon {
+    display: block;
+  }
+}
+/* ----------navbar for tablet screen-------- */
+@media screen and (min-width: 421px) and (max-width: 768px) {
+  .menuContainer {
+    display: none;
+  }
+  ul {
+    display: none;
+  }
+  .searching {
+    display: block;
+  }
+  .hamburgerIcon {
+    display: block;
+  }
+}
+
+/* main page css */
+
+.bottom {
+  width: 100%;
+  height: 88%;
+  /* border: 2px solid blue; */
+  padding-top: 70px;
+
+  display: flex;
+}
+
+.leftBottom {
+  width: 33%;
+  height: 100%;
+  /* border: 1px solid rgb(0, 255, 98); */
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.middleBottom {
+  width: 33%;
+  height: 100%;
+  /* border: 1px solid pink; */
+}
+
+#leftWave {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+#paraInformation {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #787878;
+}
+#bookappointmentbtn {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  right: 40px;
+  width: 230px;
+  height: 50px;
+border: none;
+  background-color: #5284b5;
+  color: #ffffff;
+}
+.middleBottom {
+  padding-top: 20px;
+  display: flex;
+  padding: 0px;
+  justify-content: center;
+}
+#secimg {
+  position: relative;
+  bottom: 175px;
+  left: 270px;
+}
+
+.rightBottom {
+  width: 33%;
+  height: 100%;
+  /* border: 1px solid rgb(255, 0, 179); */
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.secondwave {
+  margin-top: 40px;
+}
+
+#quatationPara {
+  position: relative;
+  top: 200px;
+  right: 70px;
+}
+
+/* Responsiveness of Main Page */
+/* ----------for mobile screen------ */
+@media screen and (min-width: 200px) and (max-width: 420px) {
+  .bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .leftBottom {
+    width: 95%;
+    height: 100%;
+    /* border: 1px solid rgb(0, 255, 98); */
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .middleBottom {
+    width: 100%;
+    /* height: 100%; */
+    /* border: 1px solid pink; */
+  }
+
+  #leftWave {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  #paraInformation {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #787878;
+  }
+  .book_apt_btn{
+    width: 65%;
+    margin: auto;
+    margin-bottom: 30px;
+    /* border: 2px solid red; */
+  }
+  #bookappointmentbtn {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    margin: auto;
+    height: 50px;
+  right: 0px;
+  border: none;
+
+
+
+    background-color: #5284b5;
+    color: #ffffff;
+  }
+  .middleBottom {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    /* border: 2px solid green; */
+  }
+  #secimg {
+    position: relative;
+    bottom: 175px;
+    left: 270px;
+  }
+
+  .rightBottom {
+    width: 90%;
+    margin: auto;
+    margin-top: 0px;
+    height: 100%;
+    /* border: 1px solid rgb(255, 0, 179); */
+    align-items: center;
+    display: flex;
+    padding-bottom: 50px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .secondwave {
+    margin-top: 40px;
+  }
+
+  #quatationPara {
+    /* position: relative; */
+    top: 20px;
+    padding-bottom: 20px;
+    right: 0px;
+    width: 80%;
+    margin-bottom: 50px;
+    margin: auto;
+    /* border: 1px solid teal; */
+  }
+}
+
+/* -----------for tablet screen------ */
+@media screen and (min-width: 421px) and (max-width: 1024px) {
+  .bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .leftBottom {
+    width: 95%;
+    height: 100%;
+    /* border: 1px solid rgb(0, 255, 98); */
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .middleBottom {
+    width: 100%;
+    /* height: 100%; */
+    /* border: 1px solid pink; */
+  }
+
+  #leftWave {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+#docqheading{
+    font-size: 40px;
+}
+  #paraInformation {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #787878;
+    font-size: 25px;
+  }
+  .book_apt_btn{
+    width: 45%;
+    margin: 40px auto;
+    margin-bottom: 30px;
+    /* border: 2px solid red; */
+  }
+  #bookappointmentbtn {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    margin: auto;
+    height: 50px;
+  right: 0px;
+  border: none;
+
+
+
+    background-color: #5284b5;
+    color: #ffffff;
+  }
+  .middleBottom {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    /* border: 2px solid green; */
+  }
+  #secimg {
+    position: relative;
+    bottom: 0px;
+    left: 0px;
+  }
+
+  .rightBottom {
+    width: 90%;
+    margin: auto;
+    margin-top: 0px;
+    height: 100%;
+    /* border: 1px solid rgb(255, 0, 179); */
+    align-items: center;
+    display: flex;
+    padding-bottom: 50px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .secondwave {
+    margin-top: 40px;
+  }
+
+  #quatationPara {
+    /* position: relative; */
+    top: 20px;
+    padding-bottom: 20px;
+    right: 0px;
+    width: 80%;
+    margin-bottom: 50px;
+    margin: auto;
+    /* border: 1px solid teal; */
+    text-align: justify;
+    font-size: 30px;
+  }
+}

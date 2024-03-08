@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <div class="outerConatiner">
+
+        <!-- Navbar -->
+        <div class="top">
+            <div class="logo">
+                <img src="./companyLogo.png" width="90px" height="90px" />
+                <img id="secondimg" src="./Doc-Q.png" width="60px" height="20px" />
+            </div>
+            <div class="menuContainer">
+                <ul>
+                    <li><a href="./home.html" style="color:#5284B5 ;">Home</a></li>
+                    <li><a href="./services.html">Our Services</a></li>
+                    <li><a href="./findDoctors.html">Find Doctors</a></li>
+                    <li><a href="./register.html">Login\Register</a></li>
+                </ul>
+            </div>
+            <div class="searching">
+                <input placeholder="Searching" />
+            </div>
+
+            <div class="hamburgerIcon">
+
+                <a> <i class="fa fa-bars" style="font-size:18px" onclick="handleMenu()"></i></a>
+                <div id="setIcons">
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Page -->
+        <div class="bottom">
+            <div class="leftBottom">
+                <h1 id="docqheading">
+                    Doc-Q – Where Your<br /> Time Matters as Much<br /> as Your Health
+                </h1>
+                <div id="leftWave">
+                    <img src="./output-onlinepngtools (1) 2.png" width="380px" />
+                </div>
+                <p id="paraInformation">
+                    Break free from waiting for doctor appointments!<br /> Prioritizing your time with swift
+                    consultations,<br /> surgeries, and rapid medical services for a<br />healthier, hassle-free
+                    experience."
+
+                </p>
+                <div  class="book_apt_btn">
+                <button id="bookappointmentbtn">
+                    Book Appointment
+                </button>
+                </div>
+
+            </div>
+            <div class="middleBottom">
+                <div class="leftrightmainContainer">
+
+                    <img id="dtimg" src="./doctorsimage.png" width="380px" />
+                    <img id="secimg" src="./Group 8.png" width="120px" height="120px" />
+
+                </div>
+            </div>
+            <div class="rightBottom">
+                <div class="arcdivstyle">
+                    <img src="./Arc.png" width="120px" height="120px" />
+                </div>
+                <div class="secondwave">
+                    <img src="./output-onlinepngtools 2.png" width="550px" />
+                </div>
+                <p id="quatationPara" style="color: #BBBBBB;">
+                    “A trusted assistance companion for your<br /> health needs. ”
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="indexx.js"></script>
+</body>
+
+</html>
