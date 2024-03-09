@@ -13,7 +13,7 @@
       .container {
         border: 1px solid red;
         width: 95%;
-        /* margin: auto; */
+        margin: auto;
         display: grid;
         /* flex-direction: row-; */
         gap: 20px;
@@ -36,6 +36,19 @@
       .card_6 img{
         width: 100%;
         margin: auto;
+      }
+      @media screen and (min-width:200px) and (max-width:421px) {
+.container{
+    display: block;
+}
+  .card_1 {
+        border: 1px solid green;
+        text-align: center;
+        margin: 10px;
+      }
+      .card_1 img {
+        width: 80%;
+      }
       }
     </style>
   </head>
