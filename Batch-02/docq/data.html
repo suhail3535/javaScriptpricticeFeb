@@ -5,26 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        h1{
-            color: red;
-            padding: 10px;
-        }
+    *body{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+      .container {
+        width: 90%;
+        margin: auto;
+        border: 1px solid red;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+      }
+      .card {
+        border: 1px solid green;
+        text-align: center;
+        width: 20%;
+        padding: 10px;
+      }
+      .card img {
+        width: 40%;
+      }
+      .main_cont{
+        width: 80%;
+        margin: 100px auto;
+        border: 5px solid red;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 10px;
+      }
+      .card1{
+        border: 2px solid black;
+        text-align: center;
+        padding: 10px;
+        width: 28%;
+      }
+      .card1 img{
+        width: 40%;
+      }
     </style>
   </head>
   <body>
-    <h1>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis
-      praesentium ipsa quasi qui eos fugiat cum doloremque, repellat laudantium
-      nobis? Enim, perspiciatis! Sunt natus numquam reprehenderit odio ipsum
-      ducimus a nostrum vero itaque saepe, esse asperiores dignissimos dicta
-      consequuntur placeat architecto enim dolores nam? Eos, odit enim
-      necessitatibus architecto cum iusto nihil illo, consequuntur asperiores
-      ipsam voluptas provident ipsa accusamus ducimus voluptatibus dolores
-      alias, delectus dolore suscipit? Deserunt alias quisquam obcaecati
-      laudantium possimus aspernatur ipsum rerum facere velit eveniet, voluptate
-      magni facilis necessitatibus exercitationem nemo veritatis saepe
-      excepturi. Quaerat perferendis eveniet cupiditate similique? Veniam nam
-      quo possimus, est consequuntur odio.
-    </h1>
+    <div class="container">
+      <div class="card">
+        <img src="./mfSupportImg.webp" alt="" />
+        <h2>Title</h2>
+        <p>price</p>
+        <div><button>Buy Now</button></div>
+      </div>
+      <div class="card">
+        <img src="./mfSupportImg.webp" alt="" />
+        <h2>Title</h2>
+        <p>price</p>
+        <div><button>Buy Now</button></div>
+      </div>
+      <div class="card">
+        <img src="./mfSupportImg.webp" alt="" />
+        <h2>Title</h2>
+        <p>price</p>
+        <div><button>Buy Now</button></div>
+      </div>
+      <div class="card">
+        <img src="./mfSupportImg.webp" alt="" />
+        <h2>Title</h2>
+        <p>price</p>
+        <div><button>Buy Now</button></div>
+      </div>
+    </div>
+
+    <div class="main_cont">
+      <div class="card1">
+        <img src="./Screenshot 2022-10-15 at 12.43.21 PM_770937.png" alt="" />
+        <h1>Lorem ipsum dolor sit.</h1>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores,
+          expedita.
+        </p>
+        <button>Know More...</button>
+      </div>
+            <div class="card1">
+        <img src="./Screenshot 2022-10-15 at 12.43.21 PM_770937.png" alt="" />
+        <h1>Lorem ipsum dolor sit.</h1>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores,
+          expedita.
+        </p>
+        <button>Know More...</button>
+      </div>
+            <div class="card1">
+        <img src="./Screenshot 2022-10-15 at 12.43.21 PM_770937.png" alt="" />
+        <h1>Lorem ipsum dolor sit.</h1>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores,
+          expedita.
+        </p>
+        <button>Know More...</button>
+      </div>
+    </div>
   </body>
 </html>
