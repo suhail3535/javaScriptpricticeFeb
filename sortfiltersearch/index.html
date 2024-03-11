@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <style>
+      #container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+        /* background-color: rgb(195, 236, 238); */
+      }
+      div {
+        /* border: 2px solid gray; */
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+          rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+        text-align: center;
+        padding: 20px;
+      }
+      #filter_div {
+        padding: 10px;
+        display: flex;
+        gap: 60px;
+        flex-direction: column;
+        /* justify-content: space-evenly; */
+        margin-bottom: 10px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+          rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+          rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+          background-color: black;
+          /* height: 300px; */
+      }
+      #filter {
+        /* width: 400px; */
+        border-radius: 5px;
+        cursor: pointer;
+        height: 30px;
+      }
+      #search {
+        /* width: ; */
+        border-radius: 5px;
+        cursor: pointer;
+        height: 25px;
+      }
+      #sort {
+        height: 30px;
+      }
+      img {
+        width: 100%;
+        border-radius: 5px;
+      }
+      .main {
+        display: flex;
+        justify-content: space-between;
+        /* border: 2px solid red; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div id="filter_div">
+        <select id="filter">
+          <option value="">Filter By Category</option>
+          <option value="Blush">Blush</option>
+          <option value="Bronzer">Bronzer</option>
+          <option value="alpha">alpha</option>
+          <option value="lipstic">lipstic</option>
+        </select>
+        <input type="text" id="search" placeholder="Search..." />
+        <select id="sort">
+          <option value="">Sort by Price</option>
+          <option value="LTH">Low to High</option>
+          <option value="HTL">High to Low</option>
+        </select>
+      </div>
+
+      <div id="container"></div>
+    </div>
+    <script>
+      let arr;
+
+      async function getValue() {
+        try {
+          let res = await axios.get(
+            "https://helpful-gray-rooster.cyclic.app/makeup"
+          );
+          arr = res.data;
+          displayData(arr);
+          console.log(arr);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+
+      getValue();
+
+      let container = document.getElementById("container");
+
+      function displayData(data) {
+        container.innerHTML = ""; // Clear previous items
+        data.forEach((item) => {
+          let div = document.createElement("div");
+          let img = document.createElement("img");
+          img.src = item.image;
+          let title = document.createElement("p");
+          title.innerText = item.name;
+          let price = document.createElement("p");
+          price.innerText = item.price;
+
+          let category = document.createElement("p");
+          category.innerText = "Category :-" + item.category;
+          let rating = document.createElement("p");
+          rating.innerText = "Rating:-" + item.rating;
+          div.append(img, title, price, category, rating);
+          container.append(div);
+        });
+      }
+
+      let filterValue = document.querySelector("#filter");
+      filterValue.addEventListener("change", handleFilter);
+
+      let searchInput = document.querySelector("#search");
+      searchInput.addEventListener("input", handleSearch);
+
+      let sortValue = document.querySelector("#sort");
+      sortValue.addEventListener("change", handleSort);
+
+      function handleFilter() {
+        let optionValue = document.querySelector("#filter").value;
+        let finalFilterValue;
+        if (optionValue == "") {
+          displayData(arr);
+        } else {
+          finalFilterValue = arr.filter(function (ele) {
+            return ele.category == optionValue;
+          });
+          displayData(finalFilterValue);
+        }
+      }
+
+      function handleSearch() {
+        let searchQuery = document.querySelector("#search").value.toLowerCase();
+        let filteredData = arr.filter(function (ele) {
+          return ele.name.toLowerCase().includes(searchQuery);
+        });
+        displayData(filteredData);
+      }
+
+      function handleSort() {
+        let sortOption = document.querySelector("#sort").value;
+
+        if (sortOption === "") {
+          // If no sort option selected, display all data
+          displayData(arr);
+        } else {
+          let sortedData;
+
+          if (sortOption === "LTH") {
+            sortedData = arr.slice().sort((a, b) => a.price - b.price);
+          } else if (sortOption === "HTL") {
+            sortedData = arr.slice().sort((a, b) => b.price - a.price);
+          }
+
+          // Display the sorted data
+          displayData(sortedData);
+        }
+      }
+    </script>
+  </body>
+</html>

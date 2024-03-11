@@ -20,17 +20,17 @@ const App = () => {
   console.log(value);
 
   return (
-    <div>
-      <h1>data</h1>
+    <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr"}}>
+    
       {value.map((ele) => (
         <div key={ele.id}>
-          <img src={ele.category.image} alt="" />
+          <img style={{width:"50%"}} src={ele.category.image} alt="" />
           <p>{ele.category.name}</p>
           <h1>{ele.title}</h1>
           <h1>{ele.price}</h1>
 
 
-          
+
 
         </div>
       ))}
