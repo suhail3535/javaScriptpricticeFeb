@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+      #filder_div {
+        border: 1px solid gray;
+        background-color: antiquewhite;
+        padding: 20px;
+        display: flex;
+        justify-content: space-evenly;
+      }
+      select {
+        width: 400px;
+
+        height: 40px;
+      }
+      select option {
+        color: red;
+        /* padding: 10px; */
+        margin: 10px;
+      }
+      #container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+      }
+      div img {
+        width: 40%;
+      }
+      div {
+        border: 1px solid gray;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="filder_div">
+      <select name="" id="filter">
+        <option value="">Select by category</option>
+        <option value="men's clothing">Men</option>
+        <option value="women's clothing">Women</option>
+        <option value="jewelery">Jewelery</option>
+      </select>
+      <select name="" id="sort">
+        <option value="">Sort by price</option>
+        <option value="LTH">LTH</option>
+        <option value="HTL">HTL</option>
+      </select>
+    </div>
+
+    <div id="container"></div>
+  </body>
+<script>
+    let arr;
+    async function getValue() {
+        try {
+            let res = await axios.get("https://api.escuelajs.co/api/v1/products");
+            arr = res.data;
+            console.log(arr);
+            displayData(arr);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    getValue();
+    let container = document.getElementById("container");
+
+    function displayData(item) {
+        container.innerHTML = "";
+        item.forEach((ele) => {
+            let div = document.createElement("div");
+            let image = document.createElement("img");
+
+            // Handle multiple images
+            ele.images.forEach((imgUrl) => {
+                JSON.parse(imgUrl).forEach((url) => {
+                    let img = document.createElement("img");
+                    img.src = url;
+                    img.style.width = "100%";
+                    div.appendChild(img);
+                });
+            });
+
+            let title = document.createElement("h3");
+            title.innerText = ele.title;
+            let price = document.createElement("h6");
+            price.innerText = ele.price;
+            let category = document.createElement("h3");
+            category.innerText = ele.category.name;
+            div.append(title, price, category);
+            container.append(div);
+        });
+    }
+</script>
+
+</html>

@@ -1,24 +1,41 @@
-import React, { useState } from 'react';
-import './App.css'; // Import your CSS file
-import { CiHeart } from "react-icons/ci";
-import DataValue from './DataValue';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
-function App () {
-  const [clicked, setClicked] = useState(false);
+const App = () => {
+  const [value, setValue] = useState([]);
 
-  const handleClick = () => {
-    setClicked(!clicked);
-  };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios.get("https://api.escuelajs.co/api/v1/products");
+        setValue(res.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  console.log(value);
 
   return (
     <div>
-      <h1>hello from React</h1>
-      {/* <div className='heartdiv'>
-        <CiHeart className={`heart ${clicked ? 'redd' : ''}`} onClick={handleClick} />
-      </div> */}
-      <DataValue />
+      <h1>data</h1>
+      {value.map((ele) => (
+        <div key={ele.id}>
+          <img src={ele.category.image} alt="" />
+          <p>{ele.category.name}</p>
+          <h1>{ele.title}</h1>
+          <h1>{ele.price}</h1>
+
+
+          
+
+        </div>
+      ))}
     </div>
   );
-}
+};
 
 export default App;
