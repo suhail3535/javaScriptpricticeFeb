@@ -34,13 +34,4 @@ let arr = [
 // let newdata=arr[0]
 // console.log(newdata.name,newdata.age);
 // console.log(arr[0].name)
-function value () {
-    let persionInfo = {
-        name: "madan lal",
-        age: 29,
-        mobile: 999999999,
-        post: "SP"
-    }
-    console.log(persionInfo)
-}
-value()
+

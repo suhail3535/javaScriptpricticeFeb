@@ -29,8 +29,8 @@
         box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
           rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
           rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-          background-color: black;
-          /* height: 300px; */
+        background-color: black;
+        /* height: 300px; */
       }
       #filter {
         /* width: 400px; */
@@ -56,6 +56,9 @@
         justify-content: space-between;
         /* border: 2px solid red; */
       }
+      button {
+        background-color: cadetblue;
+      }
     </style>
   </head>
   <body>
@@ -74,6 +77,8 @@
           <option value="LTH">Low to High</option>
           <option value="HTL">High to Low</option>
         </select>
+
+        <button><a href="./cart.html"> 🛒<span id="spanv">0</span></a> </button>
       </div>
 
       <div id="container"></div>
@@ -95,7 +100,9 @@
       }
 
       getValue();
-
+      let allData = JSON.parse(localStorage.getItem("Cart")) || [];
+      let spanv = document.getElementById("spanv");
+      spanv.innerText = allData.length;
       let container = document.getElementById("container");
 
       function displayData(data) {
@@ -113,7 +120,13 @@
           category.innerText = "Category :-" + item.category;
           let rating = document.createElement("p");
           rating.innerText = "Rating:-" + item.rating;
-          div.append(img, title, price, category, rating);
+          let btn = document.createElement("button");
+          btn.innerText = "Add to Cart";
+          btn.addEventListener("click", () => {
+            addData("Cart", item);
+            alert("data Add to Fav");
+          });
+          div.append(img, title, price, category, rating, btn);
           container.append(div);
         });
       }
@@ -140,8 +153,14 @@
         }
       }
 
+      function addData(key, value) {
+        let newData = JSON.parse(localStorage.getItem(key)) || [];
+        newData.push(value);
+        localStorage.setItem(key, JSON.stringify(newData));
+      }
       function handleSearch() {
-        let searchQuery = document.querySelector("#search").value.toLowerCase();
+        let searchQuery = document.querySelector("#search").value;
+
         let filteredData = arr.filter(function (ele) {
           return ele.name.toLowerCase().includes(searchQuery);
         });
