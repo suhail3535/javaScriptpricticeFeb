@@ -35,3 +35,24 @@ let arr = [
 // console.log(newdata.name,newdata.age);
 // console.log(arr[0].name)
 
+
+// <---------------Function---------
+let m = 20
+
+
+// let data=[1,2,4,]
+function chunnu (a, b) {
+    let data = 200
+    data=400
+    console.log(data);
+    console.log("data1");
+    console.log("data2");
+    console.log(data);
+
+    console.log( a+b);
+}
+
+let x=chunnu()
+// console.log(x)
+// <-----------------Fuction-------->
+ 
