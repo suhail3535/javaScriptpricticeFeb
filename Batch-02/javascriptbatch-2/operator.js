@@ -35,3 +35,16 @@
 // console.log(a==10 || b== 30)
 
 
+let a = 5
+let b = 10
+let c;
+c = (a != b && b == 10)&&(b!==a)
+// console.log(c);
+
+
+
+let d = 100//100
+let e=!d//false
+console.log(e==d)
+// true&&true=true
+// true&&false=false
