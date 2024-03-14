@@ -56,12 +56,13 @@
             width: 50%;
         }
 
-        .remove {
+        .remove,.checkout {
             background-color: whitesmoke;
             border: none;
             padding: 10px;
             color: red;
             cursor: pointer;
+            margin: 30px;
         }
     </style>
 </head>
@@ -80,8 +81,10 @@
     function displayData (data) {
         container.innerHTML = "";
         data.forEach((item, index) => {
-        
-            if (!item.price || typeof item.price !== 'number') {
+            if (!item.quantity) {
+                item.quantity = 1; // Set default quantity to 1 if not initialized
+            }
+            if (!item.price) {
                 item.price = 0; // Set default price to 0 if not initialized
             }
 
@@ -98,6 +101,7 @@
                 if (item.quantity > 1) {
                     item.quantity--;
                     button2.innerText = item.quantity;
+
                     updatePrice(index);
                     if (item.quantity === 1) {
                         button1.disabled = true;
@@ -147,7 +151,14 @@
 
                 alert("deleted");
             });
-            div_2.append(title, description, price, category, remove);
+            let checkout = document.createElement("button")
+            checkout.innerText = "checkout"
+            checkout.classList.add("checkout")
+            checkout.addEventListener("click", () => {
+
+                window.location.href="./payment.html"
+            });
+            div_2.append(title, description, price, category, remove, checkout);
             div_2.classList.add("card2");
 
             main_card.append(div_1, div_2);

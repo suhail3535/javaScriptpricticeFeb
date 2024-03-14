@@ -1,8 +1,14 @@
-let a = 1//3
-let b = a++//2
-let c = b++//2
-let d=a++//1
-console.log(a);
-console.log(b);
-console.log(c);
-console.log(d);
+
+let x = 10;
+let y = x++;
+let z = x % 3;
+let a = ++y;
+let b = a - x
+console.log(x)
+console.log(y)
+console.log(z)
+console.log(a)
+console.log(b)
+
+
+
