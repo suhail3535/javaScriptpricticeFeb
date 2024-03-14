@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            nav {
+                display: flex;
+                justify-content: space-between;
+                /* border: 1px solid green; */
+                /* padding: 10px; */
+                background-color: black;
+                color: white;
+                align-items: center;
+                position: sticky;
+                top: 0;
+            }
+            nav img {
+                width: 20%;
+                padding: 5px;
+            }
+            .search_bar {
+                width: 20%;
+                display: flex;
+
+                justify-content: space-evenly;
+            }
+            .search_bar button {
+                width: 20%;
+                padding: 10px;
+                background-color: yellow;
+            }
+            .search_bar input {
+                height: 40px;
+                margin-top: 10px;
+            }
+            .nav_link {
+                display: flex;
+                justify-content: space-between;
+                /* border: 1px solid green; */
+                width: 30%;
+            }
+            a {
+                text-decoration: none;
+                color: white;
+            }
+            .btn_cart {
+                padding: 5px;
+            }
+            #container {
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                gap: 20px;
+            }
+            #container div {
+                text-align: center;
+                padding: 10px;
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            }
+            #container div img {
+                width: 50%;
+            }
+            #cart {
+                color: red;
+                font-weight: bold;
+            }
+            button {
+                background-color: aqua;
+                margin: 10px;
+                padding: 5px;
+                border: none;
+                border-radius: 5px;
+            }
+            button:nth-child(3) {
+                background-color: rgb(255, 0, 25);
+                margin: 10px;
+                padding: 5px;
+                border: none;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <div>
+                <a href="./index.html">
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHQGdaIn7hjn3NWLZximOTni6fG_N6kk9Ban6KhTLtfA&s"
+                        alt=""
+                /></a>
+            </div>
+            <div class="nav_link">
+                <a href="">Home</a>
+                <a href="">About</a>
+                <a href="">Services</a>
+                <a href="">Contact</a>
+            </div>
+            <div class="search_bar">
+                <input type="search" placeholder="Search" />
+                <button class="btn_cart">
+                    <!-- <a link="" id="cart"><a> -->
+                    <a id="cart" href="./cart1.html">🛒:0</a>
+                </button>
+            </div>
+        </nav>
+        <div id="container"></div>
+    </body>
+    <script>
+        let cartValue = JSON.parse(localStorage.getItem("cart")) || [];
+        let container = document.getElementById("container");
+        function displayData(data) {
+            container.innerHTML = "";
+            data.map((item, index) => {
+                let div = document.createElement("div");
+                let category = document.createElement("p");
+                category.innerText = item.category;
+
+                let description = document.createElement("p");
+                description.innerText =
+                    item.description.split(" ").slice(0, 5).join(" ") +
+                    "..............";
+
+                let id = document.createElement("p");
+                id.innerText = item.id;
+
+                let image = document.createElement("img");
+                image.src = item.image;
+
+                let price = document.createElement("p");
+                price.innerText = item.price;
+
+                let rating = document.createElement("p");
+                rating.innerText = item.rating.rate;
+
+                let title = document.createElement("p");
+                title.innerText = item.title;
+
+                let btn = document.createElement("button");
+                btn.innerText = "Checkout";
+                btn.addEventListener("click", () => {
+                window.location.href = "./checkout.html"
+                });
+                let btn2 = document.createElement("button");
+                btn2.innerText = "Remove";
+                btn2.addEventListener("click", () => {
+                    deleteCart(cartValue, index);
+                    updateCartQuantity();
+                    window.location.reload()
+                    alert("deleted");
+                });
+
+                div.append(
+                    id,
+                    image,
+                    description,
+                    category,
+                    price,
+                    rating,
+                    price,
+                    btn,
+                    btn2
+                );
+                container.append(div);
+            });
+        }
+        displayData(cartValue);
+        function updateCartQuantity() {
+            cartData = JSON.parse(localStorage.getItem("cart")) || [];
+            let cart = document.getElementById("cart");
+            cart.innerText = `🛒:${cartData.length}`;
+        }
+        updateCartQuantity();
+        // <----------Delete----->
+        function deleteCart(data, index) {
+            data.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(data));
+        }
+    </script>
+</html>
