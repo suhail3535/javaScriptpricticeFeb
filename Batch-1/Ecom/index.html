@@ -92,7 +92,7 @@
             <div class="search_bar">
                 <input type="search" placeholder="Search" />
                 <button class="btn_cart">
-                    <a id="cart" href="./cart1.html">🛒:0</a>
+                    <a id="cart" href="./cart.html">🛒:0</a>
                 </button>
             </div>
         </nav>
@@ -104,7 +104,7 @@
             async function getValue() {
                 try {
                     let res = await axios.get(
-                        "https://fakestoreapi.com/products"
+                        'https://fakestoreapi.com/products'
                     );
                     arr = res.data;
                     console.log(arr)

@@ -192,7 +192,7 @@
             </a>
         </div>
         <div>
-            <a href="orders.html" id="orders">My Orders</a>
+            <a href="index.html" id="orders">My Orders</a>
         </div>
     </div>
     <div class="product">
@@ -265,6 +265,7 @@
     let nositem = document.getElementById("nos-item");
     let buyBtn = document.getElementById("buy");
     let totalPay = document.getElementById("total-pay");
+    let total = document.getElementById("total");
     displayData(cartData);
 
     function displayData (data) {
@@ -304,10 +305,9 @@
         for (let i = 0; i < cartData.length; i++) {
             sum += cartData[i].price * cartData[i].quantity;
         }
+        totalPay.textContent = sum;
         total.textContent = sum;
-        tax.textContent = Math.floor(sum * 0.1);
-        let taxNum = tax.textContent;
-        totalPay.textContent = (Number(sum) + Number(taxNum)) * 0.7;
+
     }
 
     let formEl = document.querySelector("form");
@@ -315,7 +315,7 @@
     buyBtn.addEventListener("click", () => {
         alert("Order Placed Successfully 🤩");
         setTimeout(() => {
-            location.href = "home.html";
+            location.href = "index.html";
         }, 1000);
         let orderData = cartData.splice(0, cartData.length);
         localStorage.setItem("order", JSON.stringify(orderData));

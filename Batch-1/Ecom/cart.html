@@ -2,341 +2,205 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        body {
-            background-color: #EEEEEE;
-            margin: 0px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-        }
-
-        .nav {
-            position: sticky;
-            top: 0;
-            z-index: 1;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 60px;
-            padding: 0px 30px;
-            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-            background-color: white;
-            /* border: 2px solid green; */
-        }
-
-        .nav>div {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            /* border: 2px solid red; */
-
-        }
-
-        .nav>div:nth-child(1) {
-            width: 40%;
-            font-weight: bold;
-
-        }
-
-        #logo {
-            height: 40px;
-        }
-
-        .nav>div>div {
-            /* border: 1px solid blue; */
-            justify-content: center;
-            align-items: center;
-        }
-
-        .nav a {
-            text-decoration: none;
-            color: black;
-            display: inline-block;
-            text-align: center;
-        }
-
-        .links>a {
-            margin-top: 5px;
-        }
-
-        #orders {
-            font-weight: 500;
-            /* border: 2px solid red; */
-        }
-
-        .fx {
-            display: flex;
-        }
-
-        #free {
-            color: #99cc33;
-        }
-
-        #cart {
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-            /* border: 2px solid blue; */
-            width: 65%;
-            margin-top: 30px;
-        }
-
-        #cart>div {
-            display: flex;
-            justify-content: space-between;
-            margin: 10px;
-            background-color: white;
-            height: 200px;
-
-        }
-
-        #cart>div>div:nth-child(2) {
-            padding: 10px;
-            /* border: 2px solid green; */
-        }
-
-        #cart>div>div:nth-child(2) button {
-            padding: 5px 10px;
-            font-size: 16px;
-            margin-inline: 5px;
-            border: none;
-            border-radius: 5px;
-            background-color: #99cc33;
-        }
-
-        #cart>div>div:nth-child(3) {
-            text-align: right;
-            padding: 20px;
-            /* border: 2px solid green; */
-
-        }
-
-        #cart>div>div:nth-child(3) button {
-            border: none;
-            background-color: transparent;
-        }
-
-        #cart img {
-            height: 100%;
-        }
-
-        .product {
-            display: flex;
-            width: 85%;
+        #container {
+            /* border: 1px solid green; */
+            width: 70%;
             margin: auto;
-            /* border: 2px solid red; */
-        }
-
-        #price {
-            width: 35%;
-            padding: 20px 50px;
-            background-color: white;
-        }
-
-        #price img {
-            width: 50px;
-        }
-
-        #price>div>div p {
-            margin: 0px;
-        }
-
-        #price>button {
-            width: 100%;
-            font-weight: bold;
-            color: white;
-            background-color: #d3145a;
-            border: none;
-            border-radius: 5px;
-            padding: 10px;
-            font-size: 20px;
-        }
-
-        #add-btn {
-            width: 80px;
-            height: 40px;
-            padding: 5px 10px;
-            background-color: #d3145a;
-            border: none;
-            border-radius: 5px;
-            color: white;
-            font-weight: bold;
-
-        }
-
-        .jcsb {
+            padding: 20px;
+            /* display: flex; */
             justify-content: space-between;
-            align-items: center;
+            /* flex-direction: column; */
         }
 
-        #large-font,
-        .amount {
-            font-size: 20px;
+        .main_card {
+            /* border: 1px solid yellow; */
+
+            display: flex;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            justify-content: space-around;
+            width: 90%;
+            margin: 20px auto;
+        }
+
+        .card1 {
+            /* border: 1px solid red; */
+            padding: 20px;
+            text-align: center;
+            width: 40%;
+        }
+
+        .card2 {
+            /* border: 1px solid rgb(0, 242, 255); */
+            padding: 20px;
+            width: 60%;
+
+        }
+
+        #qty_btn {
+            width: 80%;
+            margin: auto;
+            /* border: 1px solid gray; */
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #qty_btn button {
+            padding: 10px;
+        }
+
+        .card1 img {
+            width: 50%;
+        }
+
+        .remove,
+        .checkout {
+            background-color: whitesmoke;
+            border: none;
+            padding: 10px;
+            color: red;
+            cursor: pointer;
+            margin: 30px;
         }
     </style>
 </head>
 
 <body>
-    <div class="nav">
-        <div class="links">
-            <a href="home.html">
-                <img src="images/logo.png" id="logo" alt="">
-            </a>
-        </div>
-        <div>
-            <a href="orders.html" id="orders">My Orders</a>
-        </div>
+    <h1 id="total">0</h1>
+    <div id="container">
+
     </div>
-    <!-- <div>
-        <img src="" alt="">
-    </div>
-    <div>
-        name
-        brand
-        size
-        quantity (select tag)
-    </div>
-    <div>
-        remove X
-        price (h3)  mrp (h4)
-        free shipping (p)
-    </div> -->
-    <div class="product">
-        <div id="cart"></div>
-        <div id="price">
-            <div class="fx jcsb">
-                <img src="https://img0.junaroad.com/images/icons/coupon_icon_v2.png" alt="">
-                <div>
-                    <p id="coupon1">APPLY COUPON CODE</p>
-                    <p id="coupon2">1 Coupon Available</p>
-                </div>
-                <button id="add-btn">+ ADD</button>
-            </div>
-            <p id="large-font">SUMMARY</p>
-            <div class="fx jcsb">
-                <p>Total Price</p>
-                <p>₹<span id="total">0</span></p>
-            </div>
-            <div class="fx jcsb">
-                <p>Shipping Charges</p>
-                <p id="free">FREE</p>
-            </div>
-            <div class="fx jcsb">
-                <p>Applicable Tax And Charges</p>
-                <p>+ ₹<span id="tax">0</span></p>
-            </div>
-            <div class="fx amount jcsb">
-                <p>Amount Payable</p>
-                <p>₹<span id="total-pay">0</span></p>
-            </div>
-            <button id="buy">BUY NOW</button>
-        </div>
-    </div>
+
 </body>
+
+
 <script>
-    let cartData = JSON.parse(localStorage.getItem("cart")) || [];
+    let total=document.getElementById("total")
     let cartValue = JSON.parse(localStorage.getItem("cart")) || [];
+    let container = document.getElementById("container");
 
-
-    let cartEl = document.querySelector("#cart");
-    let total = document.getElementById("total");
-    let tax = document.getElementById("tax");
-    let totalPay = document.getElementById("total-pay");
-    let buyBtn = document.getElementById("buy");
-    let coupon = document.getElementById("add-btn");
-    let coupon1 = document.getElementById("coupon1");
-    let coupon2 = document.getElementById("coupon2");
-
-    displayData(cartData);
     function displayData (data) {
-        cartEl.innerHTML = "";
-        data.forEach((ele, ind) => {
-            let card = document.createElement("div");
-            let div1 = document.createElement("div");
+        let quantity;
+        container.innerHTML = "";
+        data.forEach((item, index) => {
+            if (!item.quantity) {
+                item.quantity = 1; // Set default quantity to 1 if not initialized
+            }
+
+            let main_card = document.createElement("div");
+            // <----------part1------->
+            let div_1 = document.createElement("div");
             let image = document.createElement("img");
-            let div2 = document.createElement("div");
-            let name = document.createElement("p");
-            let brand = document.createElement("p");
-            let size = document.createElement("p");
-            let Increment = document.createElement("button");
-            let quantity = document.createElement("span");
-            let Decrement = document.createElement("button");
-            let div3 = document.createElement("div");
-            let remove = document.createElement("button");
-            let price = document.createElement("p");
-            let fs = document.createElement("p");
+            image.src = item.image;
 
-            image.src = ele.image;
-            div1.append(image);
-            name.textContent = ele.name;
-            brand.textContent = `by ${ele.brand}`;
-            // size.textContent = `size : ${ele.size}`;
-            size.textContent = "size : unisize";
-            Increment.textContent = "+";
-            quantity.textContent = ele.quantity;
-            Decrement.textContent = "-";
-            div2.append(name, brand, size, Increment, quantity, Decrement);
-            remove.textContent = "❌";
-            price.textContent = `₹${ele.price}`;
-            fs.textContent = "free shipping";
-            div3.append(remove, price, fs);
-            card.append(div1, div2, div3);
-            cartEl.append(card);
-
-            Increment.addEventListener("click", () => {
-                ele = ele.quantity++;
-                localStorage.setItem("cart", JSON.stringify(cartData));
-                displayData(cartData);
-            });
-
-            Decrement.addEventListener("click", () => {
-                if (ele.quantity > 1) {
-                    ele = ele.quantity--;
-                    localStorage.setItem("cart", JSON.stringify(cartData));
-                    displayData(cartData);
+            let btn_div = document.createElement("div");
+            let button1 = document.createElement("button");
+            button1.innerText = "-";
+            button1.addEventListener("click", () => {
+                if (item.quantity > 1) {
+                    item.quantity--;
+                       if (item.quantity === 1) {
+                             button1.disabled = true;
+                          }
+                    button2.innerText = item.quantity;
+                    localStorage.setItem("cart", JSON.stringify(cartValue));
+                    displayData(cartValue);
                 }
+                button1.disabled = true;
             });
 
-            remove.addEventListener("click", () => {
-                data.splice(ind, 1);
-                localStorage.setItem("cart", JSON.stringify(cartData));
-                displayData(data);
+            let button2 = document.createElement("button");
+            button2.innerText = item.quantity;
+
+            let button3 = document.createElement("button");
+            button3.innerText = "+";
+
+            button3.addEventListener("click", () => {
+                item.quantity++;
+                button2.innerText = item.quantity;
+                updatePrice(price, item);
+
+                localStorage.setItem("cart", JSON.stringify(cartValue));
+                displayData(cartValue);
             });
+
+
+
+
+
+
+
+            btn_div.append(button1, button2, button3);
+            div_1.append(image, btn_div);
+            div_1.classList.add("card1");
+
+            // <-------------part2------------>
+            let div_2 = document.createElement("div");
+
+            let title = document.createElement("p");
+            title.innerText = item.title;
+
+            let description = document.createElement("p");
+            description.innerText =
+                item.description.split(" ").slice(0, 5).join(" ") +
+                "..............";
+
+            let category = document.createElement("p");
+            category.innerText = item.category;
+
+            let price = document.createElement("p");
+
+            price.innerText = "price:- $" + (item.price * item.quantity);
+            let remove = document.createElement("button")
+            remove.innerText = "Remove"
+            remove.classList.add("remove")
+            remove.addEventListener("click", () => {
+                deleteCart(cartValue, index);
+
+                alert("deleted");
+            });
+            let checkout = document.createElement("button")
+            checkout.innerText = "checkout"
+            checkout.classList.add("checkout")
+            checkout.addEventListener("click", () => {
+
+                window.location.href = "./payment.html"
+            });
+            div_2.append(title, description, price, category, remove, checkout);
+            div_2.classList.add("card2");
+
+            main_card.append(div_1, div_2);
+            main_card.classList.add("main_card");
+            container.append(main_card);
         });
 
+
         let sum = 0;
-        for (let i = 0; i < cartData.length; i++) {
-            sum += cartData[i].price * cartData[i].quantity;
+        for (let i = 0; i < cartValue.length; i++) {
+            sum += cartValue[i].price * cartValue[i].quantity;
         }
-        total.textContent = sum;
-        tax.textContent = Math.floor(sum * 0.1);
-        let taxNum = tax.textContent;
-        totalPay.textContent = Number(sum) + Number(taxNum);
+        total.innerText = sum;
+
+
+
+
     }
 
+    displayData(cartValue);
 
+    function updatePrice (element, item) {
+        element.innerText = "price:- $" + (item.price * item.quantity);
+    }
 
-
-
-    let couponApplied = false;
-    coupon.addEventListener("click", () => {
-        if (couponApplied == false) {
-            couponApplied = true;
-            totalPay.textContent = Math.floor(Number(totalPay.textContent * .7));
-            coupon1.textContent = "Coupon Applied !"
-            coupon2.innerHTML = "";
-        }
-    });
-
-    buyBtn.addEventListener("click", () => {
-        localStorage.setItem("cart", JSON.stringify(cartData));
-        location.href = "payment.html";
-    });
-
-
-
+    // <----------Delete----->
+    function deleteCart (data, index) {
+        data.splice(index, 1);
+        localStorage.setItem("cart", JSON.stringify(data));
+        displayData(data); // Update the display after deleting
+    }
 </script>
 
 </html>
