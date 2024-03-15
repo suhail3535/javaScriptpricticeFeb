@@ -87,7 +87,9 @@
         container.innerHTML = "";
         data.forEach((item, index) => {
             if (!item.quantity) {
-                item.quantity = 1; // Set default quantity to 1 if not initialized
+                item.quantity = 0; // Set default quantity to 1 if not initialized
+            }else{
+                item.quantity=1
             }
 
             let main_card = document.createElement("div");

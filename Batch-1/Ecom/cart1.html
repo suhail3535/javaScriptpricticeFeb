@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -71,118 +69,108 @@
 </head>
 
 <body>
-    <div id="container">
+    <!-- <h1 id="total">0</h1> -->
+    <div id="container"></div>
 
+    <script>
+        let total = document.getElementById("total");
+        let cartValue = JSON.parse(localStorage.getItem("cart")) || [];
+        let container = document.getElementById("container");
 
-</body>
+        function displayData (data) {
+            container.innerHTML = "";
+            data.forEach((item, index) => {
+                if (!item.quantity || item.quantity < 1) {
+                    item.quantity = 1;
+                }
 
+                let main_card = document.createElement("div");
+                let div_1 = document.createElement("div");
+                let image = document.createElement("img");
+                image.src = item.image;
 
-<script>
-    let cartValue = JSON.parse(localStorage.getItem("cart")) || [];
-    let container = document.getElementById("container");
+                let btn_div = document.createElement("div");
+                let button1 = document.createElement("button");
+                button1.innerText = "-";
+                button1.addEventListener("click", () => {
+                    if (item.quantity > 1) {
+                        item.quantity--;
+                        if (item.quantity === 1) {
+                            button1.disabled = true;
+                        }
+                        button2.innerText = item.quantity;
 
-    function displayData (data) {
-        container.innerHTML = "";
-        data.forEach((item, index) => {
-            if (!item.quantity) {
-                item.quantity = 1; // Set default quantity to 1 if not initialized
-            }
-            if (!item.price) {
-                item.price = 0; // Set default price to 0 if not initialized
-            }
+                        displayData(cartValue);
 
-            let main_card = document.createElement("div");
-            // <----------part1------->
-            let div_1 = document.createElement("div");
-            let image = document.createElement("img");
-            image.src = item.image;
+                    }
+                });
 
-            let btn_div = document.createElement("div");
-            let button1 = document.createElement("button");
-            button1.innerText = "-";
-            button1.addEventListener("click", () => {
-                if (item.quantity > 1) {
-                    item.quantity--;
+                let button2 = document.createElement("button");
+                button2.innerText = item.quantity;
+
+                let button3 = document.createElement("button");
+                button3.innerText = "+";
+                button3.addEventListener("click", () => {
+                    item.quantity++;
                     button2.innerText = item.quantity;
 
-                    updatePrice(price, item);
+                    displayData(cartValue);
 
-                    if (item.quantity === 1) {
-                        button1.disabled = true;
-                    }
-                }
+                });
+
+                btn_div.append(button1, button2, button3);
+                div_1.append(image, btn_div);
+                div_1.classList.add("card1");
+
+                let div_2 = document.createElement("div");
+                let title = document.createElement("p");
+                title.innerText = item.title;
+
+                let description = document.createElement("p");
+                description.innerText = item.description.split(" ").slice(0, 5).join(" ") + "..............";
+
+                let category = document.createElement("p");
+                category.innerText = item.category;
+
+                let price = document.createElement("p");
+                price.innerText = "Price: $" + (item.price * item.quantity); // Update the price with quantity
+
+                let remove = document.createElement("button");
+                remove.innerText = "Remove";
+                remove.classList.add("remove");
+                remove.addEventListener("click", () => {
+                    deleteCart(cartValue, index);
+                    alert("Item removed from cart.");
+                });
+                let checkout = document.createElement("button")
+                checkout.innerText = "checkout"
+                checkout.classList.add("checkout")
+                checkout.addEventListener("click", () => {
+
+                    window.location.href = "./payment.html"
+                });
+
+                div_2.append(title, description, price, category, remove, checkout);
+                div_2.classList.add("card2");
+
+                main_card.append(div_1, div_2);
+                main_card.classList.add("main_card");
+                container.append(main_card);
+
+
             });
-            button1.disabled = true;
+            localStorage.setItem("cart", JSON.stringify(cartValue));
+        }
 
-            let button2 = document.createElement("button");
-            button2.innerText = item.quantity;
 
-            let button3 = document.createElement("button");
-            button3.innerText = "+";
-            button3.addEventListener("click", () => {
-                item.quantity++;
-                button2.innerText = item.quantity;
-                updatePrice(price, item);
-                button1.disabled = false;
-            });
+        function deleteCart (data, index) {
+            data.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(data));
+            displayData(data); // Update the display after deleting
+        }
 
-            btn_div.append(button1, button2, button3);
-            div_1.append(image, btn_div);
-            div_1.classList.add("card1");
-
-            // <-------------part2------------>
-            let div_2 = document.createElement("div");
-
-            let title = document.createElement("p");
-            title.innerText = item.title;
-
-            let description = document.createElement("p");
-            description.innerText =
-                item.description.split(" ").slice(0, 5).join(" ") +
-                "..............";
-
-            let category = document.createElement("p");
-            category.innerText = item.category;
-
-            let price = document.createElement("p");
-
-            price.innerText = "price:- $" + (item.price * item.quantity);
-            let remove = document.createElement("button")
-            remove.innerText = "Remove"
-            remove.classList.add("remove")
-            remove.addEventListener("click", () => {
-                deleteCart(cartValue, index);
-
-                alert("deleted");
-            });
-            let checkout = document.createElement("button")
-            checkout.innerText = "checkout"
-            checkout.classList.add("checkout")
-            checkout.addEventListener("click", () => {
-
-                window.location.href = "./payment.html"
-            });
-            div_2.append(title, description, price, category, remove, checkout);
-            div_2.classList.add("card2");
-
-            main_card.append(div_1, div_2);
-            main_card.classList.add("main_card");
-            container.append(main_card);
-        });
-    }
-
-    displayData(cartValue);
-
-    function updatePrice (element, item) {
-        element.innerText = "price:- $" + (item.price * item.quantity);
-    }
-
-    // <----------Delete----->
-    function deleteCart (data, index) {
-        data.splice(index, 1);
-        localStorage.setItem("cart", JSON.stringify(data));
-        displayData(data); // Update the display after deleting
-    }
-</script>
+        displayData(cartValue);
+    </script>
+</body>
 
 </html>

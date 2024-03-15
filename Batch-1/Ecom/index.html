@@ -1,197 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <style>
-            nav {
-                display: flex;
-                justify-content: space-between;
-                /* border: 1px solid green; */
-                /* padding: 10px; */
-                background-color: black;
-                color: white;
-                align-items: center;
-                position: sticky;
-                top: 0;
-            }
-            nav img {
-                width: 20%;
-                padding: 5px;
-            }
-            .search_bar {
-                width: 20%;
-                display: flex;
 
-                justify-content: space-evenly;
-            }
-            .search_bar button {
-                width: 20%;
-                padding: 10px;
-                background-color: yellow;
-            }
-            .search_bar input {
-                height: 40px;
-                margin-top: 10px;
-            }
-            .nav_link {
-                display: flex;
-                justify-content: space-between;
-                /* border: 1px solid green; */
-                width: 30%;
-            }
-            a {
-                text-decoration: none;
-                color: white;
-            }
-            .btn_cart {
-                padding: 5px;
-            }
-            #container {
-                display: grid;
-                grid-template-columns: repeat(5, 1fr);
-                gap: 20px;
-            }
-            #container div {
-                text-align: center;
-                padding: 10px;
-                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-            }
-            #container div img {
-                width: 50%;
-            }
-            #cart {
-                color: red;
-                font-weight: bold;
-            }
-            button {
-                background-color: aqua;
-                margin: 10px;
-                padding: 5px;
-                border: none;
-                border-radius: 5px;
-            }
-            button:nth-child(3) {
-                background-color: rgb(255, 0, 25);
-                margin: 10px;
-                padding: 5px;
-                border: none;
-                border-radius: 5px;
-            }
-        </style>
-    </head>
-    <body>
-        <nav>
-            <div>
-                <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHQGdaIn7hjn3NWLZximOTni6fG_N6kk9Ban6KhTLtfA&s"
-                    alt="" />
-            </div>
-            <div class="search_bar">
-                <input type="search" placeholder="Search" />
-                <button class="btn_cart">
-                    <a id="cart" href="./cart.html">🛒:0</a>
-                </button>
-            </div>
-        </nav>
-        <div id="container"></div>
-        <script>
-            let arr;
-            let cartData = JSON.parse(localStorage.getItem("cart")) || [];
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <style>
+        nav {
+            display: flex;
+            justify-content: space-between;
+            /* border: 3px solid green; */
+            /* padding: 10px; */
+            background-color: black;
+            color: white;
+            align-items: center;
+            position: sticky;
+            top: 0;
+        }
 
-            async function getValue() {
-                try {
-                    let res = await axios.get(
-                        'https://fakestoreapi.com/products'
-                    );
-                    arr = res.data;
-                    console.log(arr)
-                    displayData(arr);
-                } catch (error) {
-                    console.log(error);
-                }
-            }
-            getValue();
+        nav img {
+            width: 20%;
+            padding: 5px;
+        }
 
-            let container = document.getElementById("container");
-            function displayData(data) {
-                container.innerHTML = "";
-                data.forEach((item) => {
-                    let div = document.createElement("div");
-                    let category = document.createElement("p");
-                    category.innerText = item.category;
+        #filter_div {
+            /* border: 1px solid red; */
+            width: 30%;
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+        }
 
-                    let description = document.createElement("p");
-                    description.innerText =
-                        item.description.split(" ").slice(0, 5).join(" ") +
-                        "..............";
+        select {
+            width: 50%;
+            height: 30px;
+        }
 
-                    let id = document.createElement("p");
-                    id.innerText = item.id;
+        .search_bar {
+            width: 30%;
+            display: flex;
 
-                    let image = document.createElement("img");
-                    image.src = item.image;
+            justify-content: space-evenly;
+        }
 
-                    let price = document.createElement("p");
-                    price.innerText = item.price;
+        .search_bar button {
+            width: 20%;
+            padding: 10px;
+            background-color: yellow;
+        }
 
-                    let rating = document.createElement("p");
-                    rating.innerText = item.rating.rate;
+        .search_bar input {
+            height: 40px;
+            width: 100%;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
 
-                    let title = document.createElement("p");
-                    title.innerText = item.title;
+        .nav_link {
+            display: flex;
+            justify-content: space-between;
+            /* border: 1px solid green; */
+            width: 30%;
+        }
 
-                    let btn = document.createElement("button");
-                    btn.innerText = "Add To Cart";
-                    btn.addEventListener("click", () => {
-                        addToCart(item);
-                        btn.innerText = "Go to Cart";
+        a {
+            text-decoration: none;
+            color: white;
+        }
 
-                        updateCartQuantity();
-                    });
+        .btn_cart {
+            padding: 5px;
+        }
 
-                    div.append(
-                        id,
-                        image,
-                        description,
-                        category,
-                        price,
-                        rating,
-                        price,
-                        btn
-                    );
-                    container.append(div);
-                });
-            }
+        #container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
 
-            // <---------Add to cart----->
+        #container div {
+            text-align: center;
+            padding: 10px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
 
-            function addToCart(data) {
-                let cartValue = JSON.parse(localStorage.getItem("cart")) || [];
-                let isAlreadyInCart = cartValue.some(
-                    (item) => item.id === data.id
+        #container div img {
+            width: 50%;
+        }
+
+        #cart {
+            color: red;
+            font-weight: bold;
+        }
+
+        button {
+            background-color: aqua;
+            margin: 10px;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:nth-child(3) {
+            background-color: rgb(255, 0, 25);
+            margin: 10px;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHQGdaIn7hjn3NWLZximOTni6fG_N6kk9Ban6KhTLtfA&s"
+                alt="" />
+        </div>
+        <!-- ---------filter and sort---------- -->
+        <div id="filter_div">
+            <select id="filter">
+                <option value="">Filter By Category</option>
+                <option value="men's clothing">men's clothing</option>
+                <option value="women's clothing">women's clothing</option>
+                <option value="electronics">electronics</option>
+                <option value="jewelery">jewelery</option>
+            </select>
+            <select id="sort">
+                <option value="">Sort by Price</option>
+                <option value="LTH">Low to High</option>
+                <option value="HTL">High to Low</option>
+            </select>
+        </div>
+
+        <div class="search_bar">
+            <input id="search" type="search" placeholder="Search" />
+            <button class="btn_cart">
+                <a id="cart" href="./cart1.html">🛒:0</a>
+            </button>
+        </div>
+    </nav>
+    <div id="container"></div>
+    <script>
+        let arr;
+        let cartData = JSON.parse(localStorage.getItem("cart")) || [];
+
+        async function getValue () {
+            try {
+                let res = await axios.get(
+                    'https://fakestoreapi.com/products'
                 );
+                arr = res.data;
+                console.log(arr)
+                displayData(arr);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        getValue();
 
-                if (isAlreadyInCart) {
+        let container = document.getElementById("container");
+        function displayData (data) {
+            container.innerHTML = "";
+            data.forEach((item) => {
+                let div = document.createElement("div");
+                let category = document.createElement("p");
+                category.innerText = item.category;
 
-                    alert("Item already in cart");
-                } else {
-                    cartValue.push(data);
-                    localStorage.setItem("cart", JSON.stringify(cartValue));
+                let description = document.createElement("p");
+                description.innerText =
+                    item.description.split(" ").slice(0, 5).join(" ") +
+                    "..............";
 
-                    alert("Item added to cart 🎉🎊");
+                let id = document.createElement("p");
+                id.innerText = item.id;
+
+                let image = document.createElement("img");
+                image.src = item.image;
+
+                let price = document.createElement("p");
+                price.innerText = item.price;
+
+                let rating = document.createElement("p");
+                rating.innerText = item.rating.rate;
+
+                let title = document.createElement("p");
+                title.innerText = item.title;
+
+                let btn = document.createElement("button");
+                btn.innerText = "Add To Cart";
+                btn.addEventListener("click", () => {
+                    addToCart(item);
+                    btn.innerText = "Go to Cart";
+
+                    updateCartQuantity();
+                });
+
+                div.append(
+                    id,
+                    image,
+                    description,
+                    category,
+                    price,
+                    rating,
+                    price,
+                    btn
+                );
+                container.append(div);
+            });
+        }
+
+        // <---------Add to cart----->
+
+        function addToCart (data) {
+            let cartValue = JSON.parse(localStorage.getItem("cart")) || [];
+            let isAlreadyInCart = cartValue.some(
+                (item) => item.id === data.id
+            );
+
+            if (isAlreadyInCart) {
+
+                alert("Item already in cart");
+            } else {
+                cartValue.push(data);
+                localStorage.setItem("cart", JSON.stringify(cartValue));
+
+                alert("Item added to cart 🎉🎊");
+            }
+        }
+
+        // <-----------Update Cart Quantity------>
+        function updateCartQuantity () {
+            cartData = JSON.parse(localStorage.getItem("cart")) || [];
+            let cart = document.getElementById("cart");
+            cart.innerText = `🛒:${cartData.length}`;
+        }
+        updateCartQuantity();
+
+
+
+        let filterValue = document.querySelector("#filter");
+        filterValue.addEventListener("change", handleFilter);
+
+        let searchInput = document.querySelector("#search");
+        searchInput.addEventListener("input", handleSearch);
+
+        let sortValue = document.querySelector("#sort");
+        sortValue.addEventListener("change", handleSort);
+
+        function handleFilter () {
+            let optionValue = document.querySelector("#filter").value;
+
+            let finalFilterValue;
+            if (optionValue == "") {
+                displayData(arr);
+            } else {
+                finalFilterValue = arr.filter(function (ele) {
+                    return ele.category == optionValue;
+                });
+                displayData(finalFilterValue);
+            }
+        }
+
+
+        function handleSearch () {
+            let searchQuery = document.querySelector("#search").value
+
+            let filteredData = arr.filter(function (ele) {
+                return ele.title.toLowerCase().includes(searchQuery);
+            });
+            displayData(filteredData);
+        }
+
+
+        function handleSort () {
+            let sortOption = document.querySelector("#sort").value;
+            console.log(sortOption);
+
+            if (sortOption === "") {
+                // If no sort option selected, display all data
+                displayData(arr);
+            } else {
+                let sortedData;
+
+                if (sortOption === "LTH") {
+                    sortedData = arr.slice().sort((a, b) => a.price - b.price);
+                    console.log(sortedData, "");
+                } else if (sortOption === "HTL") {
+                    sortedData = arr.slice().sort((a, b) => b.price - a.price);
                 }
-            }
 
-            // <-----------Update Cart Quantity------>
-            function updateCartQuantity() {
-                cartData = JSON.parse(localStorage.getItem("cart")) || [];
-                let cart = document.getElementById("cart");
-                cart.innerText = `🛒:${cartData.length}`;
+                // Display the sorted data
+                displayData(sortedData);
             }
-            updateCartQuantity();
-        </script>
-    </body>
+        }
+
+
+    </script>
+</body>
+
 </html>

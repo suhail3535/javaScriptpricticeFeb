@@ -111,6 +111,7 @@
         .right-container {
             width: 45%;
             padding: 20px;
+            margin-top: 70px;
             background-color: white;
         }
 
@@ -279,6 +280,8 @@
             let name = document.createElement("p");
             let size = document.createElement("p");
             let quantity = document.createElement("span");
+            let price=document.createElement("p")
+             price.innerText = "Price: $" + (ele.price * ele.quantity);
 
             image.src = ele.image;
             image.style.height = "150px";
@@ -287,7 +290,7 @@
             // size.textContent = `size : ${ele.size}`;
             size.textContent = "size : unisize";
             quantity.textContent = `Quantity: ${ele.quantity}`;
-            div2.append(name, size, quantity);
+            div2.append(name, size, quantity, price);
             card.append(div1, div2);
             cartEl.append(card);
 
@@ -295,18 +298,21 @@
 
         let editCart = document.createElement("button");
         editCart.innerText = "EDIT CART";
-        editCart.style.width = "100%";
+        editCart.style.width = "50%";
+        editCart.style.backgroundColor="green";
+
+
         cartEl.append(editCart);
         editCart.addEventListener("click", () => {
-            location.href = "cart.html";
+            location.href = "cart1.html";
         });
 
         let sum = 0;
         for (let i = 0; i < cartData.length; i++) {
             sum += cartData[i].price * cartData[i].quantity;
         }
-        totalPay.textContent = sum;
-        total.textContent = sum;
+        totalPay.textContent = sum.toFixed(2);
+        total.textContent = sum.toFixed(2);
 
     }
 

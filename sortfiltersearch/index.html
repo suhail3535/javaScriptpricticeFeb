@@ -71,13 +71,13 @@
           <option value="alpha">alpha</option>
           <option value="lipstic">lipstic</option>
         </select>
-        <input type="text" id="search" placeholder="Search..." />
         <select id="sort">
           <option value="">Sort by Price</option>
           <option value="LTH">Low to High</option>
           <option value="HTL">High to Low</option>
         </select>
 
+        <input type="text" id="search" placeholder="Search..." />
         <button><a href="./cart.html"> 🛒<span id="spanv">0</span></a> </button>
       </div>
 
@@ -131,6 +131,7 @@
         });
       }
 
+
       let filterValue = document.querySelector("#filter");
       filterValue.addEventListener("change", handleFilter);
 
@@ -153,11 +154,7 @@
         }
       }
 
-      function addData(key, value) {
-        let newData = JSON.parse(localStorage.getItem(key)) || [];
-        newData.push(value);
-        localStorage.setItem(key, JSON.stringify(newData));
-      }
+
       function handleSearch() {
         let searchQuery = document.querySelector("#search").value;
 
@@ -186,6 +183,11 @@
           displayData(sortedData);
         }
       }
+        function addData (key, value) {
+            let newData = JSON.parse(localStorage.getItem(key)) || [];
+            newData.push(value);
+            localStorage.setItem(key, JSON.stringify(newData));
+          }
     </script>
   </body>
 </html>
