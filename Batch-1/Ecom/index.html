@@ -2,16 +2,16 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <style>
         nav {
             display: flex;
             justify-content: space-between;
-            /* border: 3px solid green; */
-            /* padding: 10px; */
             background-color: black;
             color: white;
             align-items: center;
@@ -25,7 +25,6 @@
         }
 
         #filter_div {
-            /* border: 1px solid red; */
             width: 30%;
             display: flex;
             gap: 20px;
@@ -40,7 +39,6 @@
         .search_bar {
             width: 30%;
             display: flex;
-
             justify-content: space-evenly;
         }
 
@@ -60,7 +58,6 @@
         .nav_link {
             display: flex;
             justify-content: space-between;
-            /* border: 1px solid green; */
             width: 30%;
         }
 
@@ -109,6 +106,29 @@
             border: none;
             border-radius: 5px;
         }
+
+        .pagination_div {
+            width: 20%;
+            margin: 20px auto;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        #nextBtn {
+            background-color: green;
+            color: white;
+            border-radius: 0px;
+        }
+
+        #prevBtn {
+            background-color: rgb(221, 37, 12);
+            color: white;
+            border-radius: 0px;
+        }
+        #pagenumber{
+background-color: yellow;
+width: 30px;
+        }
     </style>
 </head>
 
@@ -116,9 +136,8 @@
     <nav>
         <div>
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHQGdaIn7hjn3NWLZximOTni6fG_N6kk9Ban6KhTLtfA&s"
-                alt="" />
+                alt="">
         </div>
-        <!-- ---------filter and sort---------- -->
         <div id="filter_div">
             <select id="filter">
                 <option value="">Filter By Category</option>
@@ -133,7 +152,6 @@
                 <option value="HTL">High to Low</option>
             </select>
         </div>
-
         <div class="search_bar">
             <input id="search" type="search" placeholder="Search" />
             <button class="btn_cart">
@@ -141,29 +159,37 @@
             </button>
         </div>
     </nav>
+
     <div id="container"></div>
+    <div class="pagination_div">
+        <button id="prevBtn" onclick="changePage(currentPage - 1)">Previous</button>
+        <button id="pagenumber"></button>
+
+        <button id="nextBtn" onclick="changePage(currentPage + 1)">Next</button>
+    </div>
     <script>
         let arr;
-        let cartData = JSON.parse(localStorage.getItem("cart")) || [];
+        let currentPage = 1;
+        const itemsPerPage = 10;
 
         async function getValue () {
             try {
-                let res = await axios.get(
-                    'https://fakestoreapi.com/products'
-                );
+                let res = await axios.get('https://fakestoreapi.com/products');
                 arr = res.data;
-                console.log(arr)
-                displayData(arr);
+                displayData();
+                setupPagination();
             } catch (error) {
                 console.log(error);
             }
         }
         getValue();
 
-        let container = document.getElementById("container");
         function displayData (data) {
             container.innerHTML = "";
-            data.forEach((item) => {
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const endIndex = currentPage * itemsPerPage;
+            const currentItems = arr.slice(startIndex, endIndex);
+            currentItems.forEach((item) => {
                 let div = document.createElement("div");
                 let category = document.createElement("p");
                 category.innerText = item.category;
@@ -210,8 +236,25 @@
                 container.append(div);
             });
         }
+///count total pages
+        function setupPagination () {
+            const totalPages = Math.ceil(arr.length / itemsPerPage);
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            prevBtn.disabled = currentPage === 1;
+            nextBtn.disabled = currentPage === totalPages;
+        }
 
-        // <---------Add to cart----->
+        let pagenumber = document.getElementById("pagenumber")
+        pagenumber.innerText = currentPage
+
+        function changePage (page) {
+            const totalPages = Math.ceil(arr.length / itemsPerPage);
+            currentPage = Math.max(1, Math.min(page, totalPages));
+            pagenumber.innerText = currentPage
+            displayData();
+            setupPagination();
+        }
 
         function addToCart (data) {
             let cartValue = JSON.parse(localStorage.getItem("cart")) || [];
@@ -230,15 +273,12 @@
             }
         }
 
-        // <-----------Update Cart Quantity------>
         function updateCartQuantity () {
             cartData = JSON.parse(localStorage.getItem("cart")) || [];
             let cart = document.getElementById("cart");
             cart.innerText = `🛒:${cartData.length}`;
         }
         updateCartQuantity();
-
-
 
         let filterValue = document.querySelector("#filter");
         filterValue.addEventListener("change", handleFilter);
@@ -263,7 +303,6 @@
             }
         }
 
-
         function handleSearch () {
             let searchQuery = document.querySelector("#search").value
 
@@ -273,29 +312,23 @@
             displayData(filteredData);
         }
 
-
         function handleSort () {
             let sortOption = document.querySelector("#sort").value;
-            console.log(sortOption);
 
             if (sortOption === "") {
-                // If no sort option selected, display all data
                 displayData(arr);
             } else {
                 let sortedData;
 
                 if (sortOption === "LTH") {
                     sortedData = arr.slice().sort((a, b) => a.price - b.price);
-                    console.log(sortedData, "");
                 } else if (sortOption === "HTL") {
                     sortedData = arr.slice().sort((a, b) => b.price - a.price);
                 }
 
-                // Display the sorted data
                 displayData(sortedData);
             }
         }
-
 
     </script>
 </body>

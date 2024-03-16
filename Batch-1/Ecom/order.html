@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            /* border: 1px solid green; */
+            width: 70%;
+            margin: auto;
+            padding: 20px;
+            /* display: flex; */
+            justify-content: space-between;
+            /* flex-direction: column; */
+        }
+
+        .main_card {
+            /* border: 1px solid yellow; */
+
+            display: flex;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            justify-content: space-around;
+            width: 90%;
+            margin: 20px auto;
+        }
+
+        .card1 {
+            /* border: 1px solid red; */
+            padding: 20px;
+            text-align: center;
+            width: 40%;
+        }
+
+        .card2 {
+            /* border: 1px solid rgb(0, 242, 255); */
+            padding: 20px;
+            width: 60%;
+
+        }
+
+        #qty_btn {
+            width: 80%;
+            margin: auto;
+            /* border: 1px solid gray; */
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #qty_btn button {
+            padding: 10px;
+        }
+
+        .card1 img {
+            width: 50%;
+        }
+
+        .remove,
+        .checkout {
+            background-color: whitesmoke;
+            border: none;
+            padding: 10px;
+            color: red;
+            cursor: pointer;
+            margin: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+</body>
+<script>
+    let cartData = JSON.parse(localStorage.getItem("order")) || [];
+    let cartEl = document.getElementById("container");
+
+    displayData(cartData);
+
+    function displayData (data) {
+        cartEl.innerHTML = "";
+
+        data.forEach((ele, ind) => {
+            let card = document.createElement("div");
+            let div1 = document.createElement("div");
+            let image = document.createElement("img");
+            let div2 = document.createElement("div");
+            let name = document.createElement("p");
+            let size = document.createElement("p");
+            let quantity = document.createElement("span");
+            let price = document.createElement("p")
+            price.innerText = "Price: $" + (ele.price * ele.quantity);
+
+            image.src = ele.image;
+            image.style.height = "150px";
+            div1.append(image);
+            name.textContent = ele.name;
+            // size.textContent = `size : ${ele.size}`;
+            size.textContent = "size : unisize";
+            quantity.textContent = `Quantity: ${ele.quantity}`;
+            div2.append(name, size, quantity, price);
+            card.append(div1, div2);
+            cartEl.append(card);
+
+        });
+
+
+
+
+        cartEl.append(editCart);
+        editCart.addEventListener("click", () => {
+            location.href = "cart1.html";
+        });
+
+        let sum = 0;
+        for (let i = 0; i < cartData.length; i++) {
+            sum += cartData[i].price * cartData[i].quantity;
+        }
+        totalPay.textContent = sum.toFixed(2);
+        total.textContent = sum.toFixed(2);
+
+    }
+
+    let formEl = document.querySelector("form");
+
+    buyBtn.addEventListener("click", () => {
+        alert("Order Placed Successfully 🤩");
+        setTimeout(() => {
+            location.href = "index.html";
+        }, 1000);
+        let orderData = cartData.splice(0, cartData.length);
+        localStorage.setItem("order", JSON.stringify(orderData));
+        cartData = [];
+        localStorage.setItem("cart", JSON.stringify(cartData));
+    });
+</script>
+
+</html>
