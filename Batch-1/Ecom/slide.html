@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <style>
+        .slider {
+            max-width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slide {
+            flex: 0 0 100%;
+            width: 100%;
+        }
+
+        .slider-controls {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .slider-controls button {
+            margin: 0 5px;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+            background-color: #333;
+            color: #fff;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="slider">
+        <div class="slides">
+            <div class="slide"><img
+                    src="https://media.istockphoto.com/id/1398087835/photo/pink-palace-hawa-mahal-jaipur-india-beautiful-sunset-view.jpg?s=612x612&w=0&k=20&c=S8X6bk4Mdp0xu624dFZCHfobotdwdIp7K1FEQJV6hkI="
+                    alt="Image 1"></div>
+            <div class="slide"><img
+                    src="https://www.wheregoesrose.com/wp-content/uploads/2019/08/C5B17CD6-3C53-4230-B912-74CEC7CD7BD6-2.jpeg"
+                    alt="Image 2"></div>
+            <div class="slide"><img
+                    src="https://ak-d.tripcdn.com/images/1mi4y12000b4bgagi2638_W_400_0_R5_Q90.jpg?proc=source/trip"
+                    alt="Image 3"></div>
+            <!-- Add more slides here -->
+        </div>
+        <div class="slider-controls">
+            <button onclick="prevSlide()">Previous</button>
+            <button onclick="nextSlide()">Next</button>
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide (n) {
+            if (n < 0) {
+                slideIndex = slides.length - 1;
+            } else if (n >= slides.length) {
+                slideIndex = 0;
+            } else {
+                slideIndex = n;
+            }
+
+            slides.forEach(slide => {
+                slide.style.display = 'none';
+            });
+
+            slides[slideIndex].style.display = 'block';
+        }
+
+        function nextSlide () {
+            showSlide(slideIndex + 1);
+        }
+
+        function prevSlide () {
+            showSlide(slideIndex - 1);
+        }
+
+        showSlide(slideIndex); // Show initial slide
+
+        setInterval(nextSlide, 3000); // Change slide every 1 second
+    </script>
+
+</body>
+
+</html>
