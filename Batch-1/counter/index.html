@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="reduce" disabled>Reduce-</button>
+    <button id="counter">0</button>
+    <button id="add">Add+</button>
+    <button id="reset">reset</button>
+</body>
+<script>
+    let redu = document.getElementById("reduce")
+    redu.addEventListener("click", reduce)
+
+    let counter = document.getElementById("counter")
+    let add = document.getElementById("add")
+    add.addEventListener("click", addvalue)
+
+    let reset = document.getElementById("reset")
+    reset.addEventListener("click", resetvalue)
+
+    let count = 0;
+
+    function addvalue () {
+        count++
+        counter.innerHTML = count;
+        if (count > 0) {
+            redu.disabled = false; // Enable Reduce button when count is greater than 0
+        }
+    }
+    function reduce () {
+        count--
+        counter.innerHTML = count;
+        if (count == 0) {
+            redu.disabled = true; // Disable Reduce button when count is 0
+        }
+    }
+
+    function resetvalue () {
+        count = 0;
+        counter.innerHTML = count;
+        redu.disabled = true; // Disable Reduce button on reset
+    }
+</script>
+
+</html>
