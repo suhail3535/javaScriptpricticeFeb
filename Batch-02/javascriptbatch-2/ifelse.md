@@ -1,6 +1,15 @@
 
-Question -1
-Write a program that compares two numbers and prints the larger one.
+Question-1
+let num1=10;
+let num2=15;
+if num1 is greater num2 than print("num1 is larger")
+if num1 is smaller than num2 print("num1 is smaller")
+if num1 is eqaul to num2 than print("num1 and num2 is eqaul")
+if above condition not match than print("not valid)
+
+<!-- Write a program that compares two numbers and prints the larger one. -->
+
+
 
 Question -2
 let lightColor = "green";
@@ -10,6 +19,8 @@ Write a program that simulates a traffic light. If the light is "green", print "
 Question -3
 let age=25
 Create a program that categorizes a person's age. If the age is less than 18, print "Minor". If it's between 18 and 65, print "Adult". Otherwise, print "Senior".
+
+
 
 
 question-4
