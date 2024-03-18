@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Signal control program</h1>
+    <input id="color" type="text" placeholder="enter color">
+    <button id="check">Control</button>
+    <h2 id="signal">Signal value is:-</h2>
+    <script>
+        let signal = document.getElementById("signal");
+        let colorInput = document.getElementById("color");
+        let check = document.getElementById("check");
+
+        check.addEventListener("click", function(){
+            updateLight()
+            // window.location.reload()
+            alert("updated")
+        });
+
+        function updateLight () {
+            let color = colorInput.value.toLowerCase();
+            if (color === "red") {
+                signal.innerText = signal.innerText+"Stop";
+
+                
+                window.location.reload
+                console.log(signal.innerText);
+            } else if (color === "green") {
+            signal.innerText = signal.innerText + "Go";
+                console.log(signal.innerText);
+                    window.location.reload
+            } else {
+            signal.innerText = signal.innerText + "Ready for Go";
+                console.log(signal.innerText);
+                    window.location.reload
+            }
+        }
+    </script>
+</body>
+
+</html>
