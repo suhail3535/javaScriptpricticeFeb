@@ -150,8 +150,8 @@
         </div>
 
         <script>
-            let userId = null; //for edit
-            console.log(userId, "154");
+
+
 
             let url = "http://localhost:8080/data";
 
@@ -173,6 +173,8 @@
             }
             // <--------------for edit--------------->
             // get value in form input on click edit button
+            let userId = null;
+            
             function getRowData(data) {
                 userId = data.id;
                 document.getElementById("name").value = data.name;

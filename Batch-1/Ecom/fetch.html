@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <style>
+            nav {
+                display: flex;
+                justify-content: space-between;
+                background-color: black;
+                color: white;
+                align-items: center;
+                position: sticky;
+                top: 0;
+            }
+
+            nav img {
+                width: 20%;
+                padding: 5px;
+            }
+
+            #filter_div {
+                width: 30%;
+                display: flex;
+                gap: 20px;
+                justify-content: space-between;
+            }
+
+            select {
+                width: 50%;
+                height: 30px;
+            }
+
+            .search_bar {
+                width: 30%;
+                display: flex;
+                justify-content: space-evenly;
+            }
+
+            .search_bar button {
+                width: 20%;
+                padding: 10px;
+                background-color: yellow;
+            }
+
+            .search_bar input {
+                height: 40px;
+                width: 100%;
+                margin-top: 10px;
+                border-radius: 5px;
+            }
+
+            .nav_link {
+                display: flex;
+                justify-content: space-between;
+                width: 30%;
+            }
+
+            a {
+                text-decoration: none;
+                color: white;
+            }
+
+            .btn_cart {
+                padding: 5px;
+            }
+
+            #container {
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                gap: 20px;
+            }
+
+            #container div {
+                text-align: center;
+                padding: 10px;
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            }
+
+            #container div img {
+                width: 50%;
+            }
+
+            #cart {
+                color: red;
+                font-weight: bold;
+            }
+
+            button {
+                background-color: aqua;
+                margin: 10px;
+                padding: 5px;
+                border: none;
+                border-radius: 5px;
+            }
+
+            button:nth-child(3) {
+                background-color: rgb(255, 0, 25);
+                margin: 10px;
+                padding: 5px;
+                border: none;
+                border-radius: 5px;
+            }
+
+            .pagination_div {
+                width: 20%;
+                margin: 20px auto;
+                display: flex;
+                justify-content: space-evenly;
+            }
+
+            #nextBtn {
+                background-color: green;
+                color: white;
+                border-radius: 0px;
+            }
+
+            #prevBtn {
+                background-color: rgb(221, 37, 12);
+                color: white;
+                border-radius: 0px;
+            }
+
+            #pagenumber {
+                background-color: yellow;
+                width: 30px;
+            }
+        </style>
+</head>
+
+<body>
+<div id="container"></div>
+</body>
+<script>
+    async function getData () {
+        try {
+            let res = await fetch("https://fakestoreapi.com/products")
+            let data = await res.json()
+            console.log(data);
+            displayData(data)
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    getData()
+
+
+            function displayData (data) {
+                    container.innerHTML = "";
+
+                    data.forEach((item) => {
+                        let div = document.createElement("div");
+                        let category = document.createElement("p");
+                        category.innerText = item.category;
+
+                        let description = document.createElement("p");
+                        description.innerText =
+                            item.description
+
+                        let id = document.createElement("p");
+                        id.innerText = item.id;
+
+                        let image = document.createElement("img");
+                        image.src = item.image;
+
+                        let price = document.createElement("p");
+                        price.innerText = item.price;
+
+                        let rating = document.createElement("p");
+                        rating.innerText = item.rating.rate;
+
+                        let title = document.createElement("p");
+                        title.innerText = item.title;
+
+                        let btn = document.createElement("button");
+                        btn.innerText = "Add To Cart";
+                        btn.addEventListener("click", () => {
+                            addToCart(item);
+                            btn.innerText = "Go to Cart";
+
+                            updateCartQuantity();
+                        });
+
+                        div.append(
+                            id,
+                            image,
+                            description,
+                            category,
+                            price,
+                            rating,
+                            price,
+                            btn
+                        );
+                        container.append(div);
+                    });
+                }
+
+</script>
+
+</html>
