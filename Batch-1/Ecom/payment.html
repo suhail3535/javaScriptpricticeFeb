@@ -1,3 +1,6 @@
+Sure, here's the full corrected HTML file with the JavaScript code:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -247,7 +250,8 @@
                         </div>
                         <div class="fx">
                             <p>Applicable Tax and Charges</p>
-                            <p>+ ₹<span id="tax">0</span></p>
+                            <p>+ ₹<span id="tax">20</ span>
+                            </p>
                         </div>
                         <div class="fx amount jcsb">
                             <p>Amount Payable</p>
@@ -259,77 +263,78 @@
             </div>
         </div>
     </div>
-</body>
-<script>
-    let cartData = JSON.parse(localStorage.getItem("cart")) || [];
-    let cartEl = document.querySelector(".cart-item");
-    let nositem = document.getElementById("nos-item");
-    let buyBtn = document.getElementById("buy");
-    let totalPay = document.getElementById("total-pay");
-    let total = document.getElementById("total");
-    displayData(cartData);
+    <script>
+        let cartData = JSON.parse(localStorage.getItem("cart")) || [];
+        let cartEl = document.querySelector(".cart-item");
+        let tax = document.getElementById("tax").innerText; // Get tax value from DOM
+        let datatax = parseFloat(tax); // Parse tax value to float
+        let nositem = document.getElementById("nos-item");
+        let buyBtn = document.getElementById("buy");
+        let totalPay = document.getElementById("total-pay");
+        let total = document.getElementById("total");
 
-    function displayData (data) {
-        cartEl.innerHTML = "";
-        nositem.innerText = data.length;
-        data.forEach((ele, ind) => {
-            let card = document.createElement("div");
-            let div1 = document.createElement("div");
-            let image = document.createElement("img");
-            let div2 = document.createElement("div");
-            let name = document.createElement("p");
-            let size = document.createElement("p");
-            let quantity = document.createElement("span");
-            let price=document.createElement("p")
-             price.innerText = "Price: $" + (ele.price * ele.quantity);
+        displayData(cartData);
 
-            image.src = ele.image;
-            image.style.height = "150px";
-            div1.append(image);
-            name.textContent = ele.name;
-            // size.textContent = `size : ${ele.size}`;
-            size.textContent = "size : unisize";
-            quantity.textContent = `Quantity: ${ele.quantity}`;
-            div2.append(name, size, quantity, price);
-            card.append(div1, div2);
-            cartEl.append(card);
+        function displayData (data) {
+            cartEl.innerHTML = "";
+            nositem.innerText = data.length;
+            data.forEach((ele, ind) => {
+                let card = document.createElement("div");
+                let div1 = document.createElement("div");
+                let image = document.createElement("img");
+                let div2 = document.createElement("div");
+                let name = document.createElement("p");
+                let size = document.createElement("p");
+                let quantity = document.createElement("span");
+                let price = document.createElement("p");
+                price.innerText = "Price: $" + (ele.price * ele.quantity);
 
-        });
+                image.src = ele.image;
+                image.style.height = "150px";
+                div1.append(image);
+                name.textContent = ele.name;
+                // size.textContent = `size : ${ele.size}`;
+                size.textContent = "size : unisize";
+                quantity.textContent = `Quantity: ${ele.quantity}`;
+                div2.append(name, size, quantity, price);
+                card.append(div1, div2);
+                cartEl.append(card);
+            });
 
-        let editCart = document.createElement("button");
-        editCart.innerText = "EDIT CART";
-        editCart.classList.add("edit_btn")
-        editCart.style.width = "50%";
-        editCart.style.backgroundColor="green";
-        editCart.style.marginTop="20px";
+            let editCart = document.createElement("button");
+            editCart.innerText = "EDIT CART";
+            editCart.classList.add("edit_btn");
+            editCart.style.width = "50%";
+            editCart.style.backgroundColor = "green";
+            editCart.style.marginTop = "20px";
 
+            cartEl.append(editCart);
+            editCart.addEventListener("click", () => {
+                location.href = "cart.html";
+            });
 
-        cartEl.append(editCart);
-        editCart.addEventListener("click", () => {
-            location.href = "cart.html";
-        });
-
-        let sum = 0;
-        for (let i = 0; i < cartData.length; i++) {
-            sum += cartData[i].price * cartData[i].quantity;
+            let sum = 0;
+            for (let i = 0; i < cartData.length; i++) {
+                sum += cartData[i].price * cartData[i].quantity;
+            }
+            totalPay.textContent = (sum + datatax).toFixed(2); // Add tax to the sum
+            total.textContent = sum.toFixed(2); // Add tax to the total
         }
-        totalPay.textContent = sum.toFixed(2);
-        total.textContent = sum.toFixed(2);
 
-    }
+        let formEl = document.querySelector("form");
 
-    let formEl = document.querySelector("form");
-
-    buyBtn.addEventListener("click", () => {
-        alert("Order Placed Successfully 🤩");
-        setTimeout(() => {
-            location.href = "index.html";
-        }, 1000);
-        let orderData = cartData.splice(0, cartData.length);
-        localStorage.setItem("order", JSON.stringify(orderData));
-        cartData = [];
-        localStorage.setItem("cart", JSON.stringify(cartData));
-    });
-</script>
+        buyBtn.addEventListener("click", () => {
+            alert("Order Placed Successfully 🤩");
+            setTimeout(() => {
+                location.href = "index.html";
+            }, 1000);
+            let orderData = cartData.splice(0, cartData.length);
+            localStorage.setItem("order", JSON.stringify(orderData));
+            cartData = [];
+            localStorage.setItem("cart", JSON.stringify(cartData));
+        });
+    </script>
+</body>
 
 </html>
+
