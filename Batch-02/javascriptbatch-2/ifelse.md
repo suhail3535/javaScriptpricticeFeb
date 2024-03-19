@@ -55,9 +55,13 @@ let price=50;
 Write a program that calculates a discount based on the purchase amount.
 Prices equal or over 100 "discount have a discount of 20". Prices equal or over 50 "have a discount of 10". Otherwise discount is 0
 
+let time=10am;
 Write a program that greets the user based on the time of day. Display good morning, good afternnon or good evening based on the time of day when you run the code.
 
-Write a program that calculates the Body Mass Index (BMI) and categorizes it. The formula for BMI is: weight / (height * height).
+
+
+
+
 Write a simple number guessing game. Provide a secret number and a guess. Based on those numbers give players clues if their guess is higher, lower or correct.
 
 
