@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            /* border: 1px solid green; */
+            display: flex;
+            justify-content: space-between;
+            width: 95%;
+            gap: 50px;
+            margin: 50px auto;
+        }
+
+        table {
+            width: 70%;
+
+            text-align: center;
+            /* border: 1px solid black; */
+        }
+
+        #total_div {
+            width: 20%;
+            /* background-color: antiquewhite; */
+            text-align: center;
+            /* border: 1px solid black; */
+            display: flex;
+            align-items: start;
+        }
+
+        #total_div button {
+            width: 100%;
+            height: 40px;
+            background-color: rgb(206, 102, 163);
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <table border="1px">
+            <thead>
+                <tr>
+                    <th>Sr.No</th>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+        <div id="total_div">
+            <button id="total">0</button>
+        </div>
+    </div>
+
+</body>
+<script>
+    let cartData = JSON.parse(localStorage.getItem("order")) || [];
+    let tbody = document.getElementById("tbody");
+    let total = document.getElementById("total")
+    displayData(cartData);
+
+    function displayData (data) {
+        tbody.innerHTML = "";
+
+        data.forEach((ele, ind) => {
+            let tr = document.createElement("tr");
+            let srNo = document.createElement("td");
+            srNo.textContent = ind + 1;
+
+            let imageCell = document.createElement("td");
+            let image = document.createElement("img");
+            image.src = ele.image;
+            image.style.height = "40px";
+
+            imageCell.appendChild(image);
+
+            let title = document.createElement("td");
+            title.textContent = ele.title;
+
+            let quantity = document.createElement("td");
+            quantity.textContent = ele.quantity;
+
+            let price = document.createElement("td");
+            price.textContent = "$" + (ele.price * ele.quantity).toFixed(2);
+
+            tr.appendChild(srNo);
+            tr.appendChild(imageCell);
+            tr.appendChild(title);
+            tr.appendChild(quantity);
+            tr.appendChild(price);
+
+            tbody.appendChild(tr);
+        });
+
+            let sum = 0;
+        for (let i = 0; i < cartData.length; i++) {
+            sum += cartData[i].price * cartData[i].quantity;
+        }
+
+        total.textContent = `Total Amount- ${sum.toFixed(2)}`;
+    }
+
+
+
+
+</script>
+
+</html>

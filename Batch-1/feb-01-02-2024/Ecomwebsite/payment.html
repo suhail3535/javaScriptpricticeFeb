@@ -1,0 +1,339 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #EEEEEE;
+            margin: 0px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+        }
+
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+            padding: 0px 30px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+            background-color: white;
+            /* border: 2px solid green; */
+        }
+
+        .nav>div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* border: 2px solid red; */
+
+        }
+
+        .nav>div:nth-child(1) {
+            width: 40%;
+            font-weight: bold;
+
+        }
+
+        #logo {
+            height: 40px;
+        }
+
+        .nav>div>div {
+            /* border: 1px solid blue; */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: black;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .links>a {
+            margin-top: 5px;
+        }
+
+        .product {
+            width: 85%;
+            margin: auto;
+            display: flex;
+        }
+
+        .left-container {
+            width: 60%;
+            padding: 20px;
+        }
+
+        .address>form {
+            background-color: white;
+            padding: 20px;
+        }
+
+        .address input {
+            padding: 5px;
+            margin: 5px 10px;
+        }
+
+        .cart-item {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 2px;
+        }
+
+        .cart-item>div {
+            display: flex;
+            width: 100%;
+            margin: auto;
+            background-color: white;
+        }
+
+        .cart-item>button {
+            height: 40px;
+            background-color: #EEEEEE;
+            font-size: 16px;
+            font-weight: 400;
+            border: 1px solid #ccc;
+        }
+
+        .cart-item img {
+            margin-right: 30px;
+        }
+
+        .right-container {
+            width: 45%;
+            padding: 20px;
+            margin-top: 70px;
+            background-color: white;
+        }
+
+        #large-font {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .fx {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .price {
+            width: 60%;
+        }
+
+        .price p {
+            margin: 5px;
+        }
+
+        .price>div {
+            background-color: #f5f5f5;
+            border-radius: 5px;
+            padding: 5px 10px;
+        }
+
+        .price>div>p {
+            font-size: 16px;
+            font-weight: 600;
+            margin-left: 0px;
+        }
+
+        .pay-mode button {
+            width: 200px;
+            height: 50px;
+            margin: 0px;
+            margin-bottom: 1px;
+            border: none;
+            font-size: 16px;
+            text-align: left;
+            padding: 0px 10px;
+        }
+
+        .pay-mode button:nth-child(1) {
+            background-color: white;
+            border-left: 4px solid #99cc33;
+        }
+
+        #free {
+            color: #99cc33;
+        }
+
+        .amount {
+            color: #d4145a;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        #buy {
+            width: 100%;
+            height: 40px;
+            font-size: 18px;
+            border: none;
+            background-color: #99cc33;
+            border-radius: 5px;
+            font-weight: bold;
+            color: white;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <div class="links">
+            <a href="home.html">
+                <img style="width:20%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHQGdaIn7hjn3NWLZximOTni6fG_N6kk9Ban6KhTLtfA&s"
+                    alt="">
+            </a>
+        </div>
+        <div>
+            <a href="order.html" id="orders">My Orders</a>
+        </div>
+    </div>
+    <div class="product">
+        <div class="left-container">
+            <div class="address">
+                <p>Enter Shipping Address</p>
+                <form>
+                    <input type="text" placeholder="Enter Full Name" id="name">
+                    <br>
+                    <input type="text" placeholder="Flat/House No./Building" id="address1">
+                    <input type="text" placeholder="Locality/Area" id="address2">
+                    <br>
+                    <input type="text" placeholder="City" id="">
+                    <input type="number" placeholder="Zip Code" id="">
+                    <input type="text" placeholder="State" id="">
+                </form>
+            </div>
+            <div class="cart-section">
+                <p>Cart Items (<span id="nos-item">0</span>)</p>
+                <div class="cart-item"></div>
+            </div>
+        </div>
+        <div class="right-container">
+            <p id="large-font">Payment Mode</p>
+            <div class="fx">
+                <div class="pay-mode">
+                    <button>Cash on Delivery</button>
+                    <br>
+                    <button>PayTM</button>
+                    <br>
+                    <button>Google Pay</button>
+                    <br>
+                    <button>PhonePe / BHIM UPI</button>
+                    <br>
+                    <button>ATM / Debit Card</button>
+                    <br>
+                    <button>Credit Card</button>
+                    <br>
+                    <button>Net Banking</button>
+                </div>
+                <div class="price">
+                    <div>
+                        <p>Order Details</p>
+                        <div class="fx">
+                            <p>Total Price</p>
+                            <p>₹<span id="total">0</span></p>
+                        </div>
+                        <div class="fx">
+                            <p>Shipping Charges</p>
+                            <p id="free">FREE</p>
+                        </div>
+                        <div class="fx">
+                            <p>Applicable Tax and Charges</p>
+                            <p>+ ₹<span id="tax">20</ span>
+                            </p>
+                        </div>
+                        <div class="fx amount jcsb">
+                            <p>Amount Payable</p>
+                            <p>₹<span id="total-pay">0</span></p>
+                        </div>
+                    </div>
+                    <button id="buy">Confirm Order</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let cartData = JSON.parse(localStorage.getItem("cart")) || [];
+        let cartEl = document.querySelector(".cart-item");
+        let tax = document.getElementById("tax").innerText; // Get tax value from DOM
+        let datatax = parseFloat(tax); // Parse tax value to float
+        let nositem = document.getElementById("nos-item");
+        let buyBtn = document.getElementById("buy");
+        let totalPay = document.getElementById("total-pay");
+        let total = document.getElementById("total");
+
+        displayData(cartData);
+
+        function displayData (data) {
+            cartEl.innerHTML = "";
+            nositem.innerText = data.length;
+            data.forEach((ele, ind) => {
+                let card = document.createElement("div");
+                let div1 = document.createElement("div");
+                let image = document.createElement("img");
+                let div2 = document.createElement("div");
+                let name = document.createElement("p");
+                let size = document.createElement("p");
+                let quantity = document.createElement("span");
+                let price = document.createElement("p");
+                price.innerText = "Price: $" + (ele.price * ele.quantity);
+
+                image.src = ele.image;
+                image.style.height = "150px";
+                div1.append(image);
+                name.textContent = ele.name;
+                // size.textContent = `size : ${ele.size}`;
+                size.textContent = "size : unisize";
+                quantity.textContent = `Quantity: ${ele.quantity}`;
+                div2.append(name, size, quantity, price);
+                card.append(div1, div2);
+                cartEl.append(card);
+            });
+
+            let editCart = document.createElement("button");
+            editCart.innerText = "EDIT CART";
+            editCart.classList.add("edit_btn");
+            editCart.style.width = "50%";
+            editCart.style.backgroundColor = "green";
+            editCart.style.marginTop = "20px";
+
+            cartEl.append(editCart);
+            editCart.addEventListener("click", () => {
+                location.href = "cart.html";
+            });
+
+            let sum = 0;
+            for (let i = 0; i < cartData.length; i++) {
+                sum += cartData[i].price * cartData[i].quantity;
+            }
+            totalPay.textContent = (sum + datatax).toFixed(2); // Add tax to the sum
+            total.textContent = sum.toFixed(2); // Add tax to the total
+        }
+
+        let formEl = document.querySelector("form");
+
+
+        buyBtn.addEventListener("click", () => {
+            alert("Order Placed Successfully 🤩");
+            setTimeout(() => {
+                location.href = "index.html";
+            }, 1000);
+            let orderData = cartData.splice(0, cartData.length);
+            localStorage.setItem("order", JSON.stringify(orderData));
+            cartData = [];
+            localStorage.setItem("cart", JSON.stringify(cartData));
+        });
+    </script>
+</body>
+
+</html>
