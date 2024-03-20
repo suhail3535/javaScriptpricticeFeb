@@ -10,16 +10,23 @@
 <body>
     <button onclick="addValue()">Add+</button>
     <button id="counter">0</button>
-    <button onclick="redValue()">Reduce-</button>
+    <button id="redd" onclick="redValue()">Reduce-</button>
 </body>
 <script>
     let value = document.getElementById("counter")
+    let redd = document.getElementById("redd")
     let initialCount = 0;
     function addValue () {
         initialCount++
         value.innerText = initialCount
+        redd.disabled=false
     }
-        
+    function redValue () {
+        initialCount--
+        initialCount==1? redd.disabled = true: redd.disabled = false
+
+        value.innerText = initialCount
+    }
 
 
 

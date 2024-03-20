@@ -84,7 +84,7 @@ let b = 100;
 
 
 
-let day = 4;
+let day = 2;
 let dayName;
 
 switch (day) {
