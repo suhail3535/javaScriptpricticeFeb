@@ -67,17 +67,27 @@ let b = 100;
 // console.log(`ticket price is $${price}`)
 
 
-let price = 580;
-let discount;
-if (price < 50) {
+// let price = 580;
+// let discount;
+// if (price < 50) {
 
-    discount=price-price*(0/100)
+//     discount=price-price*(0/100)
 
-} else if (price >= 50 && price <= 100) {
-    discount=price*(50/100)
-} else if(price>200) {
-    discount = price * (60 / 100)
-    price = price-price * (60 / 100)+10
+// } else if (price >= 50 && price <= 100) {
+//     discount=price*(50/100)
+// } else if(price>200) {
+//     discount = price * (60 / 100)
+//     price = price-price * (60 / 100)+10
+// }
+// console.log(`Discount price is ${discount}`);
+// console.log(`updated price is ${price}`);
+
+
+let char = "s"
+let result;
+if (char == "o" || char == "a" || char == "i" || char == "e" || char == "u") {
+result="voewl"
+} else {
+    result="consonent"
 }
-console.log(`Discount price is ${discount}`);
-console.log(`updated price is ${price}`);
+console.log(result);
