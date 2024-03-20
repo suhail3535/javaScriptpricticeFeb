@@ -24,8 +24,8 @@ Create a program that categorizes a person's age. If the age is less than 18, pr
 
 
 question-4
-let percentage = 75;
-Create a program that assigns grades based on the percentage obtained. If the percentage is greater than or equal to 90, print "A". If it's between 80 and 89, print "B". For percentages between 70 and 79, print "C". For percentages between 60 and 69, print "D". Otherwise, print "F".
+<!-- let percentage = 75;
+Create a program that assigns grades based on the percentage obtained. If the percentage is greater than or equal to 90, print "A". If it's between 80 and 89, print "B". For percentages between 70 and 79, print "C". For percentages between 60 and 69, print "D". Otherwise, print "F". -->
 
 
 <!-- <-------important------------------> -->
