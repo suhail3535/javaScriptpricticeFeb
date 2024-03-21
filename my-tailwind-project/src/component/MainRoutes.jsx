@@ -1,13 +1,14 @@
 import { Route, Routes } from "react-router-dom";
 import SingleProduct from "./reusableCard/Single";
 import Item from "./items/Item";
+import Navbar from "./navbar/Navbar";
 
 const MainRoutes = () => {
   return (
     <div>
       <Routes>
-        <Route path="/product/:id" element={<SingleProduct />} />
-        <Route path="/item" element={<Item />} />
+
+        <Route path="/navbar" element={<Navbar />} />
       </Routes>
     </div>
   );
