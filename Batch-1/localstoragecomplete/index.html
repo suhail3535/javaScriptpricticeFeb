@@ -97,11 +97,12 @@
           city: document.getElementById("city").value,
           course: document.getElementById("course").value,
         };
+        console.log(data);
         allData.push(data);
         localStorage.setItem("userData", JSON.stringify(allData));
         form.reset();
         showDeatils(allData);
-        // console.log(allData)
+        console.log(allData)
       });
 
       // function for showdata and create elements
