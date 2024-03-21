@@ -301,6 +301,8 @@ width: 30px;
                 });
                 displayData(finalFilterValue);
             }
+                setupPagination();
+
         }
 
         function handleSearch () {
@@ -310,6 +312,8 @@ console.log(searchQuery)
                 return ele.title.toLowerCase().includes(searchQuery);
             });
             displayData(filteredData);
+                setupPagination();
+
         }
 
         function handleSort () {
@@ -328,6 +332,8 @@ console.log(searchQuery)
 
                 displayData(sortedData);
             }
+                setupPagination();
+
         }
 
     </script>

@@ -83,7 +83,7 @@
 
       <div id="container"></div>
     </div>
-    <script>
+    <!-- <script>
       let arr;
 
       async function getValue() {
@@ -150,6 +150,7 @@
           finalFilterValue = arr.filter(function (ele) {
             return ele.category == optionValue;
           });
+
           displayData(finalFilterValue);
         }
       }
@@ -188,6 +189,127 @@
             newData.push(value);
             localStorage.setItem(key, JSON.stringify(newData));
           }
-    </script>
+    </script> -->
+
+
+<script>
+  let arr = []; // Initialize array to store fetched data
+  let currentPage = 1;
+  const itemsPerPage = 5;
+
+  async function fetchData () {
+    try {
+      let res = await axios.get('https://fakestoreapi.com/products');
+      arr = res.data;
+      displayData();
+      setupPagination();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  fetchData();
+
+  function displayData () {
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = currentPage * itemsPerPage;
+    const currentItems = arr.slice(startIndex, endIndex);
+
+    // Display the data in the container div
+    const container = document.getElementById("container");
+    container.innerHTML = ""; // Clear previous content
+
+    currentItems.forEach(item => {
+      // Create HTML elements for each item and append to container
+      let div = document.createElement("div");
+      div.classList.add("product"); // Add a class for styling
+      div.innerHTML = `
+                    <img src="${item.image}" alt="${item.title}">
+                    <h3>${item.title}</h3>
+                    <p>Category: ${item.category}</p>
+                    <p>Description: ${item.description.slice(0, 50)}...</p>
+                    <p>Price: $${item.price}</p>
+                    <p>Rating: ${item.rating.rate}</p>
+                    <button onclick="addToCart(${item.id})">Add To Cart</button>
+                `;
+      container.appendChild(div);
+    });
+  }
+
+  function setupPagination () {
+    const totalPages = Math.ceil(arr.length / itemsPerPage);
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const pageNumber = document.getElementById("pagenumber");
+
+    pageNumber.innerText = `Page ${currentPage} of ${totalPages}`;
+    prevBtn.disabled = currentPage === 1;
+    nextBtn.disabled = currentPage === totalPages;
+  }
+
+  function changePage (page) {
+    const totalPages = Math.ceil(arr.length / itemsPerPage);
+    currentPage = Math.max(1, Math.min(page, totalPages));
+    displayData();
+    setupPagination();
+  }
+
+  function addToCart (itemId) {
+    let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+    let item = arr.find(product => product.id === itemId);
+    if (item) {
+      if (!cartItems.some(cartItem => cartItem.id === item.id)) {
+        cartItems.push(item);
+        localStorage.setItem("cart", JSON.stringify(cartItems));
+        updateCartQuantity();
+        alert("Item added to cart!");
+      } else {
+        alert("Item is already in the cart.");
+      }
+    }
+  }
+
+  function updateCartQuantity () {
+    let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+    let cartLink = document.getElementById("cart");
+    cartLink.textContent = `🛒:${cartItems.length}`;
+  }
+  updateCartQuantity();
+
+  document.getElementById('filter').addEventListener('change', handleFilter);
+  document.getElementById('sort').addEventListener('change', handleSort);
+  document.getElementById('search').addEventListener('input', handleSearch);
+
+  function handleFilter () {
+    let category = document.getElementById('filter').value;
+    let filteredItems = arr.filter(item => category === "" || item.category === category);
+    arr = filteredItems;
+    currentPage = 1;
+    displayData();
+    setupPagination();
+  }
+
+  function handleSort () {
+    let sortBy = document.getElementById('sort').value;
+    if (sortBy === "LTH") {
+      arr.sort((a, b) => a.price - b.price);
+    } else if (sortBy === "HTL") {
+      arr.sort((a, b) => b.price - a.price);
+    }
+    currentPage = 1;
+    displayData();
+    setupPagination();
+  }
+
+  function handleSearch () {
+    let searchTerm = document.getElementById('search').value.trim().toLowerCase();
+    let filteredItems = arr.filter(item => item.title.toLowerCase().includes(searchTerm));
+    arr = filteredItems;
+    currentPage = 1;
+    displayData();
+    setupPagination();
+  }
+
+</script>
+
   </body>
 </html>
