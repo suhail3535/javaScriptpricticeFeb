@@ -21,15 +21,33 @@ let ramu = {
 
 // how to Delete key in excisting obj
 
-let data = {
-    name: 'aaa',
-    age: 27,
-    city:"Delhi"
+// let data = {
+//     name: 'aaa',
+//     age: 27,
+//     city:"Delhi"
+// }
+// console.log(data);
+
+
+// delete data.city
+// delete data.name
+// console.log(data);
+
+
+let obj = {
+    name: "sunil",
+    phone: {
+        f: 6465648845,
+        l:358568557845
+    },
+    mobile:456375476
 }
-console.log(data);
 
+obj.school = "dps"
+obj.class = 10
 
-delete data.city
-delete data.name
-console.log(data);
+obj.phone=548564
+obj.mobile = 64873565644
+console.log(obj);
+
 
