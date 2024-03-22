@@ -239,10 +239,10 @@ width: 30px;
 ///count total pages
         function setupPagination () {
             const totalPages = Math.ceil(arr.length / itemsPerPage);
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            prevBtn.disabled = currentPage === 1;
-            nextBtn.disabled = currentPage === totalPages;
+            // const prevBtn = document.getElementById('prevBtn');
+            // const nextBtn = document.getElementById('nextBtn');
+            // prevBtn.disabled = currentPage === 1;
+            // nextBtn.disabled = currentPage === totalPages;
         }
 
         let pagenumber = document.getElementById("pagenumber")
@@ -332,7 +332,6 @@ console.log(searchQuery)
 
                 displayData(sortedData);
             }
-                setupPagination();
 
         }
 
