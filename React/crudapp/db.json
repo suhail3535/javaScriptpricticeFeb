@@ -1,0 +1,95 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "age": 30,
+      "city": "New York",
+      "mobile": "123-456-7890"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "age": 25,
+      "city": "Los Angeles",
+      "mobile": "987-654-3210"
+    },
+    {
+      "id": 3,
+      "name": "Alice Johnson",
+      "age": 35,
+      "city": "Chicago",
+      "mobile": "456-789-0123"
+    },
+    {
+      "id": 4,
+      "name": "Bob Brown",
+      "age": 40,
+      "city": "Houston",
+      "mobile": "789-012-3456"
+    },
+    {
+      "id": 5,
+      "name": "Emma Davis",
+      "age": 28,
+      "city": "San Francisco",
+      "mobile": "012-345-6789"
+    },
+    {
+      "id": 6,
+      "name": "Michael Wilson",
+      "age": 33,
+      "city": "Miami",
+      "mobile": "345-678-9012"
+    },
+    {
+      "id": 7,
+      "name": "Sophia Martinez",
+      "age": 22,
+      "city": "Dallas",
+      "mobile": "678-901-2345"
+    },
+    {
+      "id": 8,
+      "name": "Matthew Anderson",
+      "age": 31,
+      "city": "Seattle",
+      "mobile": "901-234-5678"
+    },
+    {
+      "id": 9,
+      "name": "Olivia Thompson",
+      "age": 27,
+      "city": "Boston",
+      "mobile": "234-567-8901"
+    },
+    {
+      "id": 10,
+      "name": "William Garcia",
+      "age": 29,
+      "city": "Atlanta",
+      "mobile": "567-890-1234"
+    },
+    {
+      "name": "amar",
+      "age": "26",
+      "city": "jaipur",
+      "mobile": "9898981212",
+      "id": 11
+    },
+    {
+      "name": "amar",
+      "age": "26",
+      "city": "jaipur",
+      "mobile": "9898981212",
+      "id": 12
+    },
+    {
+      "name": "mohit",
+      "age": "26",
+      "city": "lalpur",
+      "mobile": "dfdfgdjkgkdg",
+      "id": 13
+    }
+  ]
+}

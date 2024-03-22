@@ -1,39 +1,54 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react';
 
 const App = () => {
-  const [value, setValue] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState('');
 
   useEffect(() => {
+  
     const fetchData = async () => {
       try {
-        const res = await axios.get("https://api.escuelajs.co/api/v1/products");
-        setValue(res.data);
+        const response = await fetch('https://fakestoreapi.com/products');
+        const data = await response.json();
+        setProducts(data);
       } catch (error) {
-        console.log(error);
+        console.error('Error fetching data:', error);
       }
     };
 
     fetchData();
   }, []);
 
-  console.log(value);
+  const handleCategoryChange = (event) => {
+    setSelectedCategory(event.target.value);
+  };
+
+  const filteredProducts = selectedCategory
+    ? products.filter(product => product.category === selectedCategory)
+    : products;
 
   return (
-    <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr"}}>
-    
-      {value.map((ele) => (
-        <div key={ele.id}>
-          <img style={{width:"50%"}} src={ele.category.image} alt="" />
-          <p>{ele.category.name}</p>
-          <h1>{ele.title}</h1>
-          <h1>{ele.price}</h1>
+    <div>
+      <h1>Product Catalog</h1>
+      <select value={selectedCategory} onChange={handleCategoryChange}>
+        <option value="">All</option>
+        <option value="men's clothing">Men's Clothing</option>
+        <option value="women's clothing">Women's Clothing</option>
+        <option value="jewelery">Jewelry</option>
+        <option value="electronics">Electronics</option>
+      </select>
 
-
-
-
-        </div>
-      ))}
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)" }}>
+        {filteredProducts.map(product => (
+          <div key={product.id}>
+            <h2>{product.title}</h2>
+            <h3>{product.category}</h3>
+            <p>Price: ${product.price}</p>
+            <p>{product.description}</p>
+            <img src={product.image} alt={product.title} style={{ width: "100%" }} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
