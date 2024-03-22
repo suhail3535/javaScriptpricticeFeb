@@ -6,7 +6,7 @@ let kuchbhi = {city:"jaipur rajasthan",state:"rrr"}
 
 let data = ["sunil", 20, "manish", "mukesh", 40, true, false,5,7,9]
 
-console.log(kuchbhi);
+console.log(data);
 
 
 
