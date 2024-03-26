@@ -1,0 +1,1227 @@
+.heading {
+    width: 100%;
+    color: white;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #368547;
+}
+
+.heading h1 {
+    font-size: 40px;
+    font-weight: 500;
+
+
+}
+
+
+.parent_div {
+
+    width: 100%;
+    padding-bottom: 25px;
+    background-color: #f5f5f5;
+}
+
+.card_container {
+    width: 80%;
+    display: grid;
+    gap: 30px;
+
+
+    grid-template-columns: repeat(2, 1fr);
+    margin: auto;
+    padding: 10px;
+}
+
+.form_stapper_2 {
+    border: 2px solid green;
+}
+
+/* <--------Donation card css--------> */
+
+.card {
+    border-radius: 8px;
+    /* border: 2px solid green; */
+    overflow: hidden;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    margin: 20px auto;
+}
+
+
+
+.donate_div_btn {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 30px;
+    height: 40px;
+}
+
+.donate_div_btn button {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0, 142, 72);
+    color: white;
+    border-radius: 5px;
+    font-size: 20px;
+    border: none;
+    transition: all 0.5s ease-in-out;
+}
+
+.donate_div_btn button:hover {
+    background-color: rgb(2, 80, 33);
+    cursor: pointer;
+}
+
+.image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content {
+    padding: 20px;
+    color: #008000;
+    text-align: center;
+    font-size: 20px;
+}
+
+.description {
+
+    font-family: "Ubuntu", "SolaimanLipi", sans-serif;
+
+    cursor: pointer;
+    margin-top: 0;
+    margin-bottom: .5em;
+    color: #262626;
+    font-weight: 400;
+    line-height: 1.2;
+    font-size: 16px;
+    box-sizing: border-box;
+    text-align: center;
+    padding-bottom: 25px;
+    height: 110px;
+    padding: 10px;
+    text-align: justify;
+    overflow-y: scroll;
+}
+
+
+/* <---------Donationcarddetail css-----------> */
+.donation_card_details_container {
+    width: 100%;
+    padding: 0;
+
+    background-color: #f5f5f5;
+}
+
+.iframe_card {
+    margin-top: 14px;
+
+}
+
+.iframe_card iframe {
+    border-radius: 10px;
+    width: 100%;
+    height: 280px;
+}
+
+.main_container {
+    width: 80%;
+    margin: 30px auto;
+    display: flex;
+    gap: 40px;
+    padding-bottom: 30px;
+    justify-content: space-between;
+
+    cursor: pointer;
+}
+
+.details_div {
+    display: block;
+
+    width: 50%;
+
+    padding: 10px;
+}
+
+.title {
+    /* border: 2px solid yellow; */
+    width: 100%;
+    border-radius: 10px;
+    margin: auto;
+    padding: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: white;
+    text-align: center;
+    color: rgb(0, 142, 72);
+    font-size: 18px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+
+.title_part_two {
+    background-color: white;
+    width: 100%;
+
+    border-radius: 10px;
+    /* margin: auto; */
+    padding: 25px;
+    margin-top: 10px;
+    text-align: left;
+    font-size: 17px;
+    line-height: 25px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.title_part_two p {
+    /* color: rgb(0, 142, 72); */
+    color: green;
+    margin-bottom: 10px;
+
+}
+
+.bank_details_div {
+    border: 1px solid gainsboro;
+    width: 50%;
+    margin-top: 20px;
+    background-color: white;
+    padding-bottom: 20px;
+    border-radius: 5px;
+}
+
+.bank_title_part_two {
+    width: 100%;
+    border-radius: 10px;
+    margin: auto;
+    padding: 25px;
+    border-radius: 5px;
+    text-align: left;
+    font-size: 15px;
+    line-height: 25px;
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+}
+
+.bank_title_part_two p {
+    /* color: rgb(0, 142, 72); */
+    font: 13px;
+    color: rgb(77, 75, 75);
+    margin-bottom: 10px;
+
+}
+
+.bank_title_part_two button {
+    background-color: rgb(0, 142, 72);
+    color: white;
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-size: 15px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    border: none;
+}
+
+.bank_title_part_two button:hover {
+    background-color: #368547;
+    cursor: pointer;
+}
+
+.bank_ac {
+    border: 1px solid gainsboro;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    border-radius: 5px;
+    margin: 20px;
+
+    justify-content: space-between;
+}
+
+.amount_btn_div {
+    /* border: 1px solid gainsboro; */
+    width: 90%;
+    margin: auto;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    border-radius: 5px;
+    margin: 20px;
+
+}
+
+.amount_btn_div button {
+    padding: 20px 30px;
+    font-size: 15px;
+    border-radius: 5px;
+    font-weight: 500;
+    background-color: transparent;
+    border: 1px solid gainsboro;
+}
+
+.amount_btn_div button:hover {
+    background-color: #368547;
+    cursor: pointer;
+}
+
+.form_div {
+    /* border: 1px solid gainsboro; */
+    width: 90%;
+    margin: auto;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+
+
+.next_btn {
+    width: 20%;
+    display: flex;
+    margin: auto;
+
+    margin-top: 30px;
+
+}
+
+.next_btn button {
+    width: 100%;
+    /* margin-top: 50px; */
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    font-weight: 500;
+    background-color: rgb(0, 142, 72);
+}
+
+#first_input {
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+#first_input,
+.doner {
+    margin-top: 30px;
+}
+
+.form div {
+    margin-bottom: 20px;
+    margin-top: 10px;
+    /* border: 2px solid green; */
+}
+
+#first_input input {
+    height: 35px;
+    margin-left: 20px;
+    width: 65%;
+    border-radius: 5px;
+    border: 1px solid gainsboro;
+}
+
+.donar input {
+    border: 1px solid gainsboro;
+    height: 35px;
+    margin-left: 20px;
+    width: 64%;
+    margin-left: 55px;
+    border-radius: 5px;
+}
+
+label {
+    font-size: 15px;
+}
+
+
+
+.bank_logo {
+    width: 25%;
+    margin: auto;
+    /* border: 1px solid teal; */
+}
+
+.bank_logo img {
+    margin: auto;
+    width: 45%;
+    display: flex;
+}
+
+.ac_number {
+    width: 70%;
+    padding: 20px;
+    text-align: left;
+    font-size: 17px;
+    height: 180px;
+
+    background-color: rgb(242, 249, 246);
+    color: rgb(77, 75, 75);
+    border: 1px solid gainsboro;
+}
+
+.error {
+
+    font-size: 15px;
+    color: red;
+    margin-left: 150px;
+}
+
+
+
+/* <-----------Zakat calculator----------> */
+.top_section_div {
+
+    text-align: center;
+    background-color: #f5f5f5;
+    width: 100%;
+    padding: 30px;
+}
+
+#top_head_as {
+
+    height: 100px;
+    line-height: 0;
+    padding: 25px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    color: black;
+    border-bottom: 1px solid gainsboro;
+
+
+}
+
+#top_head_as h5 {
+    font-size: 20px;
+    margin-top: 0px;
+
+}
+
+.top_section_div h4 {
+    font-size: 30px;
+    color: rgb(133, 130, 130);
+    margin-top: 10px;
+}
+
+.top_section_div p,
+.resource {
+    font-size: 18px;
+    margin-top: 30px;
+}
+
+.top_section_div h3 {
+    margin-top: 30px;
+    font-size: 25px;
+
+    color: rgb(53, 52, 52);
+}
+
+
+.calendar-icon {
+    margin: auto;
+}
+
+
+
+.next_zakat_page {
+
+    width: 70%;
+    margin: 50px auto;
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+.first_cal_div {
+    width: 30%;
+
+    text-align: justify;
+
+
+}
+
+.first_cal_div p {
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.first_cal_div2 {
+    width: 70%;
+
+    line-height: 0.5;
+    border-radius: 10px;
+    background-color: #ffe5d7;
+    border: 1px solid red;
+}
+
+.first_cal_div2 div {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.first_cal_div2 p {
+    font-size: 17px;
+    margin-top: 20px;
+}
+
+.form_input {
+    border: 1px solid gray;
+    margin-top: 50px;
+}
+
+.donate_a_portion {
+    width: 40%;
+    margin: auto;
+    background-color: #008e48;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.donate_a_portion.donate_a_portion_button:hover {
+    cursor: pointer;
+}
+
+.donate_a_portion_button {
+    width: 100%;
+    padding: 23px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    background-color: #008e48;
+}
+
+.stepper_div {
+    width: 100%;
+    margin: 50px auto;
+    background-color: #e8e8e8;
+    text-align: left;
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+    justify-content: space-between;
+    /* border: 1px solid gray; */
+}
+
+.content_div_zakat1 {
+    width: 50%;
+    font-size: 12px;
+    line-height: 1.3;
+    border-radius: 10px;
+    padding: 5px 10px;
+    border: 1px solid #e8e8e8;
+    background-color: white;
+}
+
+.zkat_info {
+
+    width: 70%;
+    margin: 20px auto;
+    padding: 10px;
+    font-size: 17px;
+}
+
+.zkat_info a {
+    color: rgb(0, 142, 72);
+    text-decoration: none;
+}
+
+.zkat_info p:nth-child(1) {
+
+    margin-bottom: 20px;
+}
+
+.zkat_info p {
+    margin-top: 20px;
+}
+
+.ptag {
+    color: red;
+}
+
+.content_div_zakat2 p {
+    color: green;
+}
+
+.content_div_zakat2 {
+    width: 50%;
+    border-radius: 10px;
+    font-size: 18px;
+    line-height: 1.5;
+    background-color: white;
+    border: 1px solid #e8e8e8;
+    padding: 0px 30px;
+}
+
+.you_do {
+    color: red;
+    font-size: 14px;
+    text-align: center;
+    margin-right: 15px;
+    /* font-weight: bold; */
+}
+
+.prev_next {
+    /* border: 1px solid green; */
+    display: flex;
+    width: 20%;
+    display: none;
+    margin: 30px auto;
+    justify-content: space-between;
+
+}
+
+.prev_next div {
+    padding: 15px;
+    cursor: pointer;
+    background-color: rgb(22, 119, 255);
+    border-radius: 50% 50%;
+    color: white;
+    font-size: 15px;
+    border: none;
+}
+
+/*  */
+#step_counter {
+    width: 30%;
+    /* border: 2px solid red; */
+    margin: 40px auto;
+
+}
+
+
+
+/* 888888888888888 */
+
+
+
+
+
+
+
+.steppe_div_1,
+.steppe_div_2 {
+    width: 50%;
+
+    margin: auto;
+}
+
+
+.content_container {
+
+    width: 75%;
+    margin: auto;
+}
+
+.steppe_div_1,
+.steppe_div_2 {
+    width: 70%;
+    margin: auto;
+}
+
+.input_1 {
+    width: 10%;
+
+    border: 1px solid gainsboro;
+    height: 40px;
+}
+
+.input_2 {
+    width: 90%;
+    border: 1px solid gainsboro;
+    height: 40px;
+}
+
+        label {
+            font-size: 20px;
+            font-weight: bolder;
+        }
+/* <-----------media screen for Mobile---> */
+@media screen and (min-width:200px) and (max-width:768px) {
+
+    .card_container {
+        width: 100%;
+        display: grid;
+        gap: 30px;
+
+
+        grid-template-columns: repeat(1, 1fr);
+        margin: auto;
+        padding: 10px;
+    }
+
+    .ant-steps-vertical {
+
+        display: flex;
+    }
+
+    .heading h1 {
+        font-size: 25px;
+        font-weight: 500;
+
+
+    }
+
+    #top_head_as {
+
+        height: 80px;
+        line-height: 0;
+        padding: 20px;
+        width: 100%;
+        margin: auto;
+        margin-bottom: 20px;
+        color: black;
+        border-bottom: 1px solid gainsboro;
+
+
+    }
+
+    #top_head_as p {
+        font-size: 20px;
+        margin-top: 0px;
+        line-height: 1;
+        text-align: center;
+
+    }
+
+    #top_head_as h5 {
+        font-size: 15px;
+        margin-top: 0px;
+        line-height: 1.8;
+        text-align: center;
+
+    }
+
+    .main_container {
+        display: block;
+        width: 100%
+    }
+
+    .details_div {
+
+        width: 100%;
+        padding: 10px;
+    }
+
+    .bank_details_div {
+        width: 95%;
+        margin: auto;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    .title_part_two {
+        text-align: justify;
+    }
+
+    .bank_title_part_two button {
+        background-color: rgb(0, 142, 72);
+        color: white;
+        padding: 10px 30px;
+        border-radius: 5px;
+        font-size: 12.5px;
+        margin-bottom: 15px;
+        font-weight: 500;
+        cursor: pointer;
+        border: none;
+    }
+
+    .bank_ac {
+        border: 1px solid gainsboro;
+        width: 100%;
+        margin: auto;
+        display: block;
+        margin-bottom: 20px;
+
+
+        justify-content: space-between;
+    }
+
+    .bank_logo {
+        width: 60%;
+        margin: 20px auto;
+
+    }
+
+
+
+    .ac_number {
+        width: 100%;
+        padding: 10px;
+        text-align: left;
+        font-size: 17px;
+        margin-top: 20px;
+        background-color: rgb(242, 249, 246);
+        color: rgb(77, 75, 75);
+        border: 1px solid gainsboro;
+    }
+
+    .amount_btn_div {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .form_div {
+        padding-top: 10px;
+        width: 100%;
+        margin: auto;
+        padding: 15px;
+        border-radius: 5px;
+
+    }
+
+    .form {
+        padding-top: 10px;
+        width: 100%;
+
+    }
+
+    .form div {
+        margin-bottom: 20px;
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .next_btn {
+        width: 30%;
+        display: flex;
+        margin: auto;
+    }
+
+    .next_btn button {
+        width: 100%;
+        padding: 10px 20px;
+        border-radius: 5px;
+        color: white;
+        border: none;
+        font-weight: 500;
+        background-color: rgb(0, 142, 72);
+    }
+
+    /* <-------zakat cal-----> */
+    .top_section_div {
+        width: 100%;
+        padding: 10px;
+        /* border: 1px solid green; */
+    }
+
+    .top_section_div h4 {
+        font-size: 25px;
+    }
+
+    .top_section_div p {
+        /* text-align: justify; */
+        padding: 10px;
+    }
+
+    .next_zakat_page {
+        display: block;
+        width: 95%;
+        margin: auto;
+    }
+
+    .donate_a_portion {
+        width: 95%;
+        margin: 20px auto;
+    }
+
+    .zkat_info {
+        /* border: 1px solid teal; */
+        width: 100%;
+        margin: auto;
+    }
+
+    .first_cal_div,
+    .first_cal_div2 {
+        width: 100%;
+        padding: 0px;
+        margin-top: 10px;
+    }
+
+    .you_do {
+        color: red;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 1.4;
+    }
+
+
+    .first_cal_div2 div {
+        display: flex;
+        width: 100%;
+        margin: auto;
+        font-size: 10px;
+        justify-content: space-around;
+    }
+
+    .first_cal_div2 div:nth-child(2) p {
+        color: green;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .stepper_div {
+        padding: 5px;
+        width: 100%;
+        margin: 20px auto;
+        display: block;
+    }
+
+    .content_div_zakat1,
+    .content_div_zakat2 {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .content_div_zakat1 p:nth-child(1) {
+        font-size: 20px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    /* <-----step count-----> */
+
+    #first_input input {
+        height: 35px;
+        margin-left: 60px;
+        width: 80%;
+        margin-top: 10px;
+        border-radius: 5px;
+        border: 1px solid gainsboro;
+    }
+
+    .error {
+        /* border: 1px solid red; */
+        font-size: 15px;
+        color: red;
+        margin-left: 50px;
+    }
+
+    .donar input {
+        border: 1px solid gainsboro;
+        height: 35px;
+        margin-top: 10px;
+        width: 80%;
+
+        border-radius: 5px;
+    }
+
+    .heading h4 {
+        font-size: 30px;
+    }
+                label {
+                    font-size: 20px;
+                    font-weight: bolder;
+                }
+}
+
+/* <-----------media screen for Tab---> */
+@media screen and (min-width:421px) and (max-width:1024px) {
+    .main_container {
+        display: block;
+        width: 100%;
+
+
+    }
+
+
+
+
+
+
+
+
+    #top_head_as {
+
+        height: 130px;
+        line-height: 0;
+        padding: 20px;
+        width: 100%;
+        margin-bottom: 20px;
+        color: black;
+        border-bottom: 1px solid gainsboro;
+
+
+    }
+
+    #top_head_as p {
+        font-size: 25px;
+        margin-top: 0px;
+        line-height: 1.5;
+        text-align: center;
+
+    }
+
+    #top_head_as h5 {
+        font-size: 30px;
+        margin-top: 0px;
+        line-height: 1.5;
+        text-align: center;
+
+    }
+
+
+    .input_2 {
+        width: 80%;
+        border: 1px solid rgb(114, 113, 113);
+        height: 40px;
+    }
+
+
+    .bank_details_div {
+        width: 95%;
+        margin: auto;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    .title_part_two,
+    .title,
+    .bank_title_part_two {
+        text-align: justify;
+        font-size: 25px;
+        font-weight: 500;
+        line-height: 1.8;
+    }
+
+    .bank_title_part_two button {
+        background-color: rgb(0, 142, 72);
+        color: white;
+        padding: 10px 23px;
+        border-radius: 5px;
+        font-size: 15px;
+        margin-bottom: 15px;
+        cursor: pointer;
+        border: none;
+    }
+
+    .bank_ac {
+        border: 1px solid gainsboro;
+        width: 100%;
+        padding: 20px;
+        /* margin: auto; */
+        display: block;
+        margin-top: 30px;
+    }
+
+    .bank_logo {
+        width: 60%;
+        margin: 20px auto;
+
+    }
+
+
+
+    .ac_number {
+        width: 100%;
+        /* padding: 20px; */
+        text-align: left;
+
+        margin-top: 10px;
+        font-size: 25px;
+        font-weight: 500;
+        color: black;
+        height: 250px;
+        line-height: 1.4;
+        background-color: rgb(242, 249, 246);
+
+    }
+
+    .ac_number p {
+        font-size: 27px;
+        font-weight: 600;
+    }
+
+    .amount_btn_div {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    .amount_btn_div button {
+        padding: 20px 30px;
+        font-size: 25px;
+        border-radius: 5px;
+        font-weight: 700;
+        background-color: transparent;
+        border: 1px solid gainsboro;
+    }
+
+    .amount_btn_div button:hover {
+        color: white;
+        cursor: pointer;
+    }
+
+    .form_div {
+        padding-top: 10px;
+        width: 100%;
+        margin: auto;
+        padding: 15px;
+        border-radius: 5px;
+
+    }
+
+    label {
+        font-size: 20px;
+        font-weight: bolder;
+    }
+
+    .form {
+        padding-top: 10px;
+        width: 100%;
+        padding-bottom: 80px;
+    }
+
+    .form div {
+        margin-bottom: 20px;
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .next_btn {
+        width: 50%;
+
+        margin: auto;
+
+
+
+    }
+
+    .next_btn button {
+        width: 100%;
+        padding: 15px 20px;
+        border-radius: 5px;
+        color: white;
+        border: none;
+        font-size: 25px;
+        font-weight: 500;
+        background-color: rgb(0, 142, 72);
+    }
+
+    #first_input,
+    .doner {
+        margin-top: 30px;
+    }
+
+    #first_input input {
+        height: 45px;
+        margin-left: 60px;
+        width: 80%;
+        margin-top: 10px;
+        border-radius: 5px;
+        border: 1px solid gainsboro;
+    }
+
+    .error {
+        /* border: 1px solid red; */
+        font-size: 15px;
+        color: red;
+        margin-left: 50px;
+    }
+
+    .donar input {
+        border: 1px solid gainsboro;
+        height: 45px;
+        margin-top: 10px;
+        width: 80%;
+
+        border-radius: 5px;
+    }
+}
+
+
+@media screen and (min-width:200px) and (max-width:420px) {
+    .content_container {
+
+        width: 100%;
+        padding: 10px;
+        margin: auto;
+    }
+
+    .steppe_div_1,
+    .steppe_div_2 {
+        width: 90%;
+        margin: auto;
+    }
+
+    .input_1 {
+        width: 20%;
+
+        border: 1px solid gainsboro;
+        height: 40px;
+    }
+
+    .input_2 {
+        width: 80%;
+        border: 1px solid gainsboro;
+        height: 40px;
+    }
+
+    #step_counter {
+        width: 30%;
+        display: none;
+
+        margin: 40px auto;
+
+    }
+
+    .prev_next {
+        display: flex;
+        width: 40%;
+        margin: 30px auto;
+
+        justify-content: space-between;
+    }
+}
+
+@media screen and (min-width:421px) and (max-width:769px) {
+    .content_container {
+
+        width: 90%;
+        padding: 10px;
+        margin: auto;
+    }
+
+    .steppe_div_1,
+    .steppe_div_2 {
+        width: 70%;
+        margin: auto;
+
+        font-weight: bold;
+    }
+.label_tag{
+    font-size: 200px;
+    color: red;
+}
+    .input_1 {
+        width: 20%;
+
+        border: 1px solid gainsboro;
+        height: 40px;
+    }
+
+    .input_2 {
+        width: 80%;
+        border: 1px solid gainsboro;
+        height: 40px;
+    }
+}
