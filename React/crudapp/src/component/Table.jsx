@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table } from 'antd';
+import { Space, Table, Typography } from 'antd';
 const columns = [
     {
         title: 'Sr.No',
@@ -26,8 +26,16 @@ const columns = [
     },
     {
         title: 'Action',
-        
-    },
+        render: () => (
+            <Space>
+                <Typography.Link>Delete</Typography.Link>
+                <Typography.Link>Edit</Typography.Link>
+            </Space>
+        ),
+
+
+    }
+
 ];
 
 const Details = ({value}) => (
