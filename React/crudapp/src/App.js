@@ -8,6 +8,7 @@ import Home from './views/Home';
 import Stepper2 from "./Zakat"
 import Experience from './Experience/Experience';
 import "./Experience/experience.css"
+import It from './Experience/It';
 function App () {
   return (
     <>
@@ -16,6 +17,7 @@ function App () {
       {/* <Details /> */}
       {/* <Stepper2 /> */}
       <Experience />
+      {/* <It /> */}
     </>
 
 
