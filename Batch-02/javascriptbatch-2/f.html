@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="value">result here</p>
+    <form action="" id="form">
+        <input id="num1" type="number" placeholder="enter number">
+        <input id="num2" type="number" placeholder="enter number">
+
+        <input type="submit">
+    </form>
+    <script>
+        let form = document.getElementById("form");
+        form.addEventListener("submit", cal);
+        let value = document.getElementById("value")
+
+
+        function cal (event) {
+            event.preventDefault();
+            let num1 = document.getElementById("num1").value;
+            let num2 = document.getElementById("num2").value;
+
+            let sum=num1*num2
+
+            value.innerText=`Product is:- ${sum}`
+
+        }
+
+    </script>
+</body>
+
+</html>
