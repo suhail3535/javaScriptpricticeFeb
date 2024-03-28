@@ -8,12 +8,13 @@
 </head>
 
 <body>
-    <p id="value">result here</p>
+    <p>Product of Two Number Calculator:- <span id="value" style="color:red;font-size: 30px;"></sp>
+    </p>
     <form action="" id="form">
         <input id="num1" type="number" placeholder="enter number">
         <input id="num2" type="number" placeholder="enter number">
-
         <input type="submit">
+        <button onclick="reset()">Reset</button>
     </form>
     <script>
         let form = document.getElementById("form");
@@ -22,15 +23,27 @@
 
 
         function cal (event) {
-            event.preventDefault();
+            event.preventDefault();//
             let num1 = document.getElementById("num1").value;
             let num2 = document.getElementById("num2").value;
-
-            let sum=num1*num2
-
-            value.innerText=`Product is:- ${sum}`
+            let multiply = num1 * num2
+             value.innerText = `Product is:- ${multiply}`
 
         }
+        function reset () {
+            event.preventDefault();
+            value.innerText = `Product is:- ${0}`
+        }
+
+
+    function calValue (a, b) {
+        console.log("sum of a and b", a + b);
+        console.log(`product of a and b is  ${a * b} difference of  a and b is ${a - b}`);
+        console.log(a - b);
+        console.log(a / b);
+    }
+    calValue(40, 10)
+
 
     </script>
 </body>
