@@ -6,8 +6,8 @@ const Experience = () => {
 
             <h1 style={{ textAlign: "center", color: "#4c3575" }}>Professional experience</h1>
             <div className='main_container_div'>
-                <div>
-                    
+                <div className='card_exp'>
+
                     <div className='heading_cont_first'>
                         <div>
                             <h2 className='title_pos1'>Vastu Housing Finance Corporation pvt ltd </h2>
@@ -21,18 +21,20 @@ const Experience = () => {
                     </div>
                     <div className='roles_div'>
                         <ul>
-                            <li>Collaborated with cross-functional teams on various software development projects.</li>
+                            <li>Developed and implemented the administrative interface of the Loan Origination System (LOS) for efficient management of loan processes.
+                            </li>
+                            <li>Integrated user management functionalities, including roles and permissions, to ensure secure access and data integrity.</li>
+                            <li>Converted Figma designs into web pages using React and some UI library(Ant Design).</li>
                             <li>Contributed to the entire development lifecycle, enhancing skills in problem-solving and critical thinking.</li>
                             <li>Facilitated collaboration among team members by setting up branches, pull requests, and managing code reviews on GitLab.</li>
-                            <li>Worked on a Customer Relationship Management (CRM) application to enhance relevant experience.</li>
                             <li>Wrote efficient, clean code following best practices.</li>
-                            <li>Collaborated with designers for user-friendly interfaces.</li>
-                            <li>Developed and maintained React.js web applications.</li>
+
                         </ul>
+
                     </div>
 
                 </div>
-                <div>
+                <div className='card_exp'>
                     <div className='heading_cont_first'>
                         <div>
                             <h2 className='title_pos'>Rajasthan police headquarters Jaipur(contract-based)
@@ -47,15 +49,14 @@ const Experience = () => {
                     </div>
                     <div className='roles_div'>
                         <ul>
-                            <li>Design, develop, and maintain a modern and
-                                responsive sample website for Rajasthan Police using React.js(currently working on it)</li>
-                            <li>Ensure that the website is user-friendly, accessible,
-                                and optimized for performance across various devices
-                                and browsers.</li>
-                            <li>Facilitated collaboration among team members by setting up branches, pull requests, and managing code reviews on GitLab.</li>
-                            <li>Worked on a Customer Relationship Management (CRM) application to enhance relevant experience.</li>
-                            <li>Debug and optimize application performance.
-                            </li>
+
+                                <li>Developed, and maintain a modern and responsive website for Rajasthan Police using React.js, focusing on delivering an intuitive user experience.</li>
+                                <li>Ensure that the website is user-friendly, accessible, and optimized for performance across various devices and browsers, adhering to web standards and best practices.</li>
+                                <li>Facilitate collaboration among team members by setting up branches, pull requests, and managing code reviews on GitLab, promoting efficient code development and review processes.</li>
+                                <li>Optimize user experience through responsive design, accessibility features, and usability testing, ensuring seamless interaction and accessibility for all users.</li>
+                                <li>Debug and optimize application performance, identifying and resolving issues to enhance the website's speed, reliability, and overall performance.</li>
+
+
                         </ul>
                     </div>
                 </div>

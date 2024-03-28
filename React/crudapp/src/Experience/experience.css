@@ -9,9 +9,7 @@
     width: 80%;
     border-radius: 10px;
     margin: auto;
-    padding: 10px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-    /* border: 1px solid gray; */
+
 }
 
 .heading_cont_first {
@@ -47,6 +45,24 @@ h4{
     font-size: 20px;
     line-height: 1.5;
 }
+.roles_div ul li:hover {
+    font-size: 20px;
+    line-height: 1.5;
+}
+.card_exp{
+    width:100%;
+    transition: all 0.9s ease-in-out;
+    margin: 30px 0px 30px 0px;
+    padding: 10px 0px 20px 0px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+
+}
+.card_exp:hover{
+transform: scale(1.1);
+cursor: pointer;
+
+
+}
 
 @media screen and (min-width:200px) and (max-width:420px) {
 
@@ -54,7 +70,7 @@ h4{
         width: 100%;
         margin: auto;
 
-        border: 1px solid gray;
+
     }
 
     .main_container_div {
@@ -63,7 +79,7 @@ h4{
         border-radius: 10px;
         margin: auto;
         /* padding: 10px; */
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+        /* box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px; */
 
     }
 
@@ -116,7 +132,7 @@ h4{
         width: 100%;
         margin: auto;
 
-        border: 1px solid gray;
+        /* border: 1px solid gray; */
     }
 
     .main_container_div {
@@ -125,7 +141,7 @@ h4{
         border-radius: 10px;
         margin: auto;
         /* padding: 10px; */
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+        /* box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px; */
 
     }
 

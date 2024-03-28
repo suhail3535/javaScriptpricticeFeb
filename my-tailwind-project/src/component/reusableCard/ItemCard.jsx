@@ -21,17 +21,17 @@ export default function Example({ products, index,id }) {
                 </div>
                 <div className="mt-4 flex justify-between">
                   <div>
-                    <h3 className="text-sm text-gray-700">
+                    <h3 className=" text-gray-700 text-xl">
                       <a href={product.href}>
                         <span aria-hidden="true" className="absolute inset-0" />
                         {product.Name}
                       </a>
                     </h3>
-                    <p className="mt-1 text-sm text-gray-500">
+                    <p className="mt-1 text-xl text-gray-900">
                       {product.Brand}
                     </p>
                   </div>
-                  <p className="text-sm font-medium text-gray-900">
+                  <p className="text-xl font-medium text-gray-900">
                     {product.MRP}
                   </p>
                 </div>

@@ -12,11 +12,11 @@ import It from './Experience/It';
 function App () {
   return (
     <>
-      {/* <Navbar /> */}
-      {/* <Home /> */}
-      {/* <Details /> */}
-      {/* <Stepper2 /> */}
-      <Experience />
+      {/* {<Navbar /> }
+      { <Home /> }
+      { <Details /> } */}
+      {/* { <Stepper2 /> } */}
+       <Experience />
       {/* <It /> */}
     </>
 

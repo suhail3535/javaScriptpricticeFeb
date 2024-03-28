@@ -18,9 +18,12 @@
 
 
 // <------------arrow function-------->
-let data = (a,b)=> {
-    console.log("sum of a and b", a + b);
-    console.log(`product of a and b is  ${a * b} difference of
-    a and b is ${a - b}`);
-}
-data(100,20)
+// let data = (a,b)=> {
+//     console.log("sum of a and b", a + b);
+//     console.log(`product of a and b is  ${a * b} difference of
+//     a and b is ${a - b}`);
+// }
+// data(100,20)
+
+// console.log(a)
+// let a = 10;
