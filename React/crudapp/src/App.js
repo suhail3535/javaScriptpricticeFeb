@@ -16,6 +16,7 @@ function App () {
       { <Home /> }
       { <Details /> } */}
       {/* { <Stepper2 /> } */}
+
        <Experience />
       {/* <It /> */}
     </>

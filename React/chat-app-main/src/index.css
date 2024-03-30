@@ -1,0 +1,594 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  overflow: hidden;
+  background-color: #292d32;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.login-container {
+  background-color: #292D32;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.login-container .button {
+  display: flex;
+  border: 1px solid white;
+  width: 50%;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 30px;
+  padding: 5px 10px;
+}
+
+.login-container .button:active {
+  scale: 0.99;
+}
+.notFound {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+  background-color: #292d32;
+}
+
+.home-container .friends {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.home-container .chats {
+  width: 70%;
+  height: 100%;
+  border-left: 1px solid gray;
+  /* background-color: green; */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.home-container .friends .friendsHeader {
+  height: 70px;
+  width: 100%;
+  background-color: #474b50;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  align-items: center;
+}
+.home-container .friends .friendsHeader p {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.home-container .friends .friendsHeader .profile-pic {
+  width: 50px;
+  height: 50px;
+  
+}
+.profile-pic{
+  cursor: pointer;
+}
+.home-container .friends .friendsHeader .profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.home-container .friends .friendsList {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: 20px 0px;
+  width: 100%;
+  color: white;
+}
+
+.home-container .friends .friendsList .friend {
+  display: flex;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 20px;
+}
+
+.home-container .friends .friendsList .friend .profile-pic {
+  width: 50px;
+  height: 50px;
+}
+.home-container .friends .friendsList .friend .profile-pic img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.home-container .chats .chatsHeader {
+  height: 77px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #474b50;
+  /* border-right: 1px solid white;
+border-top: 1px solid white;
+border-bottom: 1px solid white; */
+}
+
+.home-container .chats .chatsHeader p {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.home-container .chats .chatsHeader .logout {
+  margin-right: 50px;
+  background: transparent;
+  outline: none;
+  border: 1px solid white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.home-container .chats .chatsHeader .friend {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 30px;
+}
+.home-container .chats .chatsHeader .friend .profile-pic {
+  width: 50px;
+  height: 50px;
+}
+
+.home-container .chats .chatsHeader .friend .profile-pic img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.home-container .chats .chatsList {
+  height: 100%;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.home-container .chats .chatsList .chatListInner {
+  color: white;
+  gap: 15px;
+  padding: 20px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: end;
+}
+
+.home-container .chats .chatsList .profile-pic {
+  width: 35px;
+  height: 35px;
+}
+
+.home-container .chats .chatsList .profile-pic img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.home-container .chats .chatsList .recieveMsg {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.home-container .chats .chatsList .recieveMsg p {
+  background-color: #20948b;
+  padding: 10px 15px;
+  border-radius: 20px;
+}
+
+.home-container .chats .chatsList .sendMsg {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 5px;
+  justify-content: flex-end;
+}
+
+.home-container .chats .chatsList .sendMsg .profile-pic {
+  width: 35px;
+  height: 35px;
+}
+.home-container .chats .chatsList .sendMsg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* border-radius: 50%; */
+}
+
+.home-container .chats .chatsList .sendMsg p {
+  position: relative;
+  padding: 10px 25px 10px 20px;
+  border-radius: 20px;
+  background-color: #f98866;
+}
+
+.home-container .chats .chatsFooter {
+  height: 70px;
+  width: 100%;
+  border-left: 1px solid gray;
+  border-top: 1px solid gray;
+  background-color: #474b50;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chatsFooter .input {
+  border: 1px solid white;
+  padding: 3px 20px;
+  border-radius: 30px;
+  width: 600px;
+}
+.chatsFooter .input form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.chatsFooter .input input {
+  border: none;
+  width: 100%;
+  background: transparent;
+  outline: none;
+}
+
+.chatsFooter .input form button {
+  background: transparent;
+  outline: none;
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  border: none;
+}
+.welcome-chat {
+  border-left: 1px solid gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.msg-edit {
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  padding: 5px 10px;
+  background-color: #f98866;
+}
+.msg-edit .msg-edit-p {
+  margin-right: 10px;
+  cursor: pointer;
+  padding: 5px 10px !important;
+}
+
+.msg-edit .msg-edit-p:hover {
+  color: black;
+}
+
+.angle-up {
+  cursor: pointer;
+}
+
+.angle-down {
+  position: absolute;
+  top: 13px;
+  cursor: pointer;
+  right: 6px;
+}
+
+.msg-time {
+  text-align: end;
+  font-size: 12px;
+  display: block;
+  opacity: 0.9;
+  margin-top: 4px;
+}
+
+.edited {
+  text-align: end;
+  font-size: 10px;
+  display: block;
+  opacity: 0.9;
+}
+
+.msgParenttt {
+  display: flex;
+  flex-direction: column;
+}
+
+.emoji-icon {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.emoji-container {
+  top: 24%;
+  position: absolute;
+  left: 60%;
+}
+
+.inner-friend {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.online-tag {
+  font-size: 12px;
+  color: gray;
+}
+.atach-file {
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.msg-image {
+  height: 173px;
+  width: auto;
+  position: relative;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.msg-image img {
+  object-fit: cover;
+  height: 100%;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.img-angle {
+  position: absolute;
+  right: 12px;
+  top: 9px;
+  color: black;
+  cursor: pointer;
+}
+.download-img {
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  padding: 5px 10px;
+  background-color: #20948b;
+}
+
+.download-img p:hover {
+  color: black;
+  cursor: pointer;
+}
+
+.download-img p a {
+  text-decoration: none;
+}
+
+.msg-image video {
+  object-fit: cover;
+  height: 100%;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.file-msg {
+  position: relative;
+  font-size: 12px;
+  padding: 10px 20px !important ;
+}
+
+.green-active {
+  color: gray;
+  font-size: 12px;
+  margin-left: 4px;
+}
+.friendsList.model-friend-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.inner-friend.inner-modal-section p {
+  margin: 0;
+}
+
+
+.group-icon{
+  padding: 5px 7px;
+    border: 1px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.profile-pic.modal-pics img {
+  width: 50px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.checkbox-container {
+  position: relative;
+}
+
+.custom-checkbox {
+  display: none;
+}
+
+.checkbox-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border: 2px solid #4285f4; /* Google blue color */
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.checkbox-text {
+  margin-left: 40px;
+  font-size: 18px;
+  user-select: none;
+}
+
+.custom-checkbox:checked + .checkbox-label {
+  background-color: #4285f4;
+  border: 2px solid #4285f4;
+}
+
+.custom-checkbox:checked + .checkbox-label::before {
+  content: '\2713';
+  font-size: 18px;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.checkBox{
+    cursor: pointer;
+  transform: scale(2);
+}
+
+
+.group-Name-input{
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.group-Name-input-div{
+  width: fit-content;
+  padding: 5px  20px;
+  border-radius: 10px;
+  border: 1px solid white;
+}
+
+.add-photo-icon{
+  margin-top: 10px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+
+}
+
+.profile-name{
+  margin: 0;
+  cursor: pointer;
+}
+
+.msg-edit-p{
+  margin: 0;
+}
+
+.friendsHeader-inner{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.audio-container  {
+  position: relative;
+}
+
+.audio-container .angle-down   {
+  z-index: 999;
+  right: 1px;
+}
+
+.audio-container .angle-down svg path {
+  fill: #000;
+}
+
+
+.profile-name span{
+  font-size: 12px;
+  display: block;
+  color: gray;
+}
+
+.group-admin p{
+  margin: 0;
+}
+
+
+#dropdown-basic{
+
+  border: none;
+  padding: 2px;
+  background: none;
+  font-size: 22px;
+}
+.dropdown-toggle::after{
+  display: none  !important;
+}
+
+#dropdown-basic svg path {
+  color: #1f1d17;
+}
+.dropdown-item{
+  color: white  !important;
+}
+
+.dropdown-item:hover{
+  background-color: #474B50 !important;
+}
+
+
+.Delete-Group:hover{
+  background-color: #BB2D3B !important;
+}
+
+.showDp{
+  width: 300px;
+  height: 300px;
+  margin:  0 auto;
+}
+.showDp img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal.show .modal-dialog {
+  width: 500px;
+}
