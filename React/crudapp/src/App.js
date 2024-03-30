@@ -1,28 +1,23 @@
+import React, { useEffect, useState } from 'react';
 
-// import './App.css';
-import React from 'react';
-import InputSumCalculator from './Zakat';
-import Navbar from './component/Header';
-import Details from './component/Table';
-import Home from './views/Home';
-import Stepper2 from "./Zakat"
-import Experience from './Experience/Experience';
-import "./Experience/experience.css"
-import It from './Experience/It';
-function App () {
+function MyComponent () {
+  const [counter, setCounter] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCounter(prevCounter => prevCounter + 1);
+      console.log("mounted")// Increment counter every second
+    }, 1000); // Execute every second (1000 milliseconds)
+
+    // Cleanup function to clear the interval when the component unmounts
+    return () => clearInterval(interval);
+  }, [counter]); // Empty dependency array so that it runs only once after the initial render
+
   return (
-    <>
-      {/* {<Navbar /> }
-      { <Home /> }
-      { <Details /> } */}
-      {/* { <Stepper2 /> } */}
-
-       <Experience />
-      {/* <It /> */}
-    </>
-
-
+    <div>
+      <p>Counter: {counter}</p>
+    </div>
   );
 }
 
-export default App;
+export default MyComponent;
