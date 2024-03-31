@@ -67,6 +67,7 @@
 // export default App
 
 import React, { useEffect, useState } from 'react';
+import Experience from './Experience/Experience';
 
 const App = () => {
   const [cat, setCat] = useState('');
@@ -131,7 +132,10 @@ const App = () => {
           ))}
         </div>
       )}
+
+      <Experience />
     </div>
+
   );
 };
 
