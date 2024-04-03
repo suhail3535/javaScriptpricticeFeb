@@ -43,9 +43,7 @@
 // }
 // console.log(sum,"sum value");
 
-let value = "Rajaaasthan"
-let i = 0;
-count = 0;
+
 // Count tha value of a
 // a char kitne baar aya hai upar jo string diya hai
 
@@ -60,3 +58,24 @@ count = 0;
 //     console.log(j);
 //     j=j+2;
 // }
+
+let value = "jaipur police"
+let count1 = 0;
+let count2 = 0;
+let i = 0;
+while (i<=value.length - 1) {
+    // console.log(value[i]);
+    if (value[i] == "i") {
+        count1++
+    } else if (value[i] == "p"){
+        count2++
+    }
+    i++
+}
+console.log(`value of i is ${count1}, value of p is ${count2}`);
+
+"jaipur police"
+// count of i
+// count of p
+// console.log("count of p"conut);
+// console.log("count of i"conut);
