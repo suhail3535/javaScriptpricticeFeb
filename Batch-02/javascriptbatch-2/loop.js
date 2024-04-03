@@ -9,16 +9,29 @@
 
 
 
+// let string = "jaipur";
+
+// let i = 3; // starting point//1
+
+// while (i < string.length) {
+
+//     if (string[i] == "i") {
+//         console.log(true)
+//     } else {
+//     console.log(false)//false//false//true//false//false//false
+//     }
+
+//     i++;
+// }
 
 
-let bag = ""
-let i = 10;//starting point
-while (i>0) {//conditions
 
-    bag=bag+i+"_" //1 2 3
-        i--//increment
-}
-console.log( bag);
+// let a = "mohit"
+// if (a == "mohit") {
+//     console.log(true);
+// } else {
+//     console.log(false);
+// }
 
 
 // let sum = 0;
@@ -29,3 +42,21 @@ console.log( bag);
 //     i++
 // }
 // console.log(sum,"sum value");
+
+let value = "Rajaaasthan"
+let i = 0;
+count = 0;
+// Count tha value of a
+// a char kitne baar aya hai upar jo string diya hai
+
+
+// let i = 1;
+// while (i <= 10) {
+//     console.log(i);
+//     i++
+// }
+// let j = 1;
+// while (j <= 10) {
+//     console.log(j);
+//     j=j+2;
+// }
