@@ -62,6 +62,7 @@
 let value = "jaipur police"
 let count1 = 0;
 let count2 = 0;
+let count=0
 let i = 0;
 while (i<=value.length - 1) {
     // console.log(value[i]);
@@ -69,13 +70,33 @@ while (i<=value.length - 1) {
         count1++
     } else if (value[i] == "p"){
         count2++
+    } else if (value[i] == "i" || value[i] == "p") {
+        count++
     }
     i++
 }
-console.log(`value of i is ${count1}, value of p is ${count2}`);
+// console.log(` total count is ${count} value of i is ${count1}, value of p is ${count2}`);
 
-"jaipur police"
+
+
 // count of i
 // count of p
-// console.log("count of p"conut);
-// console.log("count of i"conut);
+// console.log("count of p",conut);
+// console.log("count of i",conut);
+
+let num = 1;
+let oddsum = 0
+let evensum=0
+while (num <=6) {
+    if (num % 2 == 0) {
+
+        evensum=evensum+num
+        console.log("number is even",num);
+    } else {
+
+        oddsum=oddsum+num
+        console.log("number is odd",num);
+    }
+    num++
+}
+console.log("oddsum is", oddsum, "evensum is", evensum);
