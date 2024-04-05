@@ -125,12 +125,18 @@
 // }
 // console.log(start);
 
-// let num=2
-function value (num) {
-    // num = 10
-    console.log(num)//2
-    // console.log(num);//10
-}
+let num = 2
+function value () {
+    // if (num <= 3) {
+    //     num = 5
+    //     console.log(num);
+    // }
+    num = 10
+    console.log(num);
 
-value(20)
+
+}
+console.log(num,"outside");
+
+value()
 
