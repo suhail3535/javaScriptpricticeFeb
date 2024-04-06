@@ -35,7 +35,7 @@ const It = () => {
             </select>
             <hr />
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "20px" }}>
-                {/* {filtercat.length > 0 ? filtercat.map((ele, index) => (
+                {filtercat.length > 0 ? filtercat.map((ele, index) => (
                     <div key={index} style={{ border: "1px solid gray" }}>
                         <img style={{ width: "50%" }} src={ele.image} alt="" />
                         <p>{ele.price}</p>
@@ -49,7 +49,7 @@ const It = () => {
                             <h1>{ele.category}</h1>
                         </div>
                     ))
-                )} */}
+                )}
 
 
                 {filtercat.length > 0 ? filtercat.map((ele) =>
