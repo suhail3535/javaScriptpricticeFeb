@@ -14,6 +14,7 @@ const Home = () => {
     }
     useEffect(() => {
         getData()
+        alert("updated")
     }, [])
     return (
         <div>
