@@ -48,15 +48,13 @@ const Experience = () => {
                     </div>
                     <div className='roles_div'>
                         <ul>
-
-                            <li>Developed, and maintain a modern and responsive website for Rajasthan Police using React.js, focusing on delivering an intuitive user experience.</li>
-                            <li>Ensure that the website is user-friendly, accessible, and optimized for performance across various devices and browsers, adhering to web standards and best practices.</li>
-                            <li>Facilitate collaboration among team members by setting up branches, pull requests, and managing code reviews on GitLab, promoting efficient code development and review processes.</li>
-                            <li>Optimize user experience through responsive design, accessibility features, and usability testing, ensuring seamless interaction and accessibility for all users.</li>
-                            <li>Debug and optimize application performance, identifying and resolving issues to enhance the website's speed, reliability, and overall performance.</li>
-
-
+                            <li>Developed and maintained a modern and responsive website for Rajasthan Police using React.js, Bootstrap 5, Sass, Tailwind CSS, and React Icons, focusing on delivering an intuitive user experience.</li>
+                            <li>Ensured that the website is user-friendly, accessible, and optimized for performance across various devices and browsers, adhering to web standards and best practices.</li>
+                            <li>Facilitated collaboration among team members by setting up branches, pull requests, and managing code reviews on GitLab, promoting efficient code development and review processes.</li>
+                            <li>Optimized user experience through responsive design, accessibility features, and usability testing, ensuring seamless interaction and accessibility for all users.</li>
+                            <li>Debugged and optimized application performance, identifying and resolving issues to enhance the website's speed, reliability, and overall performance.</li>
                         </ul>
+
                     </div>
                 </div>
             </div>
