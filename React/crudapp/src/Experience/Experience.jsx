@@ -21,15 +21,14 @@ const Experience = () => {
                     </div>
                     <div className='roles_div'>
                         <ul>
-                            <li>Developed and implemented the administrative interface of the Loan Origination System (LOS) for efficient management of loan processes.
-                            </li>
-                            <li>Integrated user management functionalities, including roles and permissions, to ensure secure access and data integrity.</li>
-                            <li>Converted Figma designs into web pages using React and some UI library(Ant Design).</li>
-                            <li>Contributed to the entire development lifecycle, enhancing skills in problem-solving and critical thinking.</li>
-                            <li>Facilitated collaboration among team members by setting up branches, pull requests, and managing code reviews on GitLab.</li>
-                            <li>Wrote efficient, clean code following best practices.</li>
-
+                            <li>Developed and deployed the administrative interface for the Loan Origination System (LOS) using React, Redux, and Ant Design, enhancing efficiency in loan processing.</li>
+                            <li>Integrated user management functionalities, including roles and permissions, to ensure secure access and maintain data integrity.</li>
+                            <li>Translated Figma designs into responsive web pages using React, Ant Design, Bootstrap, and SASS, ensuring a seamless user experience across devices.</li>
+                            <li>Contributed to the full software development lifecycle, collaborating with cross-functional teams and honing problem-solving and critical thinking skills.</li>
+                            <li>Established efficient version control workflows, including branch management, pull requests, and code reviews on GitLab, fostering team collaboration and code quality assurance.</li>
+                            <li>Demonstrated proficiency in writing clean, efficient code adhering to industry best practices, resulting in maintainable and scalable software solutions.</li>
                         </ul>
+
 
                     </div>
 
@@ -50,11 +49,11 @@ const Experience = () => {
                     <div className='roles_div'>
                         <ul>
 
-                                <li>Developed, and maintain a modern and responsive website for Rajasthan Police using React.js, focusing on delivering an intuitive user experience.</li>
-                                <li>Ensure that the website is user-friendly, accessible, and optimized for performance across various devices and browsers, adhering to web standards and best practices.</li>
-                                <li>Facilitate collaboration among team members by setting up branches, pull requests, and managing code reviews on GitLab, promoting efficient code development and review processes.</li>
-                                <li>Optimize user experience through responsive design, accessibility features, and usability testing, ensuring seamless interaction and accessibility for all users.</li>
-                                <li>Debug and optimize application performance, identifying and resolving issues to enhance the website's speed, reliability, and overall performance.</li>
+                            <li>Developed, and maintain a modern and responsive website for Rajasthan Police using React.js, focusing on delivering an intuitive user experience.</li>
+                            <li>Ensure that the website is user-friendly, accessible, and optimized for performance across various devices and browsers, adhering to web standards and best practices.</li>
+                            <li>Facilitate collaboration among team members by setting up branches, pull requests, and managing code reviews on GitLab, promoting efficient code development and review processes.</li>
+                            <li>Optimize user experience through responsive design, accessibility features, and usability testing, ensuring seamless interaction and accessibility for all users.</li>
+                            <li>Debug and optimize application performance, identifying and resolving issues to enhance the website's speed, reliability, and overall performance.</li>
 
 
                         </ul>
