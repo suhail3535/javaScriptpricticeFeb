@@ -140,16 +140,16 @@
 
 // value()
 
-let number = [1,2,3,4];
+let arr = [1, 2, 3, 4, 5, 6,9];
 let sum = 0;
-let count = 0;
-
-while (count < number.length) {
-    sum += number[count];
-    count++;
+let i = 0;
+while (i < arr.length) {
+    sum = sum + arr[i]
+    i++
 }
 
-const average = sum / count;
-console.log("The average is: " + average);
+console.log(sum)
+const average = sum / arr.length;
+console.log("The average is: " + Math.floor(average));
 
 
