@@ -140,16 +140,18 @@
 
 // value()
 
-let arr = [1, 2, 3, 4, 5, 6,9];
+let arr = [1, 2, 3];
 let sum = 0;
 let i = 0;
 while (i < arr.length) {
     sum = sum + arr[i]
     i++
+
 }
 
 console.log(sum)
 const average = sum / arr.length;
 console.log("The average is: " + Math.floor(average));
+
 
 
