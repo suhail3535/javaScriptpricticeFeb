@@ -152,6 +152,6 @@ while (i < arr.length) {
 console.log(sum)
 const average = sum / arr.length;
 console.log("The average is: " + Math.floor(average));
-
+// how to find avrage and sum
 
 
