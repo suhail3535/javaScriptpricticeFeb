@@ -1,27 +1,37 @@
 import React, { useState } from 'react'
 
+let initialValue = {
+    email: '',
+    pass: ''
+}
 const Counter = () => {
-    const [email, setEmail] = useState("")
-    const [pass, setPass] = useState("")
+    const [data, setData] = useState(initialValue)
+
+
+
     const handleChange = (e) => {
-        setEmail(e.target.value)
-    }
-    const handleChange1 = (e) => {
-        setPass(e.target.value)
-    }
+        console.log(e.target)
+        let name = e.target.name
+        let value = e.target.value
+        console.log(name,value);
+        // const { name, value } = e.target;
+        setData((prev) => {
+            return { ...prev, [name]: value };
+        });
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(email, pass);
-        setEmail("")
-        setPass("")
-    }
 
+        console.log(data, "20");
+        alert("updated")
+        setData(initialValue)
+    }
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <input type="text" value={email} onChange={handleChange} />
-                <input type="text" value={pass} onChange={handleChange1} />
+                <input type="text" name="email" value={data.email} onChange={handleChange} />
+                <input type="text" name="pass" value={data.pass} onChange={handleChange} />
                 <button>Submit</button>
             </form>
         </div>

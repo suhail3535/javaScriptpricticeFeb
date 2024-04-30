@@ -10,6 +10,8 @@ function App () {
   return (
     <>
       <Counter />
+      <hr />
+      
     </>
   )
 }
