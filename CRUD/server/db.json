@@ -10,7 +10,7 @@
     },
     {
       "id": "f3a2",
-      "name": "Manjeet SIngh",
+      "name": "Manjeet SIngh new",
       "email": "webdevlopersunil1997@gmail.com",
       "mobile": "9898985225",
       "city": "Jaipur",
@@ -34,6 +34,14 @@
     },
     {
       "id": "d4bc",
+      "name": "suhail",
+      "email": "khansohail015@gmail.com",
+      "mobile": "9598125005",
+      "city": "Delhi",
+      "state": "Rajasthan"
+    },
+    {
+      "id": "977d",
       "name": "suhail",
       "email": "khansohail015@gmail.com",
       "mobile": "9598125005",
