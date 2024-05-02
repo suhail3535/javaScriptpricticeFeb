@@ -17,6 +17,18 @@ import {
     InputLeftElement,
     Textarea,
 } from '@chakra-ui/react'
+import {
+    Table,
+    Thead,
+    Tbody,
+    Tfoot,
+    Tr,
+    Th,
+    Td,
+    TableCaption,
+    TableContainer,
+} from '@chakra-ui/react'
+import { useToast } from '@chakra-ui/react'
 import { MdPhone, MdEmail, MdLocationOn, MdFacebook } from 'react-icons/md'
 import { BsGithub, BsDiscord, BsPerson } from 'react-icons/bs'
 import { useState } from 'react';
@@ -29,7 +41,7 @@ let initValue = {
 
 export default function Contact () {
     const [value, setValue] = useState(initValue);
-
+const toast=useToast()
     const handleChange = (e) => {
         const { name, value } = e.target;
         setValue((prev) => {
@@ -37,20 +49,29 @@ export default function Contact () {
         });
     };
 
+    const existingData = JSON.parse(localStorage.getItem('formData')) || [];
     const handleSubmit = () => {
-        const existingData = JSON.parse(localStorage.getItem('formData')) || [];
 
         // Push new form data to the array
         const newData = [...existingData, value];
 
         // Store the updated array in local storage
         localStorage.setItem('formData', JSON.stringify(newData));
-        alert("submitted");
+        // alert("submitted");
         setValue(initValue)
-        console.log(value);
+        // console.log(value);
+        toast({
+            title: 'Details Submitted .',
+            description:"",
+            status: 'success',
+            duration: 3000,
+            isClosable: true,
+            position:"top-center"
+        })
     };
 
     return (
+        <>
         <Container bg="#9DC4FB" maxW="full" mt={0} centerContent overflow="hidden">
             <Flex>
                 <Box
@@ -178,6 +199,33 @@ export default function Contact () {
                     </Box>
                 </Box>
             </Flex>
-        </Container>
+            </Container>
+
+            <TableContainer>
+                <Table variant='striped' colorScheme='teal'>
+                    {/* <TableCaption>Imperial to metric conversion factors</TableCaption> */}
+                    <Thead>
+                        <Tr>
+                            <Th>Name</Th>
+                            <Th>Email</Th>
+                            <Th isNumeric>Message</Th>
+                        </Tr>
+                    </Thead>
+                    <Tbody>
+                        {existingData.map((ele) => {
+                            return <Tr>
+                                <Td>{ele.name}</Td>
+                                <Td>{ele.mail}</Td>
+                                <Td isNumeric>{ ele.add}</Td>
+                            </Tr>
+                        })}
+
+
+                    </Tbody>
+
+                </Table>
+            </TableContainer>
+
+        </>
     )
 }

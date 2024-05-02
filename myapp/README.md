@@ -68,3 +68,39 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
+
+
+
+<!-- <--------------------->
+
+
+<!-- <------------for loop-----------> -->
+In JavaScript, a for loop is used to iterate over a block of code multiple times. The syntax for a for loop is as follows:
+
+
+for(initialization; condition; iteration) {
+    // code to be executed
+}
+
+
+<!-- for(let i=0;i<5;i++){
+    console.log(i)
+} -->
+
+
+The initialization statement is executed before the loop starts. It typically initializes one or more loop counters.
+The condition statement defines the condition for executing the loop. If this condition evaluates to true, the loop will continue; otherwise, it will terminate.
+The iteration statement is executed each time after the loop has been executed. It typically increments or decrements the loop counter.
+Here's an example of a for loop in JavaScript that prints numbers from 1 to 5:
+
+javascript
+Copy code
+for (let i = 1; i <= 5; i++) {
+    console.log(i);
+}
+
+
