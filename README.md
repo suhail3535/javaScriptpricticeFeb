@@ -45,3 +45,12 @@ https://66323309939664664b1ca9be--legendary-kheer-da74c9.netlify.app/
 https://6630e0e7ce04abdf05395945--dulcet-frangollo-ce38ca.netlify.app/
 https://66332c8a653c457a0cce3341--helpful-biscotti-45e559.netlify.app/
 https://6633610824494da83938c879--bucolic-hotteok-c4695a.netlify.app/
+
+
+
+
+Read about array H.O.F function
+1-map
+2-filter
+3-forEach
+diff b/w map and forEach
