@@ -26,13 +26,19 @@
 
 
 
-let details = [
-    { name: "sohan", age: 24,city:"rajasthan" },
-    { name: "sohan", age: 14, city: "mp" },
-    { name: "suresh", age: 40, city: "delhi" },
-    { name: "aman", age: 30, city: "U.P" }
-]
-let data = details.filter(function (costItem) {
-    return costItem.city=="mp" || costItem.city=="U.P"
-});
-console.log(data);
+// let details = [
+//     { name: "sohan", age: 24,city:"rajasthan" },
+//     { name: "sohan", age: 14, city: "mp" },
+//     { name: "suresh", age: 40, city: "delhi" },
+//     { name: "aman", age: 30, city: "U.P" }
+// ]
+// let data = details.filter(function (costItem) {
+//     return costItem.city=="mp" || costItem.city=="U.P"
+// });
+// console.log(data);
+
+const array = [50, 120, 80, 200, 30];
+
+// Using map to keep integers greater than 100
+const result = array.map(ele => ele > 100);
+console.log(result)
