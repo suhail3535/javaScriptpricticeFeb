@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+        <h1 id="heading">Hello from Javascript</h1>
+
+        <p class="para">Lorem ipsum dolor sit amet.</p>
+        <p class="para">Lorem ipsum dolor sit amet.</p>
+        <p class="para">Lorem ipsum dolor sit amet.</p>
+        <h4>Hello from h4</h4>
+        <h4>Hello from h4 2</h4>
+        <h3>0</h3>
+        <h6>hellow h6</h6>
+        <h6>hellow h6</h6>
+        <h6>hellow h6</h6>
+        <h6>hellow h6</h6>
+        <h6>hellow h6</h6>
+    </div>
+
+</body>
+<script>
+    let container = document.getElementById("container")
+    console.log(container);
+    let heading = document.getElementById("heading")
+    heading.innerText = "hello from javascript by mohit"
+    console.log(heading);
+    let para = document.getElementsByClassName("para")
+    console.log(para);
+    let tagname = document.getElementsByTagName("p")
+    console.log(tagname);
+    let mohit = document.getElementsByTagName("h3")
+    console.log(mohit);
+    console.log(document.getElementsByTagName("h4"))
+
+    let query = document.querySelectorAll(".para")
+    console.log(query);
+
+    // let h6 = document.getElementsByTagName("h6")
+    // for (let i = 0; i < h6.length; i++) {
+    //     if (h6[i] == "2") {
+    //         h6[i].classList.add("newClass")
+    //         h6[i].style.color = "red";
+
+
+    //     } else {
+    //         h6[i].classList.add("oldClass")
+    //         h6[i].style.color = "green";
+
+    //     }
+    //     console.log(h6[i].innerText);
+    // }
+    // console.log(h6[0].innerText);
+
+
+    let h6 = document.getElementsByTagName("h6");
+
+    // let h6 = document.getElementsByTagName("h6");
+
+        // for (let i = 0; i < h6.length; i++) {
+        //     if (i === 2) { // Check if index is 2
+        //         h6[i].classList.add("newClass");
+        //         h6[i].style.color = "red";
+        //     } else {
+        //         h6[i].classList.add("oldClass");
+        //         h6[i].style.color = "green";
+        //     }
+        //     console.log(h6[i].innerText);
+        // }
+
+        // console.log(h6[0].innerText);
+
+
+</script>
+
+</html>

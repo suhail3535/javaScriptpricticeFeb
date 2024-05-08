@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="heading">this is heading</h1>
+    <h3 class="subHeading">this is subheading1</h3>
+    <h3 class="subHeading">this is heading2</h3>
+    <h3 class="subHeading">this is heading3</h3>
+</body>
+<script>
+    let heading = document.getElementById("heading")
+    console.log(heading);//return tag
+    console.log(heading.innerText);//return innerText
+
+    let para = document.getElementsByClassName("subHeading")
+    for(let i=0;i<para.length;i++){
+        console.log(para[i].innerText);
+
+    }
+    ///hardcoded
+    console.log(para[2].innerText,"this hardcoded")
+
+////add style
+heading.style.color="cyan"
+heading.style.backgroundColor="salmon"
+heading.style.font="20px"
+
+
+</script>
+
+</html>

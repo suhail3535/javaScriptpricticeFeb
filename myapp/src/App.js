@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import Contact from './pages/Form';
+
+import React from 'react'
+import SquareGrid from './Square'
 
 const App = () => {
-
   return (
     <div>
-      <Contact />
+      <SquareGrid />
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App

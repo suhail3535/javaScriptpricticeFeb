@@ -36,9 +36,3 @@
 //     return costItem.city=="mp" || costItem.city=="U.P"
 // });
 // console.log(data);
-
-const array = [50, 120, 80, 200, 30];
-
-// Using map to keep integers greater than 100
-const result = array.map(ele => ele > 100);
-console.log(result)
