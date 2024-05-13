@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #head{
+            width: 90%;
+            margin: auto;
+            border: 2px solid red;
+            padding: 10px;
+        }
+        table{
+            width: 100%;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="head">
+
+
+
+
+    </div>
+</body>
+<script>
+    let head = document.getElementById("head")
+    let table = document.createElement("table")
+    let thead = document.createElement("thead")
+    let tr = document.createElement("tr")////create row
+    let th = document.createElement("th")
+    th.innerText = "Sr.No"
+    let th1 = document.createElement("th")
+    th1.innerText = "Name"
+ 
+    let th2 = document.createElement("th")
+    th2.innerText = "City"
+
+    let th3 = document.createElement("th")
+    th3.innerText = "Mobile"
+
+    tr.append(th, th1, th2, th3)
+    thead.append(tr)
+    table.append(thead)
+    // table.style.border="1px dotted black"
+    head.append(table)
+
+
+
+
+</script>
+
+</html>

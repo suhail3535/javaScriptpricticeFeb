@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main_container div{
+            width:500px;
+            border:1px solid gray;
+            text-align: center;
+            padding: 10px;
+        }
+        #main_container div button{
+            padding: 5px 10px;
+            background-color: lightblue;
+            border: none;
+            color: black;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main_container">
+
+
+
+    </div>
+</body>
+<script>
+    // console.log(main_container);
+    let card = document.createElement("div")
+    let image = document.createElement("img")
+    image.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOq0uh8FQvH_QfF4daf-KCjkJS9N9C5-BewudTOB1Fgw&s"
+    let title = document.createElement("h1")
+    title.innerText = "SitaRam"
+    let details = document.createElement("p")
+    details.innerText = "Sitaram is a very good trainee,and according to Manoj he is very sweet boy"
+    let btn=document.createElement("button")
+    btn.innerText="Know More😋"
+    card.append(image,title,details,btn)
+    let main_container=document.getElementById("main_container")
+    main_container.append(card)
+
+
+
+</script>
+
+</html>
