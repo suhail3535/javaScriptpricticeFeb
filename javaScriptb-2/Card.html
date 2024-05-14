@@ -6,13 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #main_container div{
-            width:500px;
-            border:1px solid gray;
+        #main_container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 20px;
+            width: 95%;
+            margin: auto;
+        }
+        #main_container div {
+            /* width: 500px; */
+            border: 1px solid gray;
             text-align: center;
             padding: 10px;
         }
-        #main_container div button{
+img{
+    width: 100%;
+}
+        #main_container div button {
             padding: 5px 10px;
             background-color: lightblue;
             border: none;
@@ -32,22 +42,103 @@
     </div>
 </body>
 <script>
-    // console.log(main_container);
-    let card = document.createElement("div")
-    let image = document.createElement("img")
-    image.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOq0uh8FQvH_QfF4daf-KCjkJS9N9C5-BewudTOB1Fgw&s"
-    let title = document.createElement("h1")
-    title.innerText = "SitaRam"
-    let details = document.createElement("p")
-    details.innerText = "Sitaram is a very good trainee,and according to Manoj he is very sweet boy"
-    let btn=document.createElement("button")
-    btn.innerText="Know More😋"
-    card.append(image,title,details,btn)
-    let main_container=document.getElementById("main_container")
-    main_container.append(card)
+    let data = [
+
+        {
+            "id": 1,
+            "image": "https://www.aeropostale.com/dw/image/v2/BBSG_PRD/on/demandware.static/-/Sites-master-catalog-aeropostale/default/dw80ddf4ed/60069082_001_main.jpg?sw=478&sh=557&sm=fit&sfrm=jpg",
+            "name": "Black Panther Comic Graphic Tee",
+            "Rating": 5,
+            "price": 2.99
+        },
+        {
+            "id": 2,
+            "image": "https://www.aeropostale.com/dw/image/v2/BBSG_PRD/on/demandware.static/-/Sites-master-catalog-aeropostale/default/dwd4b76dfb/60178348_402_main.jpg?sw=478&sh=557&sm=fit&sfrm=jpg",
+            "name": "Striped Tie-Dye Crew Tee",
+            "Rating": 3,
+            "price": 7.99
+        },
+        {
+            "id": 3,
+            "image": "https://www.aeropostale.com/dw/image/v2/BBSG_PRD/on/demandware.static/-/Sites-master-catalog-aeropostale/default/dw935f338a/66319241_185_main.jpg?sw=478&sh=557&sm=fit&sfrm=jpg",
+            "name": "Jogger Shorts 8.5",
+            "Rating": 2,
+            "price": 9.99
+        },
+        {
+            "id": 4,
+            "image": "https://www.aeropostale.com/dw/image/v2/BBSG_PRD/on/demandware.static/-/Sites-master-catalog-aeropostale/default/dw23751409/60052293_102_main.jpg?sw=478&sh=557&sm=fit&sfrm=jpg",
+            "name": "Aero Box Logo Foil Appliqué Graphic Tee",
+            "Rating": 1,
+            "price": 6.99
+        },
+        {
+            "id": 5,
+            "image": "https://www.aeropostale.com/dw/image/v2/BBSG_PRD/on/demandware.static/-/Sites-master-catalog-aeropostale/default/dwe9617739/67632461_402_alt2.jpg?sw=478&sh=557&sm=fit&sfrm=jpg",
+            "name": "Lord Of The Rings Graphic Tee",
+            "Rating": 2,
+            "price": 2.99
+        },
+        {
+            "id": 6,
+            "image": "https://www.aeropostale.com/dw/image/v2/BBSG_PRD/on/demandware.static/-/Sites-master-catalog-aeropostale/default/dw43f0d62d/62372658_007_main.jpg?sw=478&sh=557&sm=fit&sfrm=jpg",
+            "name": "Skinny Taper Hemp Jean",
+            "Rating": 1,
+            "price": 15.99
+        },
+        {
+            "id": 7,
+            "image": "https://www.aeropostale.com/dw/image/v2/BBSG_PRD/on/demandware.static/-/Sites-master-catalog-aeropostale/default/dw90ab0b51/66112024_067_alt2.jpg?sw=478&sh=557&sm=fit&sfrm=jpg",
+            "name": "Air Softspun Tech Fleece Colorblocked Full-Zip Hoodie",
+            "Rating": 4,
+            "price": 6.99
+        },
+        {
+            "id": 8,
+            "image": "https://www.aeropostale.com/dw/image/v2/BBSG_PRD/on/demandware.static/-/Sites-master-catalog-aeropostale/default/dw43de86d5/60052637_052_main.jpg?sw=478&sh=557&sm=fit&sfrm=jpg",
+            "name": "Raglan Crew Tee",
+            "Rating": 5,
+            "price": 7.99
+        },
+        {
+            "id": 9,
+            "image": "https://www.aeropostale.com/dw/image/v2/BBSG_PRD/on/demandware.static/-/Sites-master-catalog-aeropostale/default/dwee264f50/64912466_269_main.jpg?sw=478&sh=557&sm=fit&sfrm=jpg",
+            "name": "Skinny Premium Air Jean",
+            "Rating": 3,
+            "price": 5.99
+        },
+        {
+            "id": 10,
+            "image": "https://www.aeropostale.com/dw/image/v2/BBSG_PRD/on/demandware.static/-/Sites-master-catalog-aeropostale/default/dw70d3c86c/68339456_007_main.jpg?sw=478&sh=557&sm=fit&sfrm=jpg",
+            "name": "Aero Script Logo Appliqué Graphic Tee",
+            "Rating": 2,
+            "price": 11.99
+        }
+    ]
 
 
+    // data.forEach((ele)=>{
+    //     console.log(ele.name);
+    //     console.log(ele.price);
+    // })
 
+
+            let card = document.createElement("div")
+            let image = document.createElement("img")
+            image.src = item.image
+            let title = document.createElement("h1")
+            title.innerText = `Name:-${item.name}`
+            let price = document.createElement("p")
+            price.innerText = item.price
+            let details = document.createElement("p")
+            details.innerText = item.Rating
+            let btn = document.createElement("button")
+            btn.innerText = "Know More😋"
+            card.append(image, title, price,details, btn)
+            let main_container = document.getElementById("main_container")
+            main_container.append(card)
+            console.log(item);
+    
 </script>
 
 </html>
