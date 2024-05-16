@@ -8,6 +8,8 @@
 </head>
 
 <body>
+    <p>This is a <em>very</em> important point.</p>
+
     <h1>Signal control program</h1>
     <input id="color" type="text" placeholder="enter color">
     <button id="check">Control</button>
@@ -28,7 +30,7 @@
             if (color === "red") {
                 signal.innerText = signal.innerText+"Stop";
 
-                
+
                 window.location.reload
                 console.log(signal.innerText);
             } else if (color === "green") {

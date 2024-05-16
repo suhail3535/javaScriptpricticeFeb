@@ -10,14 +10,14 @@
     {
       "id": 2,
       "name": "Jane Smith",
-      "age": 25,
+      "age": "26",
       "city": "Los Angeles",
       "mobile": "987-654-3210"
     },
     {
       "id": 3,
       "name": "Alice Johnson",
-      "age": 35,
+      "age": "55",
       "city": "Chicago",
       "mobile": "456-789-0123"
     },
@@ -90,6 +90,13 @@
       "city": "lalpur",
       "mobile": "dfdfgdjkgkdg",
       "id": 13
+    },
+    {
+      "name": "aman kumar",
+      "age": "30",
+      "city": "delhi",
+      "mobile": "08630245788",
+      "id": 14
     }
   ]
 }

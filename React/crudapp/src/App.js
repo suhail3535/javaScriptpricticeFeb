@@ -15,15 +15,15 @@ const App = () => {
         <Navbar />
         <Routes>
           {/* <Route path="/" element={<Home />} /> */}
-          {/* <Route path="/table" element={<Table />} /> */}
+          <Route path="/table" element={<Table />} />
           <Route path="/exp" element={<Experience />} />
-          {/* <Route path="/pro" element={<It />} /> */}
+          <Route path="/pro" element={<It />} />
         </Routes>
       </BrowserRouter>
 
 
 
-      <div className="card flex flex-wrap justify-content-center gap-3">
+      {/* <div className="card flex flex-wrap justify-content-center gap-3">
         <Button label="Primary" text />
         <Button label="Secondary" severity="secondary" text />
         <Button label="Success" severity="success" text />
@@ -31,10 +31,10 @@ const App = () => {
         <Button label="Warning" severity="warning" text />
         <Button label="Help" severity="help" text />
         <Button label="Danger" severity="danger" text />
-      </div>
+      </div> */}
 
 
-      <BasicDemo />
+      {/* <BasicDemo /> */}
     </div>
   );
 };

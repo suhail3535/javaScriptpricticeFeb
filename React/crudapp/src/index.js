@@ -5,17 +5,19 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import "primereact/resources/themes/lara-light-cyan/theme.css";
-
+import { ChakraProvider } from '@chakra-ui/react'
 import { PrimeReactProvider, PrimeReactContext } from 'primereact/api';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <PrimeReactProvider>
+  // <PrimeReactProvider>
+  <ChakraProvider>
   <React.StrictMode>
     <App />
     </React.StrictMode>
-  </PrimeReactProvider>
+  </ChakraProvider>
+  // </PrimeReactProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
