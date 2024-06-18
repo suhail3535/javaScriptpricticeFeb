@@ -1,0 +1,306 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+    }
+
+    #container div {
+      border-radius: 5px;
+      box-shadow: 0px 0px 2px grey;
+      padding: 15px 10px 55px 10px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    #container div img {
+      width: 40%;
+      display: flex;
+      margin: auto;
+      padding: 10px;
+      aspect-ratio: 5/6;
+
+    }
+
+
+    .footer_a a:hover{
+      color: blue;
+    }
+
+    .heart{
+      position: absolute;
+      right: 10px ;
+      top: 0;
+      font-size: 25px;
+    }
+
+    .fixednavbar{
+      position: sticky;
+      top: 0;
+      z-index: 99;
+      background-color: white;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="fixednavbar">
+  <p class="bg-stone-950 text-white text-center p-2">
+    Due to dollar rate instability, please call us before placing an order. +1-123-456789
+  </p>
+  <nav class="w-full nav justify-between p-3 border">
+    <div class="logo w-52">
+      <img class="w-60" src="img/header-logo.png" alt="">
+    </div>
+    <div class="flex w-1/2 border gap-10 bg-slate-100 p-2">
+      <select name="" id="filter" class="bg-slate-100">
+        <option value="">All Category</option>
+        <option value="">All Category</option>
+        <option value="">All Category</option>
+        <option value="">All Category</option>
+      </select>
+      <input class="w-full px-5 bg-slate-100" type="text" placeholder="Search">
+    </div>
+    <div class="user flex justify-between p-2 w-96 align-middle px-10">
+      <div class="flex p-2"> <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+          </svg>
+        </span><span>whish list</span></div>
+      <div class="flex p-2">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+          </svg>
+        </span>
+        <span>signin</span>
+      </div>
+      <div class="flex bg-yellow-400 px-5 p-2 rounded" id="cartpage"><span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+          </svg>
+
+        </span>
+        <span id="cart">
+          0
+        </span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="w-full  bg-yellow-500  gap-7 px-20 align-middle navbar">
+    <a href="#" class="bg-black text-white p-3">Departments</a>
+    <a href="#">Elements</a>
+    <a href="#">Shop</a>
+    <a href="#">Track Order</a>
+    <a href="#">blog</a>
+    <a href="#">About Us</a>
+    <a href="#">Contact</a>
+  </div>
+
+</div>
+  <div class=" m-auto p-10  mt-10 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 " id="container">
+
+  </div>
+  <footer class="bg-black">
+    <div class="flex container justify-between border-b  mx-auto bg-black align-middle  text-white p-2 pt-10">
+      <div class="flex ">
+        <div class="w-14 p-1">
+          <img src="img/Icon-3-min.png" alt="">
+        </div>
+        <div>
+          <h4>Free Shipping Order $60</h4>
+          <p>Delivery Moves So Quickly</p>
+        </div>
+      </div>
+
+      <div class="flex ">
+        <div class="w-16 p-1">
+          <img src="img/Icon-1.png" alt="">
+        </div>
+        <div>
+          <h4>Easy & Fast Returns</h4>
+          <p>30 Days Free Return Policy</p>
+        </div>
+      </div>
+
+      <div class="flex ">
+        <div class="w-16 ">
+          <img src="img/Icon-2.png" alt="">
+        </div>
+        <div>
+          <h4>24/7 Customer Support</h4>
+          <p>Online Help By Our Agents</p>
+        </div>
+      </div>
+
+      <div class="flex ">
+        <div class="w-14 ">
+          <img src="img/Icon-3-min.png" alt="">
+        </div>
+        <div>
+          <h4>100% Secure Payments</h4>
+          <p>PayPal / MasterCard / Visa  </p>
+        </div>
+      </div>
+      
+    </div>
+   <div class="container flex flex-wrap mt-20  mx-auto border-b  p-2 justify-between text-white">
+<div class="grid grid-cols-1 footer_a mb-20">
+<h4 class="font-serif size-6 font-bold text-gray-600">COMPANY</h4>
+<a class="hover:" href="#">About Us</a>
+<a href="#">Carriers</a>
+<a href="#">Contact</a>
+<a href="#">Blog</a>
+</div>
+
+<div class="grid grid-cols-1 footer_a mb-20">
+  <h4 class="font-serif size-6 font-bold text-gray-600">SHOP</h4>
+  <a class="hover:" href="#">Appliance</a>
+  <a href="#">Gadgets</a>
+  <a href="#">Wearables</a>
+  <a href="#">Shop All</a>
+  </div>
+
+  <div class="grid grid-cols-1 footer_a mb-20 px-14  border-r-2">
+    <h4 class="font-serif size-6 font-bold text-gray-600">SUPPORT</h4>
+    <a class="hover:" href="#">Contact Us</a>
+    <a href="#">Returns</a>
+    <a href="#">Freqwently Asked Questions</a>
+    <a href="#">Privecy</a>
+    </div>
+
+    <div class="grid grid-cols-1 footer_a mb-20 px-36">
+      <h4 class="font-serif size-6 font-bold text-gray-600">SUBSCRIBE      </h4>
+      <span>Enter your email address to get <a href="#">$20 off your first order</a></span>
+     <span class="flex gap-3"><svg class="h-6 w-6 text-black-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg> <svg class="h-6 w-6 text-black-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <rect x="4" y="4" width="16" height="16" rx="4" />  <circle cx="12" cy="12" r="3" />  <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" /></svg>
+      <svg class="h-6 w-6 text-black-500"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />  <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" /></svg>
+      <svg class="h-6 w-6 text-black-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M22 4.01c-1 .49-1.98.689-3 .99-1.121-1.265-2.783-1.335-4.38-.737S11.977 6.323 12 8v1c-3.245.083-6.135-1.395-8-4 0 0-4.182 7.433 4 11-1.872 1.247-3.739 2.088-6 2 3.308 1.803 6.913 2.423 10.034 1.517 3.58-1.04 6.522-3.723 7.651-7.742a13.84 13.84 0 0 0 .497 -3.753C20.18 7.773 21.692 5.25 22 4.009z" /></svg>
+    </span>
+      </div>
+   </div>
+
+   <div class="  pb-20  pt-10 flex container navbar mx-auto flex-wrap text-white justify-between ">
+    <div>
+      <img src="img/logo-footer.png" alt="">
+    </div>
+    <div>
+      <p>Phone:
+        888.312.2456.
+        Text:
+        200.490.1520
+        Email:
+        customerservice@8theme.com</p>
+        <p>Hours:
+          Monday - Friday 8:30am - 4:45pm EST
+          </p>
+          <p>Copyright © 2022 XStore Theme. Created by 8theme – Premium WordPress WooCommerce Themes.</p>
+
+    </div>
+    <div>
+      <img src="img/Payment.png" alt="">
+    </div>
+   </div>
+  </footer>
+</body>
+
+
+
+<script>
+  let container = document.getElementById("container");
+  let cartData = JSON.parse(localStorage.getItem("cartData")) || [];
+console.log(cartData.length);
+
+  async function getData() {
+    try {
+      let res = await fetch("https://fakestoreapi.com/products")
+      let responce = await res.json()
+      console.log(responce);
+      displayData(responce)
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  getData();
+
+
+
+  function displayData(data) {
+    data.map((item) => {
+      let div = document.createElement("div");
+      div.addEventListener("click",()=>{
+        opencartpage(item)
+        window.location.href = "./cart.html"
+      })
+      let img = document.createElement("img")
+      img.src = item.image;
+
+      let description = document.createElement("h6")
+      description.innerText = item.description.split(" ").slice(0, 5).join(" ") + "...";
+
+      let title = document.createElement("h5")
+      title.innerText = item.title;
+
+
+      let Category = document.createElement("h3")
+      Category.innerText = item.category;
+
+      let price = document.createElement("p")
+      price.innerText = `$: ${item.price}`;
+
+      let heart = document.createElement("p")
+      heart.innerText = "💗";
+      heart.classList.add("heart")
+
+
+      div.append(img, title, Category, description, price,heart)
+      container.append(div)
+    })
+  }
+
+  function updateCartValue(){
+   cartData = JSON.parse(localStorage.getItem("cartData")) || [];
+   let cartvalue  = document.getElementById("cart");
+  cartvalue.innerText = cartData.length;
+ }
+ updateCartValue()
+
+
+ function opencartpage(data){
+let cart = []
+cart.push(data);
+localStorage.setItem("cartpage",JSON.stringify(cart))
+ }
+
+ let cartpage  = document.getElementById("cartpage");
+ cartpage.addEventListener("click",()=>{
+  window.location.href = "./addcartpage.html"
+ })
+</script>
+
+</html>

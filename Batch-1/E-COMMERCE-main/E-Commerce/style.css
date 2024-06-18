@@ -1,0 +1,98 @@
+.main-navbar {
+    border-bottom: 1px solid #ccc;
+}
+.main-navbar .top-navbar {
+    background-color: #2874f0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.main-navbar .top-navbar .brand-name {
+    color: #fff;
+}
+.main-navbar .top-navbar .nav-link {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+}
+.main-navbar .top-navbar .dropdown-menu {
+    padding: 0px 0px;
+    border-radius: 0px;
+}
+.main-navbar .top-navbar .dropdown-menu .dropdown-item {
+    padding: 8px 16px;
+    border-bottom: 1px solid #ccc;
+    font-size: 14px;
+}
+.main-navbar .top-navbar .dropdown-menu .dropdown-item i {
+    width: 20px;
+    text-align: center;
+    color: #2874f0;
+    font-size: 14px;
+}
+.main-navbar .navbar {
+    padding: 0px;
+    background-color: #ddd;
+}
+.main-navbar .navbar .nav-item .nav-link {
+    padding: 8px 20px;
+    color: #000;
+    font-size: 15px;
+}
+
+.footer {
+    background-color: #dddddd;
+    padding: 40px 20px;
+    color: #333;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 200px;
+    width: 100%;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.footer ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.footer ul li:last-child {
+    margin-right: 0;
+}
+
+.footer ul li a {
+    color: #333;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.footer ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer p {
+    margin-bottom: 20px;
+}
+
+.footer .social-links a {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 18px;
+    color: #333;
+    text-decoration: none;
+}
+
+.footer .social-links a:hover {
+    color: #007bff;
+}
+
+@media only screen and (max-width: 600px) {
+    .main-navbar .top-navbar .nav-link {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+}

@@ -158,13 +158,16 @@
         });
       }
       showDeatils(allData);
-      // ------Delete function------
+      // ------Add Data function------
 
       function addData(key, value) {
-        let newData = JSON.parse(localStorage.getItem(key)) || [];
+        let newData =JSON.parse(localStorage.getItem("favData"))||[];
         newData.push(value);
         localStorage.setItem(key, JSON.stringify(newData));
       }
+
+
+      
       // ------Delete function------
       function delData(data, value) {
         data.splice(value, 1);

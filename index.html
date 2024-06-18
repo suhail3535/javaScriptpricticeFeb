@@ -8,21 +8,21 @@
 </head>
 
 <body>
-    <div class="container">
 
-</div>
 </body>
 <script>
-    let div = document.getElementsByClassName("container")[0]
-console.log(div);
-    let title = document.createElement("h1")
-    title.innerText = "hello"
-    let details = document.createElement("p")
-    details.innerText = "helo mini"
-    // console.log(title, details)
-    div.append(title, details)
+    // function userData (name, lastName, callback) {
+    //     let user = ` my name is ${name} and my lastName is ${lastName} it is goo d${callback}`
+    //     // return callback(user)
+    //     console.log(user)
+    // }
+    // userData("suhail", "khan", "name")
 
-    console.log(div)
+    const obj = { name: "John", age: 30, city: "New York" };
+    console.log(obj);
+    const jsonString = JSON.stringify(obj);
+    console.log(jsonString); // Output: '{"name":"John","age":30,"city":"New York"}'
+
 
 </script>
 

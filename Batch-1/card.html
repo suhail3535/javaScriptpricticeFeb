@@ -1,48 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h1>all card</h1>
-    <div id="container"></div>
-  </body>
-  <script>
-    let data = [
-      {
-        img: "./image1.jpg",
-        name: "manjeet",
-      },
-      {
-        img: "./image1.jpg",
-        name: "manjeet",
-      },
-      {
-        img: "./image1.jpg",
-        name: "manjeet",
-      },
-    ];
-    function getdata(value) {
-      console.log(value);
-    }
-    getdata(data);
-    let container = document.getElementById("container");
-    function disp(ele) {
-      ele.map((item) => {
-        let div = document.createElement("div");
-        let image=document.createElement("img")
-        image.src=item.img
-        let p = document.createElement("p");
-        p.innerText = item.name;
-        div.append(image,p);
-        container.append(div);
-      });
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    nav {box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      display: flex;
+      /* border: 1px solid green; */
+      /* height: 50px; */
+      width: 90%;
+      margin: auto;
+      justify-content: space-between;
+      /* padding: 10px; */
     }
 
-    disp(data);
+    .logo_div {
+      /* border: 1px solid green; */
+      width: 10%;
+      display: grid;
+      place-items: center;
+    /* margin: auto; */
+    }
 
-    
-  </script>
+    .logo_div img {
+      width: 100%;
+      padding: 10px;
+      border-radius: 20px;
+      margin: auto;
+      /* height: 40px; */
+    }
+  .link{
+      width: 60%;
+      display: grid;
+      place-items: center;
+    }
+    .link ul li:hover{
+color: brown;
+padding: 10px;
+cursor: pointer;
+font-weight: bold;
+background:black;
+border-radius: 10px;
+transition: all 0.4s ease-in-out;
+    }
+    .link ul {
+      display: flex;
+      width: 100%;
+    justify-content: space-around;
+    }
+
+  li{
+    list-style: none;
+  }
+
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="logo_div">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1dzAY9vxSYgd7Zz6Aji9j2-LaG3-BF5iw5w&s" alt="">
+    </div>
+    <div class="link">
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+        <li>Services</li>
+      </ul>
+    </div>
+  </nav>
+</body>
+
 </html>

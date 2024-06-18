@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monthly-Examination-May-</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="three_line">&#9776;</div>
+        <div class="logo">
+            <img src="https://t3.ftcdn.net/jpg/00/85/73/28/360_F_85732813_H42V97IazS9xQNfMPYrbk1fgQcg9l8rs.jpg"
+                alt="" />
+        </div>
+        <div class="nav_links">
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+                <li>Service</li>
+                <a href="./cart.html">
+                    <li style="display: flex;">🛒 <span id="cart">0</span></li>
+                </a>
+
+            </ul>
+        </div>
+    </nav>
+    <div class="hero_section">
+        <img src="https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=2086&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="" />
+    </div>
+    <h1>Student Registration</h1>
+    <hr style="height: 3px; width: 90%; margin: auto; background-color: #407da7" />
+    <div class="main_container">
+        <div class="form_container">
+            <h2>Fill This Form&#8628;</h2>
+            <hr style="
+            height: 3px;
+            width: 95%;
+            margin: auto;
+            background-color: #407da7;
+          " />
+            <br />
+            <form action="" id="form">
+                Name:- <input type="text" placeholder="Name" id="name" /><br />
+                Email:- <input type="email" placeholder="Email" id="email" /><br />
+                Course:-
+                <select name="" id="course">
+                    <option>select</option>
+                    <option>HTML</option>
+                    <option>CSS</option>
+                    <option>JAVA</option>
+                </select>
+                <input type="submit" id="btn" />
+            </form>
+        </div>
+        <div class="display_data">
+            <h2>Registred Students&#8628;</h2>
+            <hr style="
+            height: 3px;
+            width: 95%;
+            margin: auto;
+            background-color: #407da7;
+          " />
+            <br />
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sr.No.</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Course</th>
+                        <th>Action</th>
+
+                    </tr>
+                </thead>
+                <tbody id="tbody"></tbody>
+            </table>
+        </div>
+    </div>
+    <div class="footer">
+        <footer id="main_footer">
+            <div class="about">
+                <h3>About Us</h3>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br />
+                    Disigned by Mukesh Kumar Jat <br />Mobile No.8441925100 <br />Email
+                    :- mjatsuper@gmail.com
+                </p>
+            </div>
+            <div class="links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Email</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="follow_us">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li>
+                        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</body>
+<script>
+    let arr = JSON.parse(localStorage.getItem("user")) || [];
+
+    function userDetails (e) {
+        e.preventDefault();
+        let obj = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            course: document.getElementById("course").value,
+        };
+        arr.push(obj);
+        localStorage.setItem("user", JSON.stringify(arr));
+        DisplayData(arr);
+        form.reset();
+    }
+    let btn = document.getElementById("btn");
+    btn.addEventListener("click", userDetails);
+
+    function DisplayData (data) {
+        let tbody = document.getElementById("tbody");
+        tbody.innerHTML = "";
+        data.map((ele, index) => {
+            index++;
+            let tr = document.createElement("tr");
+            let td = document.createElement("td");
+            td.innerText = index;
+            let td1 = document.createElement("td");
+            td1.innerText = ele.name;
+            let td2 = document.createElement("td");
+            td2.innerText = ele.email;
+            let td3 = document.createElement("td");
+            td3.innerText = ele.course;
+            let addbtn = document.createElement("button");
+            addbtn.innerText = "Add to cart"
+            addbtn.addEventListener("click", () => {
+                addToCart(ele)
+                updateQuantity()
+            })
+
+
+
+            tr.append(td, td1, td2, td3, addbtn);
+            tbody.append(tr);
+        });
+    }
+
+    function addToCart (value) {
+        let cartArr = JSON.parse(localStorage.getItem("cartitem")) || []
+        cartArr.push(value)
+        localStorage.setItem("cartitem", JSON.stringify(cartArr))
+        alert("added to cart")
+
+    }
+
+
+    function updateQuantity () {
+        let cart = document.getElementById("cart")
+        let cartArrkey = JSON.parse(localStorage.getItem("cartitem")) || []
+        cart.innerText = cartArrkey.length
+    }
+    updateQuantity()
+
+
+    DisplayData(arr);
+</script>
+
+</html

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1 style="text-align: center; font-size: 30px; margin-bottom: 50px;">All Cart Items</h1>
+    <div class="display_data">
+        <h2>Registred Students&#8628;</h2>
+        <hr style="
+                        height: 3px;
+                        width: 95%;
+                        margin: auto;
+                        background-color: #407da7;
+                      " />
+        <br />
+        <table>
+            <thead>
+                <tr>
+                    <th>Sr.No.</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Course</th>
+                    <th>Action</th>
+
+                </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+        </table>
+    </div>
+</body>
+<script>
+    let cartvalue = JSON.parse(localStorage.getItem("cartitem")) || []
+    console.log(cartvalue, "cartpage");
+    function DisplayData (data) {
+        let tbody = document.getElementById("tbody");
+        tbody.innerHTML = "";
+        data.map((ele, index) => {
+            index++;
+            let tr = document.createElement("tr");
+            let td = document.createElement("td");
+            td.innerText = index;
+            let td1 = document.createElement("td");
+            td1.innerText = ele.name;
+            let td2 = document.createElement("td");
+            td2.innerText = ele.email;
+            let td3 = document.createElement("td");
+            td3.innerText = ele.course;
+
+            let del = document.createElement("button")
+            del.innerText="Delete"
+            tr.append(td, td1, td2, td3,del);
+            tbody.append(tr);
+        });
+    }
+    DisplayData(cartvalue)
+</script>
+
+</html>

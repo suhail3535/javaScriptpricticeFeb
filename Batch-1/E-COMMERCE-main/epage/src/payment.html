@@ -1,0 +1,203 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+        }
+
+
+
+
+
+
+        .footer_a a:hover {
+            color: blue;
+        }
+
+
+
+        .fixednavbar {
+            position: sticky;
+            top: 0;
+            z-index: 99;
+            background-color: white;
+        }
+
+
+   
+
+
+  
+
+
+
+    
+
+        .btn_div {
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn_div button {
+            margin: 2px;
+            padding: 5px 20px;
+            background-color: grey;
+        }
+
+        .delbtn{
+            padding: 4px 15px;
+            background-color: red;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body class="bg-slate-200">
+
+
+
+
+    <div class="fixednavbar">
+        <p class="bg-stone-950 text-white text-center p-2">
+            Due to dollar rate instability, please call us before placing an order. +1-123-456789
+        </p>
+
+
+        <div class="w-full  bg-yellow-500  gap-7 px-20 align-middle navbar">
+            <a href="#" class="bg-black text-white p-3">Departments</a>
+   
+        </div>
+
+    </div>
+    <div class="container mx-auto mt-5"> <a href="index.html" class="underline text-red-900 font-bold font-serif">Go To Home Page</a></div>
+    <div class="  container border grid grid-cols-1   sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 mx-auto  mt-24 mb-20 gap-20 " id="container">
+        <div class="address  ">
+            <div class="flex bg-white justify-between px-10 border border-b-black py-3 shadow-gray-1000">
+                <div class="">
+                    <h1 class="text-gray-950 font-bold">Login </h1>
+                    <p class="text-pretty">+ 8209277800</p>
+                </div>
+                <div>
+                    <button class=" border border-gray-600 p-1 text-blue-950 font-bold">CHANGE</button>
+                </div>
+            </div>
+
+            <div class="mt-5">
+                <h1 class="bg-blue-800 text-white p-3 font-bold">DELIVERY ADDRESS</h1>
+                <h1 class="p-2 font-bold"> <input type="radio" name="ns">
+                    SUNIL KUMAR</h1>
+                <div class="uppercase p-2 px-5">
+                    Village : Naradpura , vaya: Jahota, Tehsil: amer , District:jaipur , Rajasthan , Pincode : 303701 
+                </div>
+
+                <h1 class="p-2 font-bold"> <input type="radio" name="ns">
+                    RAKESH KUMAR </h1>
+                <div class="uppercase p-2 px-5">
+                    Village : Rojda , vaya: Rojda, Tehsil: JHOTWARA , District:jaipur , Rajasthan , Pincode : 302012 
+                </div>
+            </div>
+        </div>
+        <div class="totalAmount mx-auto py-5 px-5  bg-white">
+            <h1 class="p-2 px-20 bg-blue-900 text-white font-bold">PRICE DETAILS</h1>
+            <div class="flex justify-between font-bold py-2">
+                <p>Price</p>
+                <p id="total">2899</p>
+            </div>
+            <div class="flex justify-between font-bold py-2">
+                <p>Delivery Charge</p>
+                <p ><del>₹</del><span class="text-green-600">FREE</span></p>
+            </div>
+
+            <div class="flex justify-between font-bold py-2 pb-5 border border-b-black">
+                <p>Packing Charge</p>
+                <p>₹<span class="text-green-600">59</span></p>
+            </div>
+
+            <div class="flex justify-between font-bold py-5">
+                <p>TOTAL AMOUNT</p>
+                <p id="total1">₹<span class="text-green-600">59</span></p>
+            </div>
+            <div>
+                <img src="img/Payment.png" alt="">
+            </div>
+            <div class="bg-green-900 font-bold mt-3 text-center cursor-pointer text-white ">
+                <button class="p-2">PAY</button>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-black">
+     
+
+
+        <div class="  pb-20  pt-10 flex container navbar mx-auto flex-wrap text-white justify-between ">
+            <div>
+                <img src="img/logo-footer.png" alt="">
+            </div>
+            <div>
+                <p>Phone:
+                    888.312.2456.
+                    Text:
+                    200.490.1520
+                    Email:
+                    customerservice@8theme.com</p>
+                <p>Hours:
+                    Monday - Friday 8:30am - 4:45pm EST
+                </p>
+                <p>Copyright © 2022 XStore Theme. Created by 8theme – Premium WordPress WooCommerce Themes.</p>
+
+            </div>
+            <div>
+                <img src="img/Payment.png" alt="">
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+    let cart = JSON.parse(localStorage.getItem("cartData")) || [];
+    console.log(cart);
+       
+            function sum_amount() {
+                let total = document.getElementById("total");
+                let sum = 0;
+                for (let i = 0; i < cart.length; i++) {
+                    sum = sum + cart[i].price * cart[i].Quantity;
+                }
+
+                total.innerText = `$ : ${sum}`;
+
+
+                let total1 = document.getElementById("total1");
+                let sum1 = 0;
+                    for (let i = 0; i < cart.length; i++) {
+                    sum1 = sum1 + cart[i].price * cart[i].Quantity;
+                    total2 =sum1+59;
+                }
+
+                total1.innerText = `$ : ${total2}`;
+
+            }
+            sum_amount();
+
+</script>
+
+
+</html>

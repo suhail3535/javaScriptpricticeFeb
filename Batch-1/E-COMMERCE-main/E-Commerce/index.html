@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>E-COMMERCE PAGE</title>
+            <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            #container {
+                display: flex;
+                flex-wrap: wrap;
+                width: 95%; /* Adjust the width as needed */
+                margin: 20px auto; /* Center the container horizontally */
+                gap: 20px;
+            }
+
+            #container div {
+                box-shadow: 0px 0px 2px grey;
+                padding: 20px;
+                margin: auto;
+                width: 20%;
+            }
+
+            #container div img {
+                width: 100%;
+                aspect-ratio: 8/5;
+                display: block;
+                margin: auto;
+            }
+            .btn{
+                border: none;
+                background-color: rgb(0, 102, 255);
+                color: white;
+            }
+            .btn:hover{
+                background-color:rgb(61, 59, 59) ;
+                color: white;
+            }
+
+            /* Media queries for responsiveness */
+            @media screen and (max-width: 768px) {
+                #container div {
+                    width: 40%; /* Each div occupies 40% of the container width on screens up to 768px wide */
+                }
+            }
+
+            @media screen and (max-width: 480px) {
+                #container div {
+                    width: 100%; /* Each div occupies 100% of the container width on screens up to 480px wide */
+                }
+            }
+
+
+        </style>
+    </head>
+    <body>
+
+<div class="main-navbar shadow-sm sticky-top">
+        <div class="top-navbar">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-2 my-auto d-none d-sm-none d-md-block d-lg-block">
+                        <h5 class="brand-name">Funda Ecom</h5>
+                    </div>
+                    <div class="col-md-5 my-auto">
+                        <form role="search">
+                            <div class="input-group">
+                                <input type="search" placeholder="Search your product" class="form-control" />
+                                <button class="btn bg-white" type="submit">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-5 my-auto">
+                        <ul class="nav justify-content-end">
+
+                            <li class="nav-item">
+                                <a class="nav-link" id="cartpage" href="#">
+                                    <i class="fa fa-shopping-cart"></i> Cart <span id="cart">0</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="fa fa-heart"></i> Wishlist (0)
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa fa-user"></i> Username
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a></li>
+
+                                <li><a class="dropdown-item" href="#"><i class="fa fa-list"></i> My Orders</a></li>
+
+                                <li><a class="dropdown-item" href="#"><i class="fa fa-heart"></i> My Wishlist</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa fa-shopping-cart"></i> My Cart</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa fa-sign-out"></i> Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand d-block d-sm-block d-md-none d-lg-none" href="#">
+                    Funda Ecom
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">All Categories</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">New Arrivals</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Featured Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Electronics</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Fashions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Accessories</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Appliances</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+        <div id="container"></div>
+
+                <section>
+            <div class="footer">
+    <div class="footer-links">
+        <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+        </ul>
+    </div>
+    <div class="social-links">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+    </div>
+    <p style="font-size: 18px;">&copy; 2024 E-Commerce Store. All rights reserved.</p>
+</div>
+
+        </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script>
+            let arr = JSON.parse(localStorage.getItem("eshopCart")) || [];
+            async function getData() {
+                try {
+                    let res = await fetch("https://dummyjson.com/products");
+                    let responce = await res.json();
+                    arr = responce;
+                    console.log(arr.products);
+                    displayData(arr.products);
+                } catch (error) {
+                    console.log("error");
+                }
+            }
+            getData();
+
+            let container = document.getElementById("container");
+            function displayData(data) {
+                data.map((item) => {
+                    let div = document.createElement("div");
+                    let brand = document.createElement("h5");
+                    brand.innerText = item.brand;
+
+                    let category = document.createElement("h5");
+                    category.innerText = item.category;
+
+                    let discount = document.createElement("h5");
+                    discount.innerText = item.discountPercentage;
+
+                    let description = document.createElement("h4");
+                    description.innerText =
+                        item.description.split(" ").slice(0, 2).join(" ") +
+                        " ............";
+
+                    let price = document.createElement("h6");
+                    price.innerText = item.price;
+
+                    let title = document.createElement("h6");
+                    title.innerText = item.title;
+                    let img = document.createElement("img");
+                    img.src = item.images[0];
+
+                    let btn = document.createElement("button")
+                    btn.innerText = "Add to cart"
+                    btn.classList.add("btn")
+                    btn.addEventListener("click",()=>{
+                        addToCart(item)
+                        updatedCartQuantity()
+                    })
+
+                    div.append(brand,img,description,category,discount,price,title,btn);
+
+                    container.append(div);
+                });
+            }
+
+            function addToCart(data){
+                let value  = JSON.parse(localStorage.getItem("eshopCart")) || [];
+                value.push(data)
+                localStorage.setItem("eshopCart",JSON.stringify(value));
+                alert("Add To Cart Success!")
+            }
+
+
+            function updatedCartQuantity(){
+                let cart = document.getElementById("cart");
+                let value  = JSON.parse(localStorage.getItem("eshopCart")) || [];
+                let data = value.length;
+                cart.innerText = data;
+
+            }
+            updatedCartQuantity()
+
+            let cartpage = document.getElementById("cartpage");
+            cartpage.addEventListener("click",()=>{
+                  window.location.href = "./cart.html";
+            })
+
+
+
+
+        </script>
+    </body>
+</html>
